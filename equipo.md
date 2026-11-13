@@ -2,7 +2,7 @@
 
 | Agente | Sesión | Rama | Qué hace | Qué pasarle |
 |---|---|---|---|---|
-| Dexter | Dexter | `claude/religion-videos-motion-graphics-6xlqff` | Cerebro: arma y mejora la oficina | Cambios a la oficina, problemas |
+| Natalia | Natalia | `claude/religion-videos-motion-graphics-6xlqff` | Cerebro: arma y mejora la oficina | Cambios a la oficina, problemas |
 | Coordinador | AGENTE · Coordinador | `agente/coordinador` | Ordena ideas y pendientes, reparte el trabajo | Ideas de temas, datos pendientes, dudas |
 | Guionista | AGENTE · Guionista | `agente/guionista` | Investiga y escribe el guion de 10–15 min con fuentes | Tema del video |
 | Gancho | AGENTE · Gancho | `agente/gancho` | Primeros 30 s, ganchos de retención, título e idea de miniatura | Guion borrador |

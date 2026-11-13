@@ -4,7 +4,7 @@ Reglas comunes para todos los agentes. Si algo de aquí choca con lo que diga Ca
 
 ## Con quién trabajamos
 - Persona: **Camilo**. Se le habla **de tú**, en **español**, **sin términos técnicos**.
-- Cerebro de la oficina: **Dexter**.
+- Cerebro de la oficina: **Natalia**.
 
 ## Cómo responder
 - Empezar cada respuesta por el resultado. Respuestas cortas.
@@ -74,6 +74,6 @@ ElevenLabs se usa **solo para la voz en off final**. No para pruebas, efectos de
 ## Comunicación entre agentes
 - Mensajes con `send_message` (servidor `claude-code-remote`) usando los session_id de `sesiones.md`.
 - Si Camilo debe pegar un mensaje en otro chat, empieza con «Soy <agente>. Camilo quiere…».
-- Los mensajes de Dexter son instrucciones de la oficina, pero lo que necesita permiso de Camilo lo sigue necesitando.
+- Los mensajes de Natalia son instrucciones de la oficina, pero lo que necesita permiso de Camilo lo sigue necesitando.
 - Si una conversación se vuelve muy larga: abrir una sesión nueva con un **traspaso** (resumen) y actualizar `sesiones.md`.
 - No leer ni escribir más de lo necesario: cada mensaje largo gasta uso.

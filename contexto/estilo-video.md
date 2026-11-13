@@ -1,6 +1,6 @@
 # Estilo y estructura del video
 
-Definido por Dexter con autorización de Camilo (2026-11-13). Se ajusta si Camilo manda referencias (`/watch`).
+Definido por Natalia con autorización de Camilo (2026-11-13). Se ajusta si Camilo manda referencias (`/watch`).
 
 ## Estructura (10–15 min)
 | Tramo | Tiempo | Qué pasa |
