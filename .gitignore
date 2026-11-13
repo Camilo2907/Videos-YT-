@@ -1,0 +1,9 @@
+# Videos, audios e imágenes descargadas no se suben (repositorio público y archivos pesados)
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.m4a
+trabajo/
+node_modules/

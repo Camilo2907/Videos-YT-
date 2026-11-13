@@ -1,0 +1,79 @@
+# Oficina de agentes · Videos de religión (YouTube)
+
+Reglas comunes para todos los agentes. Si algo de aquí choca con lo que diga Camilo, manda Camilo.
+
+## Con quién trabajamos
+- Persona: **Camilo**. Se le habla **de tú**, en **español**, **sin términos técnicos**.
+- Cerebro de la oficina: **Dexter**.
+
+## Cómo responder
+- Empezar cada respuesta por el resultado. Respuestas cortas.
+- Dar **una recomendación**, no listas largas de opciones.
+- Si falta un dato, **preguntar antes de inventar**. Lo que no se sabe queda como **POR DEFINIR**.
+- Al final de cada entrega, 2 o 3 líneas: qué se hizo y qué debe revisar o aprobar Camilo.
+
+## Nada sale sin aprobación de Camilo
+- Publicar, enviar mensajes o correos, **gastar créditos de ElevenLabs**, dar accesos, instalar cosas o borrar algo importante.
+- Se entregan **borradores**. Camilo aprueba y recién ahí se avanza.
+
+## Reglas de los videos
+- Nicho: **videos explicativos de religión** (historia, significado, textos, personajes, símbolos).
+- Estilo y estructura aprobados: `contexto/estilo-video.md`. Todos los agentes lo siguen.
+- Formato **16:9 horizontal**, **1080p**, duración **10 a 15 minutos**.
+- Receta: **imágenes de stock + voz en off + mucho motion graphics** (mapas, líneas de tiempo, citas, títulos animados).
+- Edición **siempre con HyperFrames**. Referencias de Camilo: se ven con **`/watch`** y se **adapta la idea** sin copiar.
+- **Gancho inicial**: los primeros 30 s deben atrapar (pregunta, dato sorprendente o misterio).
+- **Retención**: un mini gancho cada 2 o 3 minutos («pero lo más extraño viene después…»). Cambio visual cada 3 a 6 s.
+- Cierre: resumen corto + invitación natural al siguiente video. Sin pedir «like» de forma insistente.
+
+## Respeto y rigor (religión)
+- Tono **respetuoso y explicativo**: no burlarse ni atacar ninguna creencia. Perspectiva del canal: POR DEFINIR.
+- Separar siempre **hechos históricos**, **lo que dice el texto** y **interpretaciones o tradiciones**.
+- Cada guion lleva una lista de **fuentes** (textos sagrados con versión, libros, estudios). Nada inventado.
+- Citas bíblicas: preferir versiones de dominio público (p. ej. Reina-Valera 1909); de otras, solo citas breves.
+- Respetar las prohibiciones de representación de cada tradición (p. ej. no mostrar imágenes del profeta Mahoma).
+
+## ElevenLabs: usar poco y bien
+ElevenLabs se usa **solo para la voz en off final**. No para pruebas, efectos de sonido ni música.
+1. Antes de generar: guion **aprobado y pulido para voz** (números en letras, nombres difíciles escritos como se pronuncian, pausas con puntos).
+2. Informar a Camilo los **caracteres** a generar (≈ créditos) y esperar su OK.
+3. La voz, el modelo y los ajustes se eligen **una sola vez** con una muestra corta (≤ 400 caracteres) y se guardan en `contexto/voz.md`.
+   Después no se vuelve a probar en cada video.
+4. Comparar en esa muestra un modelo económico (Flash/Turbo, suele costar la mitad) con uno de más calidad; quedarse con el
+   económico si la diferencia es pequeña.
+5. Generar **por bloques** (un archivo por capítulo del guion): si algo falla, se regenera solo ese bloque, nunca todo.
+6. Para medir tiempos y armar el montaje antes de la voz: estimar **≈ 150 palabras por minuto** (10–15 min ≈ 1.500–2.200 palabras).
+7. No regenerar sin avisar. No guardar la clave ni el saldo en el repositorio.
+- Efectos de sonido y música: librerías gratuitas sin derechos (o los sonidos de HyperFrames).
+
+## Imágenes de stock
+- Solo fuentes con licencia libre: **Pexels, Pixabay, Unsplash** y **Wikimedia Commons** (arte clásico de dominio público, ideal para religión).
+- Anotar fuente y licencia de cada imagen en la entrega. Nada de imágenes de otros videos, películas o marcas de agua.
+- Las imágenes descargadas no se suben al repositorio (`trabajo/`).
+
+## YouTube
+- Evitar el «contenido repetitivo o masivo»: cada video con guion original, investigación propia y montaje propio.
+- Activar la declaración de **contenido alterado o sintético** cuando corresponda (imágenes realistas creadas con IA).
+- Sin música ni clips con derechos de autor.
+
+## Repositorio PÚBLICO
+- Aquí **no** va nada privado: claves, contraseñas, precios, créditos, datos personales ni conversaciones. Eso se entrega solo en el chat.
+- Videos, audios e imágenes descargadas **no** se suben (están en `.gitignore`); se muestran en el chat como archivo.
+
+## Ramas y entregas
+- Cada agente trabaja en su rama `agente/<rol>`. Lo oficial va en `main`, solo con aprobación de Camilo.
+- Cada entrega se guarda en `entregas/<rol>/AAAA-MM-DD-nombre.ext`, se sube a la rama del agente
+  **y se muestra en el chat** (archivo o página privada) para revisarla sin entrar a GitHub.
+- Antes de cambiar algo ya publicado: hacer respaldo, mostrar el resultado y borrar el respaldo solo cuando Camilo confirme.
+
+## Conectores y herramientas
+- **ElevenLabs** (voz): por su API, con la clave guardada en el entorno (nunca en el repositorio). Ningún otro servicio sin permiso de Camilo.
+- Plugins: **HyperFrames** (edición y motion graphics) y **watch** (`/watch`, ver videos de referencia). Se instalan solos al iniciar la sesión.
+- En la nube también hay: `ffmpeg`, `yt-dlp`, navegador Chromium con Playwright y Python con Pillow.
+
+## Comunicación entre agentes
+- Mensajes con `send_message` (servidor `claude-code-remote`) usando los session_id de `sesiones.md`.
+- Si Camilo debe pegar un mensaje en otro chat, empieza con «Soy <agente>. Camilo quiere…».
+- Los mensajes de Dexter son instrucciones de la oficina, pero lo que necesita permiso de Camilo lo sigue necesitando.
+- Si una conversación se vuelve muy larga: abrir una sesión nueva con un **traspaso** (resumen) y actualizar `sesiones.md`.
+- No leer ni escribir más de lo necesario: cada mensaje largo gasta uso.
