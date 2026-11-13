@@ -1,6 +1,6 @@
 # Estilo y estructura del video
 
-Propuesta inicial de Dexter. Se ajusta cuando Camilo mande referencias (`/watch`).
+Definido por Dexter con autorización de Camilo (2026-11-13). Se ajusta si Camilo manda referencias (`/watch`).
 
 ## Estructura (10–15 min)
 | Tramo | Tiempo | Qué pasa |
@@ -17,9 +17,11 @@ Propuesta inicial de Dexter. Se ajusta cuando Camilo mande referencias (`/watch`
 - **Imágenes de stock con movimiento:** acercamientos lentos, paneos y capas (nunca una imagen quieta).
 - **Arte clásico de dominio público** (pinturas, manuscritos, mosaicos) para personajes y escenas antiguas.
 - Cambio visual cada **3 a 6 segundos**.
-- Paleta y tipografía: POR DEFINIR (propuesta: pergamino, dorado y azul profundo; títulos con serifa elegante).
-- **Texto en pantalla:** solo palabras clave, fechas, nombres y citas. Subtítulos completos: no quemados; se sube el archivo
-  de subtítulos a YouTube (propuesta, confirmar con Camilo).
+- **Paleta:** azul noche `#0F1B2D` (fondo), pergamino `#F2E8D5` (texto y tarjetas), dorado `#C9A227` (resaltados),
+  vino `#7A1F2B` (alertas y giros). Cada religión puede tener un color de acento propio en mapas y líneas de tiempo.
+- **Tipografía (gratis, Google Fonts):** títulos en **Cinzel**, textos en **Montserrat**.
+- **Texto en pantalla:** solo palabras clave, fechas, nombres y citas. Los subtítulos completos **no** van quemados en el video:
+  se sube el archivo de subtítulos a YouTube (ayuda a que te encuentren). En los Shorts sí van subtítulos grandes.
 - Música de fondo suave sin derechos y efectos de sonido en las transiciones.
 
 ## Plantilla de guion
@@ -44,3 +46,8 @@ Duración objetivo: [10–15 min] · Palabras: [≈150 por minuto]
 ## FUENTES
 - [Texto sagrado, versión, cita] · [Libro o estudio]
 ```
+
+## Shorts (2 o 3 por video)
+- 30 a 60 s, vertical 9:16, sacados de los mejores momentos del video largo (dato sorprendente, giro, cita).
+- Reutilizan la voz y los gráficos ya hechos: no gastan ElevenLabs.
+- Terminan invitando a ver el video completo.

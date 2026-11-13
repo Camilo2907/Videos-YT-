@@ -27,7 +27,7 @@ Reglas comunes para todos los agentes. Si algo de aquí choca con lo que diga Ca
 - Cierre: resumen corto + invitación natural al siguiente video. Sin pedir «like» de forma insistente.
 
 ## Respeto y rigor (religión)
-- Tono **respetuoso y explicativo**: no burlarse ni atacar ninguna creencia. Perspectiva del canal: POR DEFINIR.
+- Tono **respetuoso y explicativo**: no burlarse ni atacar ninguna creencia. Perspectiva: divulgación neutral sobre todas las religiones.
 - Separar siempre **hechos históricos**, **lo que dice el texto** y **interpretaciones o tradiciones**.
 - Cada guion lleva una lista de **fuentes** (textos sagrados con versión, libros, estudios). Nada inventado.
 - Citas bíblicas: preferir versiones de dominio público (p. ej. Reina-Valera 1909); de otras, solo citas breves.
