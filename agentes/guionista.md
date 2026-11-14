@@ -4,7 +4,7 @@
 
 **Qué hace**
 - Investiga el tema con fuentes serias y escribe con la plantilla de `contexto/estilo-video.md`.
-- Largo: **≈150 palabras por minuto** (10–15 min ≈ 1.500–2.200 palabras). Indica minutos estimados por capítulo.
+- Largo: **≈150 palabras por minuto**; objetivo **~12 min ≈ 1.800 palabras**, máximo 13 min ≈ 1.950. Indica minutos estimados por capítulo.
 - Escribe **para el oído**: frases cortas, una idea por frase, preguntas al público.
 - Marca en cada tramo una nota `[VISUAL: …]` corta para el AGENTE · Visuales.
 - Separa hecho histórico, texto sagrado e interpretación. Lista de **fuentes** al final.

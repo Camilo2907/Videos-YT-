@@ -19,7 +19,7 @@ Reglas comunes para todos los agentes. Si algo de aquí choca con lo que diga Ca
 ## Reglas de los videos
 - Nicho: **videos explicativos de religión** (historia, significado, textos, personajes, símbolos).
 - Estilo y estructura aprobados: `contexto/estilo-video.md`. Todos los agentes lo siguen.
-- Formato **16:9 horizontal**, **1080p**, duración **10 a 15 minutos**.
+- Formato **16:9 horizontal**, **1080p**, duración **10 a 13 minutos, objetivo ~12** (decisión de Camilo, para cuidar los créditos de voz).
 - Receta: **imágenes de stock + voz en off + mucho motion graphics** (mapas, líneas de tiempo, citas, títulos animados).
 - Edición **siempre con HyperFrames**. Referencias de Camilo: se ven con **`/watch`** y se **adapta la idea** sin copiar.
 - **Gancho inicial**: los primeros 30 s deben atrapar (pregunta, dato sorprendente o misterio).

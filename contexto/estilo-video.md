@@ -2,7 +2,7 @@
 
 Definido por Natalia con autorización de Camilo (2026-11-13). Se ajusta si Camilo manda referencias (`/watch`).
 
-## Estructura (10–15 min)
+## Estructura (~12 min, máximo 13)
 | Tramo | Tiempo | Qué pasa |
 |---|---|---|
 | Gancho | 0:00–0:30 | Pregunta o dato sorprendente + promesa de lo que se va a descubrir |
@@ -27,7 +27,7 @@ Definido por Natalia con autorización de Camilo (2026-11-13). Se ajusta si Cami
 ## Plantilla de guion
 ```
 # [TÍTULO]
-Duración objetivo: [10–15 min] · Palabras: [≈150 por minuto]
+Duración objetivo: [~12 min, máximo 13] · Palabras: [≈150 por minuto]
 
 ## GANCHO (0:00–0:30)
 [Narración]
