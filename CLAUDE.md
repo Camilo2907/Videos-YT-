@@ -39,8 +39,7 @@ ElevenLabs se usa **solo para la voz en off final**. No para pruebas, efectos de
 2. Informar a Camilo los **caracteres** a generar (≈ créditos) y esperar su OK.
 3. La voz, el modelo y los ajustes se eligen **una sola vez** con una muestra corta (≤ 400 caracteres) y se guardan en `contexto/voz.md`.
    Después no se vuelve a probar en cada video.
-4. Comparar en esa muestra un modelo económico (Flash/Turbo, suele costar la mitad) con uno de más calidad; quedarse con el
-   económico si la diferencia es pequeña.
+4. Modelo **económico (Flash v2.5)**, decisión de Camilo. La muestra solo sirve para elegir la voz, no para comparar modelos.
 5. Generar **por bloques** (un archivo por capítulo del guion): si algo falla, se regenera solo ese bloque, nunca todo.
 6. Para medir tiempos y armar el montaje antes de la voz: estimar **≈ 150 palabras por minuto** (10–15 min ≈ 1.500–2.200 palabras).
 7. No regenerar sin avisar. No guardar la clave ni el saldo en el repositorio.
