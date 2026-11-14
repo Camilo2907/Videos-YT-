@@ -9,7 +9,7 @@
 ## Datos que faltan de Camilo
 - [ ] Nombre del canal (el AGENTE · Gancho puede proponer opciones).
 - [ ] Videos de referencia para `/watch` (opcional).
-- [ ] Plan de ElevenLabs que va a usar (en el chat, no aquí).
+- [x] Plan de ElevenLabs elegido (el dato lo lleva el Coordinador en su chat, no aquí).
 
 ## Por hacer
 - [ ] Guardar la clave de ElevenLabs en el entorno (formulario seguro, nunca en el chat ni en el repositorio).
