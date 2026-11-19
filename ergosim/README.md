@@ -33,9 +33,12 @@ comparación entre métodos, modo claro y oscuro, y **evaluación por foto con I
 la foto se envía a Claude (capacidad `sample` con imágenes), que estima todas las respuestas; el evaluador las revisa
 y el informe marca cada factor como «IA», «IA, corregido a mano» o «Manual».
 
-En el archivo descargado (fuera de claude.ai) la foto se analiza con **MediaPipe Pose Landmarker** en el propio
-navegador: mide ángulos de tronco, cuello, brazo, antebrazo, muñeca y rodillas; lo que no se ve en una foto (carga,
-agarre, giros, frecuencia) se completa a mano. El informe puede imprimirse o guardarse en PDF.
+**Simulación completa por foto:** con un botón se analiza la foto y se calculan RULA, REBA y ROSA a la vez, con su
+informe. En el archivo descargado (fuera de claude.ai) la foto se analiza con **MediaPipe Pose Landmarker** en el propio
+navegador, usando sus coordenadas 3D: ángulos, giros e inclinaciones de tronco y cuello, abducción y elevación del
+hombro, antebrazo fuera de la línea media, muñeca y su desviación, rodillas, posición sentada y apoyo de pies. Lo que
+una foto no muestra (peso, frecuencia, agarre, horas frente al computador) se responde en cuatro preguntas rápidas.
+Los umbrales propios de la herramienta están marcados con «UMBRAL» en `src/pose.ts`. El informe puede imprimirse o guardarse en PDF.
 
 Pendiente: video, exportación a PDF y Word,
 gestión de varias evaluaciones con IndexedDB, comparación antes y después, mapa de calor de puestos.

@@ -93,7 +93,8 @@ function origenes(m: Metodo, s: Estado, lado?: 'izq' | 'der'): Record<string, Or
   return Object.fromEntries(
     Object.entries(CAMPOS[m]).map(([clave, rutas]) => {
       const det = s.ia[m]?.detectados;
-      const usadas = det ? rutas.filter((r) => det.includes(r)) : rutas;
+      const resp = s.ia[m]?.respondidos ?? [];
+      const usadas = (det ? rutas.filter((r) => det.includes(r)) : rutas).filter((r) => !resp.includes(r));
       if (!ia || usadas.length === 0) return [clave, 'Manual' as Origen];
       const igual = usadas.every((r) => leer('actual', r) === leer('ia', r));
       return [clave, (igual ? 'IA' : 'IA, corregido a mano') as Origen];

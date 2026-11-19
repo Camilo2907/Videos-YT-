@@ -121,6 +121,8 @@ export interface ResultadoIA {
   motor?: 'claude' | 'mediapipe';
   /** Campos que el análisis pudo estimar (rutas como 'C.troncoAngulo', 'L.brazoAngulo' o 'pantalla'); sin lista = todos. */
   detectados?: string[];
+  /** Campos que vinieron de las respuestas rápidas (no de la foto). */
+  respondidos?: string[];
 }
 
 const describir = (esq: Record<string, Campo>) =>

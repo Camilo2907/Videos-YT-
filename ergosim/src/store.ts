@@ -4,6 +4,7 @@ import type { RulaComun, RulaLado } from './methods/rula';
 import type { RebaComun, RebaLado } from './methods/reba';
 import type { RosaEntrada } from './methods/rosa';
 import type { ResultadoIA } from './ia';
+import { RESPUESTAS_INICIALES, RespuestasRapidas } from './respuestas';
 
 export type Metodo = 'rula' | 'reba' | 'rosa';
 export type Vista = Metodo | 'comparar';
@@ -69,6 +70,9 @@ interface Estado {
   fotoArchivo: File | null;
   /** Último análisis con IA por método: valores sugeridos, puntos y observaciones. */
   ia: Partial<Record<Metodo, ResultadoIA>>;
+  /** Respuestas rápidas para lo que no se ve en la foto. */
+  respuestas: RespuestasRapidas;
+  setRespuestas: (r: Partial<RespuestasRapidas>) => void;
   setVista: (v: Vista) => void;
   setDatos: (d: Partial<DatosEvaluacion>) => void;
   setRulaComun: (c: Partial<RulaComun>) => void;
@@ -128,6 +132,8 @@ export const useErgo = create<Estado>()(
       foto: null,
       fotoArchivo: null,
       ia: {},
+      respuestas: RESPUESTAS_INICIALES,
+      setRespuestas: (r) => set((s) => ({ respuestas: { ...s.respuestas, ...r } })),
       setVista: (vista) => set({ vista }),
       setDatos: (d) => set((s) => ({ datos: { ...s.datos, ...d } })),
       setRulaComun: (c) => set((s) => ({ rula: { ...s.rula, comun: { ...s.rula.comun, ...c } } })),
@@ -159,7 +165,7 @@ export const useErgo = create<Estado>()(
     {
       name: 'ergosim-v2',
       storage: almacenSeguro,
-      partialize: (s) => ({ datos: s.datos, rula: s.rula, reba: s.reba, rosa: s.rosa, informes: s.informes, ia: s.ia }),
+      partialize: (s) => ({ datos: s.datos, rula: s.rula, reba: s.reba, rosa: s.rosa, informes: s.informes, ia: s.ia, respuestas: s.respuestas }),
     },
   ),
 );

@@ -144,8 +144,8 @@ export default function App() {
               </div>
             )}
             <DatosEvaluacion />
-            {metodo && <FotoIA metodo={metodo} />}
-            {metodo && <p className="text-xs text-tenue">El formulario abre con un caso de ejemplo. Use una foto o cambie los valores por los de su puesto.</p>}
+            {metodo && <FotoIA metodo={metodo} abrirInforme={(m) => { ir(m); setInforme(m); requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'smooth' })); }} irA={(m) => { if (m === metodo) document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth' }); else ir(m); }} />}
+            {metodo && <p id="formulario" className="scroll-mt-4 text-xs text-tenue">Formulario de {metodo.toUpperCase()}: abre con un caso de ejemplo. Use la simulación por foto o cambie los valores por los de su puesto.</p>}
             {vista === 'rula' && <FormRula onInforme={() => generar('rula')} />}
             {vista === 'reba' && <FormReba onInforme={() => generar('reba')} />}
             {vista === 'rosa' && <FormRosa onInforme={() => generar('rosa')} />}
