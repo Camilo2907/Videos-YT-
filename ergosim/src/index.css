@@ -242,3 +242,31 @@ input[type='range'] {
     scroll-behavior: auto !important;
   }
 }
+
+/* Impresión del informe (archivo descargado: Imprimir o guardar PDF) */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+  body::before,
+  .no-imprimir {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  .min-h-full {
+    display: block !important;
+  }
+  #informe {
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+  }
+  figure,
+  table,
+  section {
+    break-inside: avoid;
+  }
+}

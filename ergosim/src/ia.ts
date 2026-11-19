@@ -117,6 +117,10 @@ export interface ResultadoIA {
   observaciones: string[];
   confianza: 'alta' | 'media' | 'baja';
   fecha: string;
+  /** Quién hizo el análisis. */
+  motor?: 'claude' | 'mediapipe';
+  /** Campos que el análisis pudo estimar (rutas como 'C.troncoAngulo', 'L.brazoAngulo' o 'pantalla'); sin lista = todos. */
+  detectados?: string[];
 }
 
 const describir = (esq: Record<string, Campo>) =>
@@ -211,4 +215,6 @@ export const MENSAJE_ERROR: Record<string, string> = {
   refused: 'Claude no pudo analizar esta imagen. Pruebe con otra foto del puesto.',
   invalid_json: 'La respuesta no tuvo el formato esperado. Pulse «Analizar» de nuevo.',
   session_expired: 'La sesión expiró: vuelva a iniciar sesión en Claude.',
+  sin_persona: 'No se detectó a ninguna persona en la foto. Use una foto donde se vea el cuerpo completo, mejor de perfil.',
+  sin_detector: 'No se pudo cargar el detector de postura. Revise la conexión a internet e intente de nuevo.',
 };

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Metodo, useErgo } from '../store';
 import { MENSAJE_ERROR, Punto, ResultadoIA, construirPrompt, validarRespuesta } from '../ia';
+import { analizarConMediapipe } from '../pose';
 
 type Sample = ((input: string, opts?: Record<string, unknown>) => Promise<{ text: string }>) & {
   json: (input: string, opts?: Record<string, unknown>) => Promise<unknown>;
@@ -98,25 +99,34 @@ export function FotoIA({ metodo }: { metodo: Metodo }) {
     r.readAsDataURL(f);
   };
 
+  const disponible = listo && !!s && imagenes;
+  // Dentro de claude.ai analiza Claude; fuera (archivo descargado) analiza MediaPipe en el navegador.
+  const motor: 'claude' | 'mediapipe' | null = !listo ? null : disponible ? 'claude' : window.claude ? null : 'mediapipe';
+
   const analizar = async () => {
-    if (!s || !fotoArchivo) return;
+    if (!foto) return;
     ctl.current = new AbortController();
     setFase('analizando');
     setError('');
+    const actual = (metodo === 'rosa' ? estado.rosa : estado[metodo]) as unknown as Record<string, unknown>;
     try {
-      const actual = (metodo === 'rosa' ? estado.rosa : estado[metodo]) as unknown as Record<string, unknown>;
-      const r = await s.json(construirPrompt(metodo, datos.tarea), { images: [fotoArchivo], signal: ctl.current.signal });
-      aplicarIA(validarRespuesta(metodo, r, actual));
+      if (motor === 'claude' && s && fotoArchivo) {
+        const r = await s.json(construirPrompt(metodo, datos.tarea), { images: [fotoArchivo], signal: ctl.current.signal });
+        aplicarIA({ ...validarRespuesta(metodo, r, actual), motor: 'claude' });
+      } else {
+        const img = new Image();
+        img.src = foto;
+        await img.decode();
+        aplicarIA(await analizarConMediapipe(metodo, img, actual));
+      }
       setFase('reposo');
     } catch (e) {
-      const code = (e as { code?: string })?.code ?? 'upstream_error';
+      const code = (e as { code?: string })?.code ?? (motor === 'mediapipe' ? 'sin_detector' : 'upstream_error');
       if (code === 'cancelled') return setFase('reposo');
       setError(MENSAJE_ERROR[code] ?? 'No se pudo completar el análisis. Intente de nuevo.');
       setFase('error');
     }
   };
-
-  const disponible = listo && !!s && imagenes;
   const lado = ia?.ladoVisible === 'izq' ? 'izq' : 'der';
 
   return (
@@ -127,7 +137,9 @@ export function FotoIA({ metodo }: { metodo: Metodo }) {
             <p className="etiqueta">Evaluación por foto</p>
             <h2 className="text-lg font-bold">Adjunte una foto y la IA llena el formulario</h2>
             <p className="text-sm text-tinta2">
-              Claude observa la foto, estima los ángulos y las demás respuestas de {metodo.toUpperCase()} y las selecciona por usted. Revíselas: puede corregir cualquier valor y el informe indicará qué vino de la IA y qué se corrigió a mano.
+              {motor === 'mediapipe'
+                ? `La IA detecta el esqueleto en la foto (MediaPipe, en este mismo navegador), mide los ángulos y selecciona las respuestas de ${metodo.toUpperCase()} que se pueden ver. Revíselas y complete lo demás: el informe indicará qué vino de la IA y qué se corrigió a mano.`
+                : `Claude observa la foto, estima los ángulos y las demás respuestas de ${metodo.toUpperCase()} y las selecciona por usted. Revíselas: puede corregir cualquier valor y el informe indicará qué vino de la IA y qué se corrigió a mano.`}
             </p>
           </div>
           {!foto ? (
@@ -155,13 +167,13 @@ export function FotoIA({ metodo }: { metodo: Metodo }) {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
-                disabled={!disponible || !fotoArchivo || fase === 'analizando'}
+                disabled={!motor || (motor === 'claude' && !fotoArchivo) || fase === 'analizando'}
                 onClick={analizar}
                 className="rounded-xl bg-acento px-4 py-2.5 font-bold text-sobre-acento shadow-sm disabled:opacity-50"
               >
                 {fase === 'analizando' ? 'Analizando la foto…' : ia ? 'Volver a analizar' : 'Analizar foto con IA'}
               </button>
-              {fase === 'analizando' && (
+              {fase === 'analizando' && motor === 'claude' && (
                 <button type="button" onClick={() => ctl.current?.abort()} className="rounded-xl border border-linea px-3 py-2 text-sm font-medium">
                   Detener
                 </button>
@@ -175,22 +187,27 @@ export function FotoIA({ metodo }: { metodo: Metodo }) {
             </div>
           )}
           <input id={`foto-${metodo}`} type="file" accept="image/jpeg,image/png,image/webp" className="sr-only" onChange={(e) => cargar(e.target.files?.[0])} />
-          {fase === 'analizando' && <p className="animate-pulse text-sm text-tinta2">Claude está observando la postura. Suele tardar entre 20 y 60 segundos.</p>}
+          {fase === 'analizando' && (
+            <p className="animate-pulse text-sm text-tinta2">
+              {motor === 'claude' ? 'Claude está observando la postura. Suele tardar entre 20 y 60 segundos.' : 'Detectando la postura… La primera vez descarga el modelo (unos 10 MB) y tarda un poco más.'}
+            </p>
+          )}
           {fase === 'error' && (
             <p role="alert" className="rounded-lg px-3 py-2 text-sm" style={{ background: 'var(--r-rojo-fondo)', color: 'var(--r-rojo-tinta)' }}>
               {error}
             </p>
           )}
-          {foto && !fotoArchivo && <p className="text-xs text-tenue">Vuelva a elegir la foto para analizarla (la foto no se guarda al recargar la página).</p>}
-          {listo && !disponible && (
+          {foto && !fotoArchivo && motor === 'claude' && <p className="text-xs text-tenue">Vuelva a elegir la foto para analizarla (la foto no se guarda al recargar la página).</p>}
+          {listo && !motor && (
             <p className="rounded-lg bg-hundido px-3 py-2 text-xs text-tinta2">
-              El análisis con IA funciona en la página publicada en claude.ai, con su permiso para usar Claude. Aquí puede adjuntar la foto y llenar los datos a mano.
+              El análisis con IA no está disponible en esta vista (falta el permiso para usar Claude). Puede adjuntar la foto y llenar los datos a mano.
             </p>
           )}
+          {motor === 'mediapipe' && <p className="text-xs text-tenue">Necesita conexión a internet la primera vez. La foto no sale de este equipo.</p>}
           {ia && (
             <div className="grid gap-2 rounded-xl bg-acento-suave p-3 text-sm">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="font-semibold">Sugerencias de la IA aplicadas</span>
+                <span className="font-semibold">Sugerencias de la IA aplicadas{ia.motor === 'mediapipe' ? ' (MediaPipe)' : ia.motor === 'claude' ? ' (Claude)' : ''}</span>
                 <span className="rounded-full bg-superficie px-2 py-0.5 text-xs font-semibold">Confianza {ia.confianza}</span>
               </div>
               {ia.observaciones.length > 0 && (

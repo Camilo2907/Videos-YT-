@@ -92,8 +92,10 @@ function origenes(m: Metodo, s: Estado, lado?: 'izq' | 'der'): Record<string, Or
   };
   return Object.fromEntries(
     Object.entries(CAMPOS[m]).map(([clave, rutas]) => {
-      if (!ia) return [clave, 'Manual' as Origen];
-      const igual = rutas.every((r) => leer('actual', r) === leer('ia', r));
+      const det = s.ia[m]?.detectados;
+      const usadas = det ? rutas.filter((r) => det.includes(r)) : rutas;
+      if (!ia || usadas.length === 0) return [clave, 'Manual' as Origen];
+      const igual = usadas.every((r) => leer('actual', r) === leer('ia', r));
       return [clave, (igual ? 'IA' : 'IA, corregido a mano') as Origen];
     }),
   );

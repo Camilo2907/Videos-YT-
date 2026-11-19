@@ -163,7 +163,7 @@ export default function App() {
 function BarraLateral({ vista, ir, tema, setTema }: { vista: Vista; ir: (v: Vista) => void; tema: Tema; setTema: (t: Tema) => void }) {
   const comp = usarComparacion();
   return (
-    <aside className="sticky top-[env(safe-area-inset-top,0px)] z-20 lg:top-0 lg:h-screen" style={{ background: 'var(--barra)', color: 'var(--barra-tinta)' }}>
+    <aside className="no-imprimir sticky top-[env(safe-area-inset-top,0px)] z-20 lg:top-0 lg:h-screen" style={{ background: 'var(--barra)', color: 'var(--barra-tinta)' }}>
       <div className="gutter flex flex-wrap items-center justify-between gap-3 py-3 lg:flex lg:h-full lg:flex-col lg:flex-nowrap lg:items-stretch lg:justify-start lg:gap-6 lg:py-6">
         <div className="flex items-center gap-2.5">
           <svg viewBox="0 0 32 32" width={30} height={30} aria-hidden="true">

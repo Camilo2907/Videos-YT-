@@ -12,7 +12,8 @@ Muestra la puntuación en vivo, genera un informe con gráficas, colores de ries
 npm install
 npm run dev          # abre la app en http://localhost:5173
 npm test             # pruebas de los métodos (Vitest)
-npm run build:pagina # genera pagina/ergosim.html (una sola página para publicar)
+npm run build:pagina  # genera pagina/ergosim.html (página para publicar en claude.ai)
+npm run build:archivo # genera pagina/ErgoSim.html (archivo único para compartir: Teams, correo, USB)
 ```
 
 ## Qué hay
@@ -32,8 +33,11 @@ comparación entre métodos, modo claro y oscuro, y **evaluación por foto con I
 la foto se envía a Claude (capacidad `sample` con imágenes), que estima todas las respuestas; el evaluador las revisa
 y el informe marca cada factor como «IA», «IA, corregido a mano» o «Manual».
 
-Pendiente: detección de pose con MediaPipe (ángulos medidos, no estimados), análisis en `npm run dev` con clave propia
-(hoy solo funciona en la página publicada), video, exportación a PDF y Word,
+En el archivo descargado (fuera de claude.ai) la foto se analiza con **MediaPipe Pose Landmarker** en el propio
+navegador: mide ángulos de tronco, cuello, brazo, antebrazo, muñeca y rodillas; lo que no se ve en una foto (carga,
+agarre, giros, frecuencia) se completa a mano. El informe puede imprimirse o guardarse en PDF.
+
+Pendiente: video, exportación a PDF y Word,
 gestión de varias evaluaciones con IndexedDB, comparación antes y después, mapa de calor de puestos.
 
 ## Limitaciones

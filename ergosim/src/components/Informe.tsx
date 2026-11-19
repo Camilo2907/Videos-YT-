@@ -171,9 +171,16 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
             <p className="etiqueta">Informe de evaluación ergonómica</p>
             <h2 className="mt-1 text-3xl font-bold">{modelo.nombreCompleto}</h2>
           </div>
-          <button type="button" onClick={onCerrar} className="rounded-lg border border-linea px-3 py-1.5 text-sm font-medium">
-            Volver al formulario
-          </button>
+          <div className="no-imprimir flex flex-wrap gap-2">
+            {!window.claude && (
+              <button type="button" onClick={() => window.print()} className="rounded-lg bg-acento px-3 py-1.5 text-sm font-bold text-sobre-acento">
+                Imprimir o guardar PDF
+              </button>
+            )}
+            <button type="button" onClick={onCerrar} className="rounded-lg border border-linea px-3 py-1.5 text-sm font-medium">
+              Volver al formulario
+            </button>
+          </div>
         </div>
         <dl className="grid grid-cols-1 gap-x-6 gap-y-2 rounded-lg bg-hundido p-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
