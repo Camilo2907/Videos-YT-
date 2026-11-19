@@ -26,13 +26,20 @@ npm run build:pagina # genera pagina/ergosim.html (una sola página para publica
 
 ## Estado
 
-Hecho: cálculo y pruebas, formularios paso a paso con lado izquierdo y derecho, figura humana que cambia con los
-ángulos, informe con gráficas y tablas resaltadas, comparación entre métodos, modo claro y oscuro.
+Hecho: cálculo y pruebas, formularios paso a paso con lado izquierdo y derecho, personaje ilustrado y animado que
+cambia con los ángulos (y escena de oficina en ROSA), informe con gráficas explicadas y tablas resaltadas,
+comparación entre métodos, modo claro y oscuro, y **evaluación por foto con IA**: en la página publicada en claude.ai
+la foto se envía a Claude (capacidad `sample` con imágenes), que estima todas las respuestas; el evaluador las revisa
+y el informe marca cada factor como «IA», «IA, corregido a mano» o «Manual».
 
-Pendiente: detección de pose con MediaPipe y análisis por IA, video, exportación a PDF y Word,
+Pendiente: detección de pose con MediaPipe (ángulos medidos, no estimados), análisis en `npm run dev` con clave propia
+(hoy solo funciona en la página publicada), video, exportación a PDF y Word,
 gestión de varias evaluaciones con IndexedDB, comparación antes y después, mapa de calor de puestos.
 
 ## Limitaciones
+
+- La IA **estima** ángulos y situaciones a partir de una sola foto en 2D: puede equivocarse con la perspectiva,
+  partes ocultas, la carga o la frecuencia. Los valores deben revisarse antes de generar el informe.
 
 - Los métodos valoran una postura puntual; los resultados dependen de la observación del evaluador.
 - Los plazos y responsables de las recomendaciones son sugerencias que debe validar el profesional en SST.

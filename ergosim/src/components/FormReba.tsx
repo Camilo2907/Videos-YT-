@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useErgo } from '../store';
 import { REBA_AGARRES, REBA_CARGAS, calcularReba } from '../methods/reba';
 import { AngleControl, LadoTabs, NavPasos, OptionCards, Seccion, Stepper, Toggle } from './ui';
-import { Figura, Postura } from './Figura';
+import { Personaje, Postura } from './Personaje';
 import { PanelVivo } from './PanelVivo';
 import { nivelSegmento } from './FormRula';
 
@@ -24,8 +24,9 @@ export function FormReba({ onInforme }: { onInforme: () => void }) {
     muneca: L.munecaAngulo,
     rodilla: C.sentado ? 0 : C.rodillaFlexion,
     sentado: C.sentado,
+    lejano: { brazo: reba[lado === 'izq' ? 'der' : 'izq'].brazoAngulo, antebrazo: reba[lado === 'izq' ? 'der' : 'izq'].antebrazoAngulo, muneca: reba[lado === 'izq' ? 'der' : 'izq'].munecaAngulo },
   };
-  const fig = (s: Parameters<typeof Figura>[0]['resaltar']) => <Figura postura={postura} resaltar={s} tamano={120} />;
+  const fig = (s: Parameters<typeof Personaje>[0]['resaltar']) => <Personaje postura={postura} resaltar={s} tamano={132} />;
   const res = { izq: calcularReba(reba.izq, C), der: calcularReba(reba.der, C) };
   const porLado = paso === 1 || paso === 2;
 
@@ -195,7 +196,7 @@ export function FormReba({ onInforme }: { onInforme: () => void }) {
           { nombre: 'Izquierdo', final: res.izq.final, nivel: res.izq.nivel, detalle: `A ${res.izq.puntuacionA} · B ${res.izq.puntuacionB} · C ${res.izq.C}` },
           { nombre: 'Derecho', final: res.der.final, nivel: res.der.nivel, detalle: `A ${res.der.puntuacionA} · B ${res.der.puntuacionB} · C ${res.der.C}` },
         ]}
-        figura={<Figura postura={postura} tamano={170} colores={Object.fromEntries(res[lado].factores.map((f) => [f.segmento!, nivelSegmento(f.total, f.maximo)]))} />}
+        figura={<Personaje postura={postura} tamano={250} colores={Object.fromEntries(res[lado].factores.map((f) => [f.segmento!, nivelSegmento(f.total, f.maximo)]))} />}
         onInforme={onInforme}
       />
     </div>

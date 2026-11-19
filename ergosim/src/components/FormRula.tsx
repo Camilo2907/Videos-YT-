@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useErgo } from '../store';
 import { RULA_CARGAS, RulaCarga, calcularRula } from '../methods/rula';
 import { AngleControl, LadoTabs, NavPasos, OptionCards, Seccion, Stepper, Toggle } from './ui';
-import { Figura, Postura } from './Figura';
+import { Personaje, Postura } from './Personaje';
 import { PanelVivo } from './PanelVivo';
 
 const PASOS = ['Brazo y antebrazo', 'Muñeca', 'Cuello, tronco y piernas', 'Actividad y carga'];
@@ -14,8 +14,17 @@ export function FormRula({ onInforme }: { onInforme: () => void }) {
   const L = rula[lado];
   const C = rula.comun;
   const setL = (c: Parameters<typeof setRulaLado>[1]) => setRulaLado(lado, c);
-  const postura: Postura = { tronco: C.troncoAngulo, cuello: C.cuelloAngulo, brazo: L.brazoAngulo, antebrazo: L.antebrazoAngulo, muneca: L.munecaAngulo, rodilla: 0 };
-  const fig = (s: Parameters<typeof Figura>[0]['resaltar']) => <Figura postura={postura} resaltar={s} tamano={120} />;
+  const O = rula[lado === 'izq' ? 'der' : 'izq'];
+  const postura: Postura = {
+    tronco: C.troncoAngulo,
+    cuello: C.cuelloAngulo,
+    brazo: L.brazoAngulo,
+    antebrazo: L.antebrazoAngulo,
+    muneca: L.munecaAngulo,
+    rodilla: 0,
+    lejano: { brazo: O.brazoAngulo, antebrazo: O.antebrazoAngulo, muneca: O.munecaAngulo },
+  };
+  const fig = (s: Parameters<typeof Personaje>[0]['resaltar']) => <Personaje postura={postura} resaltar={s} tamano={132} />;
   const res = { izq: calcularRula(rula.izq, C), der: calcularRula(rula.der, C) };
   const sufijo = lado === 'izq' ? 'Izq' : 'Der';
 
@@ -199,7 +208,7 @@ export function FormRula({ onInforme }: { onInforme: () => void }) {
           { nombre: 'Izquierdo', final: res.izq.final, nivel: res.izq.nivel, detalle: `A ${res.izq.grupoA} · B ${res.izq.grupoB} · C ${res.izq.C} · D ${res.izq.D}` },
           { nombre: 'Derecho', final: res.der.final, nivel: res.der.nivel, detalle: `A ${res.der.grupoA} · B ${res.der.grupoB} · C ${res.der.C} · D ${res.der.D}` },
         ]}
-        figura={<Figura postura={postura} tamano={170} colores={Object.fromEntries(res[lado].factores.filter((f) => f.segmento && f.clave !== 'giro').map((f) => [f.segmento!, nivelSegmento(f.total, f.maximo)]))} titulo="Postura del lado seleccionado" />}
+        figura={<Personaje postura={postura} tamano={250} colores={Object.fromEntries(res[lado].factores.filter((f) => f.segmento && f.clave !== 'giro').map((f) => [f.segmento!, nivelSegmento(f.total, f.maximo)]))} titulo="Postura del lado seleccionado" />}
         onInforme={onInforme}
       />
     </div>

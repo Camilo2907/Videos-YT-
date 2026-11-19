@@ -6,7 +6,7 @@ const assets = join('dist', 'assets');
 const archivos = readdirSync(assets);
 const js = readFileSync(join(assets, archivos.find((f) => f.endsWith('.js'))), 'utf8').replace(/<\/script/gi, '<\\/script');
 const css = readFileSync(join(assets, archivos.find((f) => f.endsWith('.css'))), 'utf8').replace(/<\/style/gi, '<\\/style');
-const fuentes = 'https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap';
+const fuentes = 'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap';
 
 const html = `<title>ErgoSim</title>
 <meta name="claude:viewport-fit-sides" content="cover">

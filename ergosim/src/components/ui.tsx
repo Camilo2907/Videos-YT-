@@ -50,7 +50,7 @@ export function OptionCards<T extends string>({ name, opciones, valor, onChange,
         return (
           <label
             key={o.valor}
-            className={`flex cursor-pointer gap-3 rounded-lg border p-3 transition-colors ${activo ? 'border-acento bg-acento-suave' : 'border-linea bg-superficie hover:border-tenue'}`}
+            className={`flex cursor-pointer gap-3 rounded-xl border p-3 transition-colors ${activo ? 'border-acento bg-acento-suave' : 'border-linea bg-superficie hover:border-tenue'}`}
           >
             <input id={`${name}-${o.valor}`} type="radio" name={name} className="sr-only" checked={activo} onChange={() => onChange(o.valor)} />
             {o.ilustracion && <span className="shrink-0">{o.ilustracion}</span>}
@@ -77,7 +77,7 @@ export interface Banda {
 export function AngleControl({ id, etiqueta, ayuda, valor, onChange, min, max, bandas, figura }: { id: string; etiqueta: string; ayuda?: string; valor: number; onChange: (v: number) => void; min: number; max: number; bandas: Banda[]; figura?: ReactNode }) {
   return (
     <div className="grid gap-3 sm:grid-cols-[132px_1fr]">
-      {figura && <div className="flex items-center justify-center rounded-lg bg-hundido p-1">{figura}</div>}
+      {figura && <div className="flex items-center justify-center rounded-xl p-1" style={{ background: 'var(--escenario)' }}>{figura}</div>}
       <div className="min-w-0">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <label htmlFor={id} className="font-semibold">

@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { RulaComun, RulaLado } from './methods/rula';
 import type { RebaComun, RebaLado } from './methods/reba';
 import type { RosaEntrada } from './methods/rosa';
+import type { ResultadoIA } from './ia';
 
 export type Metodo = 'rula' | 'reba' | 'rosa';
 export type Vista = Metodo | 'comparar';
@@ -64,6 +65,10 @@ interface Estado {
   /** Métodos con informe generado (entran en la comparación). */
   informes: Record<Metodo, boolean>;
   foto: string | null;
+  /** Archivo original de la foto (para enviarlo a Claude); no se guarda. */
+  fotoArchivo: File | null;
+  /** Último análisis con IA por método: valores sugeridos, puntos y observaciones. */
+  ia: Partial<Record<Metodo, ResultadoIA>>;
   setVista: (v: Vista) => void;
   setDatos: (d: Partial<DatosEvaluacion>) => void;
   setRulaComun: (c: Partial<RulaComun>) => void;
@@ -72,7 +77,9 @@ interface Estado {
   setRebaLado: (l: Lado, c: Partial<RebaLado>) => void;
   setRosa: (c: Partial<RosaEntrada>) => void;
   marcarInforme: (m: Metodo, v: boolean) => void;
-  setFoto: (f: string | null) => void;
+  setFoto: (f: string | null, archivo?: File | null) => void;
+  aplicarIA: (r: ResultadoIA) => void;
+  descartarIA: (m: Metodo) => void;
   reiniciar: (m: Metodo) => void;
 }
 
@@ -119,6 +126,8 @@ export const useErgo = create<Estado>()(
       rosa: ROSA_INICIAL,
       informes: { rula: false, reba: false, rosa: false },
       foto: null,
+      fotoArchivo: null,
+      ia: {},
       setVista: (vista) => set({ vista }),
       setDatos: (d) => set((s) => ({ datos: { ...s.datos, ...d } })),
       setRulaComun: (c) => set((s) => ({ rula: { ...s.rula, comun: { ...s.rula.comun, ...c } } })),
@@ -127,7 +136,17 @@ export const useErgo = create<Estado>()(
       setRebaLado: (l, c) => set((s) => ({ reba: { ...s.reba, [l]: { ...s.reba[l], ...c } } })),
       setRosa: (c) => set((s) => ({ rosa: { ...s.rosa, ...c } })),
       marcarInforme: (m, v) => set((s) => ({ informes: { ...s.informes, [m]: v } })),
-      setFoto: (foto) => set({ foto }),
+      setFoto: (foto, archivo = null) => set({ foto, fotoArchivo: archivo }),
+      aplicarIA: (r) =>
+        set((s) => {
+          const v = r.valores as never;
+          const base = { ia: { ...s.ia, [r.metodo]: r } };
+          if (r.metodo === 'rosa') return { ...base, rosa: { ...s.rosa, ...(v as Partial<RosaEntrada>) } };
+          const g = v as { comun: object; izq: object; der: object };
+          if (r.metodo === 'rula') return { ...base, rula: { comun: { ...s.rula.comun, ...g.comun }, izq: { ...s.rula.izq, ...g.izq }, der: { ...s.rula.der, ...g.der } } };
+          return { ...base, reba: { comun: { ...s.reba.comun, ...g.comun }, izq: { ...s.reba.izq, ...g.izq }, der: { ...s.reba.der, ...g.der } } };
+        }),
+      descartarIA: (m) => set((s) => { const ia = { ...s.ia }; delete ia[m]; return { ia }; }),
       reiniciar: (m) =>
         set((s) =>
           m === 'rula'
@@ -138,9 +157,9 @@ export const useErgo = create<Estado>()(
         ),
     }),
     {
-      name: 'ergosim-v1',
+      name: 'ergosim-v2',
       storage: almacenSeguro,
-      partialize: (s) => ({ datos: s.datos, rula: s.rula, reba: s.reba, rosa: s.rosa, informes: s.informes }),
+      partialize: (s) => ({ datos: s.datos, rula: s.rula, reba: s.reba, rosa: s.rosa, informes: s.informes, ia: s.ia }),
     },
   ),
 );

@@ -21,6 +21,7 @@ import { useErgo } from '../store';
 import type { Celda } from '../methods/common';
 import { RiskBadge } from './ui';
 import { ComparacionMetodos, usarComparacion } from './Comparar';
+import { FotoEsqueleto, etiquetasAngulos } from './FotoIA';
 
 const fmtFecha = (iso: string) => {
   const [y, m, d] = iso.split('-');
@@ -39,13 +40,25 @@ function Bloque({ n, titulo, children }: { n: number; titulo: string; children: 
   );
 }
 
-export function Anexo({ n, titulo, fuente, children }: { n: number; titulo: string; fuente: string; children: ReactNode }) {
+export function Anexo({ n, titulo, fuente, children, explicacion, lectura }: { n: number; titulo: string; fuente: string; children: ReactNode; explicacion: string; lectura?: string }) {
   return (
-    <figure className="tarjeta grid gap-3 p-4">
+    <figure className="tarjeta grid content-start gap-3 p-4">
       <figcaption className="font-titulo font-semibold">
         Anexo {n}. {titulo}
       </figcaption>
       <div className="min-w-0">{children}</div>
+      <div className="grid gap-1.5 rounded-xl bg-hundido p-3 text-sm">
+        <p>
+          <span className="font-bold">Cómo leerlo. </span>
+          <span className="text-tinta2">{explicacion}</span>
+        </p>
+        {lectura && (
+          <p>
+            <span className="font-bold">En esta evaluación. </span>
+            <span className="text-tinta2">{lectura}</span>
+          </p>
+        )}
+      </div>
       <p className="text-xs text-tenue">Fuente de los datos: {fuente}</p>
     </figure>
   );
@@ -102,7 +115,9 @@ function TablaComb({ t, celda }: { t: TablaCombinacion; celda?: Celda }) {
 const PRIORIDAD_COLOR = { Alta: 'rojo', Media: 'amarillo', Baja: 'verde' } as const;
 
 export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar: () => void }) {
-  const { datos, foto } = useErgo();
+  const estado = useErgo();
+  const { datos, foto } = estado;
+  const ia = estado.ia[modelo.clave];
   const comparacion = usarComparacion();
   const fuente = `evaluación ${modelo.metodo} de ErgoSim (${fmtFecha(datos.fecha)}); tablas y criterios según docs/fuentes.md.`;
   const posturas = modelo.metodo !== 'ROSA';
@@ -136,6 +151,13 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
   const intermediosRosa = modelo.metodo === 'ROSA' ? p.intermedios.map((i) => ({ etapa: i.etiqueta.replace(/ \(.*\)/, ''), Puntuación: i.valor })) : [];
 
   const series = ['var(--serie-1)', 'var(--serie-2)'];
+  const ordenados = [...p.factores].sort((a, b) => aporte(b) - aporte(a));
+  const top = ordenados[0];
+  const masMods = [...contrib].sort((a, b) => b.Modificadores - a.Modificadores)[0];
+  const origenes = Object.values(p.origen);
+  const nIA = origenes.filter((o) => o === 'IA').length;
+  const nCorr = origenes.filter((o) => o === 'IA, corregido a mano').length;
+  const ORIGEN_ESTILO: Record<string, string> = { IA: 'var(--acento-suave)', 'IA, corregido a mano': 'var(--r-amarillo-fondo)', Manual: 'var(--hundido)' };
   let anexo = 0;
   const sig = () => ++anexo;
   const evaluados = comparacion.filter((c) => c.evaluado);
@@ -187,16 +209,31 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
       <Bloque n={1} titulo="Descripción de la tarea">
         <p className="max-w-prose">{datos.tarea || 'POR DEFINIR'}</p>
         {foto ? (
-          <img src={foto} alt="Fotografía de la tarea evaluada" className="max-h-80 w-auto rounded-lg border border-linea object-contain" />
+          <div className="grid gap-1">
+            <FotoEsqueleto foto={foto} ia={ia} etiquetas={etiquetasAngulos(modelo.clave, estado, ia?.ladoVisible === 'izq' ? 'izq' : 'der')} alto={380} />
+            {ia && <p className="text-xs text-tenue">Esqueleto y articulaciones estimados por IA (aproximados); los ángulos mostrados son los valores finales del formulario.</p>}
+          </div>
         ) : (
-          <p className="text-sm text-tenue">Sin fotografía. Puede agregarla en «Datos de la evaluación». La detección automática del esqueleto y los ángulos se incorporará en una próxima etapa.</p>
+          <p className="text-sm text-tenue">Sin fotografía.</p>
         )}
-        <p className="text-xs text-tenue">Origen de los valores: introducidos manualmente por el evaluador (no se usó IA en esta evaluación).</p>
+        <p className="text-sm">
+          <strong>Origen de los valores: </strong>
+          {ia
+            ? `${nIA} de ${origenes.length} factores se tomaron tal como los sugirió la IA a partir de la foto (confianza ${ia.confianza}); ${nCorr} se corrigieron a mano; el resto se introdujo manualmente. La columna «Origen» de cada tabla lo detalla.`
+            : 'todos los valores fueron introducidos manualmente por el evaluador (no se usó IA).'}
+        </p>
+        {ia && ia.observaciones.length > 0 && (
+          <ul className="grid list-disc gap-1 pl-5 text-sm text-tinta2">
+            {ia.observaciones.map((o) => (
+              <li key={o}>{o}</li>
+            ))}
+          </ul>
+        )}
       </Bloque>
 
       {/* 3. Resultados por lado */}
       <Bloque n={2} titulo="Resultados del método">
-        <div className={`grid gap-5 ${modelo.lados.length > 1 ? 'xl:grid-cols-2' : ''}`}>
+        <div className={`grid gap-5 ${modelo.lados.length > 1 ? '2xl:grid-cols-2' : ''}`}>
           {modelo.lados.map((l) => (
             <div key={l.nombre} className="grid min-w-0 content-start gap-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
@@ -204,14 +241,15 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
                 <RiskBadge nivel={l.nivel} />
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full min-w-[460px] border-collapse text-sm">
+                <table className="w-full min-w-[560px] border-collapse text-sm">
                   <thead>
                     <tr className="border-b border-linea text-left">
                       <th className="py-1.5 pr-2 etiqueta">Factor</th>
                       <th className="py-1.5 pr-2 etiqueta">Medida</th>
                       <th className="py-1.5 pr-2 text-center etiqueta">Base</th>
                       <th className="py-1.5 pr-2 etiqueta">Modificadores</th>
-                      <th className="py-1.5 text-center etiqueta">Resultado</th>
+                      <th className="py-1.5 pr-2 text-center etiqueta">Resultado</th>
+                      <th className="py-1.5 etiqueta">Origen</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -223,7 +261,12 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
                         <td className="py-1.5 pr-2 text-tinta2">
                           {f.modificadores.length ? f.modificadores.map((m) => `${m.nombre} (${m.valor > 0 ? '+' : '−'}${Math.abs(m.valor)})`).join('; ') : '—'}
                         </td>
-                        <td className="num py-1.5 text-center font-datos font-bold">{f.total}</td>
+                        <td className="num py-1.5 pr-2 text-center font-datos font-bold">{f.total}</td>
+                        <td className="py-1.5">
+                          <span className="whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-semibold" style={{ background: ORIGEN_ESTILO[l.origen[f.clave] ?? 'Manual'] }}>
+                            {l.origen[f.clave] ?? 'Manual'}
+                          </span>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -353,7 +396,10 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
       {/* 8. Anexos */}
       <Bloque n={7} titulo="Anexos">
         <div className="grid gap-4 xl:grid-cols-2">
-          <Anexo n={sig()} titulo={posturas ? 'Radar por segmento corporal (% del máximo de cada segmento)' : 'Radar por elemento del puesto (% del máximo de cada elemento)'} fuente={fuente}>
+          <Anexo n={sig()} titulo={posturas ? 'Radar por segmento corporal (% del máximo de cada segmento)' : 'Radar por elemento del puesto (% del máximo de cada elemento)'} fuente={fuente}
+            explicacion={`Cada eje es un ${posturas ? 'segmento del cuerpo' : 'elemento del puesto'}. El centro (0 %) es la postura de referencia y el borde (100 %) el peor valor posible de ese ${posturas ? 'segmento' : 'elemento'}. Cuanto más se aleja la línea del centro, más aporta al riesgo.${posturas ? ' La línea azul es el lado izquierdo y la naranja el derecho: donde se separan, un lado trabaja peor que el otro.' : ''}`}
+            lectura={top && aporte(top) > 0 ? `El punto más alejado es ${top.nombre.toLowerCase()} (${aporte(top)} %): es la primera parte a corregir.` : 'Todos los puntos están en el centro: no hay desviaciones.'}
+          >
             <div className="h-72">
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart data={radar} outerRadius="72%">
@@ -370,7 +416,10 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
             </div>
           </Anexo>
 
-          <Anexo n={sig()} titulo={`Contribución de cada factor (${p.nombre.toLowerCase()}): puntuación base y modificadores`} fuente={fuente}>
+          <Anexo n={sig()} titulo={`Contribución de cada factor (${p.nombre.toLowerCase()}): puntuación base y modificadores`} fuente={fuente}
+            explicacion="Cada barra es la puntuación de un factor. La parte azul es lo que puntúa la postura en sí (el ángulo o la situación base) y la naranja lo que suman las situaciones agravantes, como giros, hombro elevado o falta de regulación. Mucho naranja indica que corregir esas situaciones baja el riesgo sin cambiar la postura principal."
+            lectura={masMods && masMods.Modificadores > 0 ? `${masMods.factor} es el factor con más agravantes (+${masMods.Modificadores}).` : 'Ningún factor tiene agravantes: la puntuación viene solo de la postura base.'}
+          >
             <div style={{ height: Math.max(220, contrib.length * 34 + 60) }}>
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={contrib} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }} barCategoryGap={6}>
@@ -389,7 +438,10 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
           </Anexo>
 
           {posturas ? (
-            <Anexo n={sig()} titulo={`Puntuación final por lado (escala 1–${modelo.max}) y nivel de riesgo`} fuente={fuente}>
+            <Anexo n={sig()} titulo={`Puntuación final por lado (escala 1–${modelo.max}) y nivel de riesgo`} fuente={fuente}
+              explicacion={`Compara la puntuación final de cada lado en la escala del método (1 a ${modelo.max}). La altura es la puntuación y el color, el nivel de riesgo que le corresponde.`}
+              lectura={modelo.lados[0].final === modelo.lados[1]?.final ? `Ambos lados obtienen ${modelo.lados[0].final}.` : `El lado con mayor puntuación (${p.nombre.toLowerCase()}, ${p.final}) es el que define el riesgo del puesto.`}
+            >
               <div className="h-56">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={ladosBarras} margin={{ left: 0, right: 16, top: 24, bottom: 4 }}>
@@ -408,7 +460,10 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
               </div>
             </Anexo>
           ) : (
-            <Anexo n={sig()} titulo="Puntuaciones intermedias del método ROSA" fuente={fuente}>
+            <Anexo n={sig()} titulo="Puntuaciones intermedias del método ROSA" fuente={fuente}
+              explicacion="Muestra el camino del cálculo: la silla, la pantalla con el teléfono, el ratón con el teclado y su combinación. La puntuación final es el mayor valor entre la silla y los periféricos, así que el elemento más alto es el que marca el resultado."
+              lectura={`La silla suma ${p.intermedios[1]?.valor} y los periféricos ${p.intermedios[4]?.valor}; por eso el resultado es ${p.final}.`}
+            >
               <div className="h-64">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={intermediosRosa} layout="vertical" margin={{ left: 8, right: 28, top: 4, bottom: 4 }}>
@@ -425,7 +480,10 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
             </Anexo>
           )}
 
-          <Anexo n={sig()} titulo="Comparación entre métodos (puntuación normalizada 0–100 %)" fuente="métodos con informe generado en esta sesión de ErgoSim; normalización = puntuación ÷ máximo del método.">
+          <Anexo n={sig()} titulo="Comparación entre métodos (puntuación normalizada 0–100 %)" fuente="métodos con informe generado en esta sesión de ErgoSim; normalización = puntuación ÷ máximo del método."
+            explicacion="Pone los métodos en una misma escala dividiendo cada puntuación por su máximo (RULA 7, REBA 15, ROSA 10). Sirve para orientarse: los métodos no son equivalentes porque cada uno observa partes distintas del cuerpo o del puesto."
+            lectura={evaluados.length >= 2 ? `El resultado más alto es ${[...evaluados].sort((a, b) => b.pct - a.pct)[0].metodo} (${[...evaluados].sort((a, b) => b.pct - a.pct)[0].pct} %).` : undefined}
+          >
             {evaluados.length >= 2 ? (
               <ComparacionMetodos datos={evaluados} />
             ) : (
@@ -434,7 +492,10 @@ export function Informe({ modelo, onCerrar }: { modelo: InformeModelo; onCerrar:
           </Anexo>
         </div>
 
-        <Anexo n={sig()} titulo={`Tablas de combinación con la celda resultante resaltada (${p.nombre.toLowerCase()})`} fuente={`${modelo.referencias[modelo.referencias.length - 1].split('. https')[0]} (ver docs/fuentes.md).`}>
+        <Anexo n={sig()} titulo={`Tablas de combinación con la celda resultante resaltada (${p.nombre.toLowerCase()})`} fuente={`${modelo.referencias[modelo.referencias.length - 1].split('. https')[0]} (ver docs/fuentes.md).`}
+          explicacion="Así calcula el método el resultado: se busca la fila y la columna con las puntuaciones parciales, y la celda donde se cruzan (resaltada) es la puntuación del grupo. Las franjas claras marcan la fila y la columna usadas."
+          lectura={`La última tabla da ${p.celdas[modelo.tablas[modelo.tablas.length - 1].clave].valor}${modelo.metodo === 'REBA' ? `, la puntuación C; al sumar la actividad (+${p.final - p.celdas.C.valor}) resulta ${p.final}` : ', que es la puntuación final'}.`}
+        >
           <div className="grid gap-5">
             {modelo.tablas.map((t) => (
               <TablaComb key={t.clave} t={t} celda={p.celdas[t.clave]} />

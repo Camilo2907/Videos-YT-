@@ -3,6 +3,7 @@ import { useErgo } from '../store';
 import { ROSA_TIEMPOS, RosaEntrada, RosaTiempo, calcularRosa } from '../methods/rosa';
 import { NavPasos, OptionCards, Seccion, Stepper, Toggle } from './ui';
 import { PanelVivo } from './PanelVivo';
+import { EscenaOficina } from './EscenaOficina';
 
 const PASOS = ['Silla', 'Pantalla y teléfono', 'Ratón y teclado'];
 
@@ -191,6 +192,7 @@ export function FormRosa({ onInforme }: { onInforme: () => void }) {
         metodo="ROSA"
         max={10}
         lados={[{ nombre: 'Puesto de oficina', final: r.final, nivel: r.nivel, detalle: `Silla ${r.silla} · Pantalla y teléfono ${r.tablaB} · Ratón y teclado ${r.tablaC} · Periféricos ${r.perifericos}` }]}
+        figura={<EscenaOficina entrada={e} tamano={290} />}
         onInforme={onInforme}
       />
     </div>

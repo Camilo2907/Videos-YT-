@@ -13,8 +13,12 @@ export interface Intermedio {
   nota?: string;
 }
 
+export type Origen = 'IA' | 'IA, corregido a mano' | 'Manual';
+
 export interface LadoInforme {
   nombre: string;
+  /** De dónde salió cada factor (clave del factor → origen). */
+  origen: Record<string, Origen>;
   final: number;
   nivel: NivelRiesgo;
   factores: Factor[];
@@ -44,6 +48,55 @@ export interface InformeModelo {
   conclusiones: string[];
   limitaciones: string[];
   referencias: string[];
+}
+
+const CAMPOS: Record<Metodo, Record<string, string[]>> = {
+  rula: {
+    brazo: ['L.brazoAngulo', 'L.hombroElevado', 'L.brazoAbducido', 'L.brazoApoyado'],
+    antebrazo: ['L.antebrazoAngulo', 'L.antebrazoFueraLinea'],
+    muneca: ['L.munecaAngulo', 'L.munecaDesviada'],
+    giro: ['L.giroExtremo'],
+    cuello: ['C.cuelloAngulo', 'C.cuelloRotado', 'C.cuelloInclinado'],
+    tronco: ['C.troncoAngulo', 'C.troncoRotado', 'C.troncoInclinado'],
+    piernas: ['C.piernasApoyadas'],
+  },
+  reba: {
+    tronco: ['C.troncoAngulo', 'C.troncoTorsionInclinacion'],
+    cuello: ['C.cuelloAngulo', 'C.cuelloTorsionInclinacion'],
+    piernas: ['C.piernasApoyo', 'C.sentado', 'C.rodillaFlexion'],
+    brazo: ['L.brazoAngulo', 'L.brazoAbducidoRotado', 'L.hombroElevado', 'L.brazoApoyoGravedad'],
+    antebrazo: ['L.antebrazoAngulo'],
+    muneca: ['L.munecaAngulo', 'L.munecaTorsionDesviacion'],
+  },
+  rosa: {
+    altura: ['alturaAsiento', 'alturaEspacioInsuficiente', 'alturaNoRegulable'],
+    profundidad: ['profundidad', 'profundidadNoRegulable'],
+    reposabrazos: ['reposabrazos', 'reposabrazosSeparados', 'reposabrazosDuros', 'reposabrazosNoRegulables'],
+    respaldo: ['respaldo', 'superficieAlta', 'respaldoNoRegulable', 'tiempoSilla'],
+    pantalla: ['pantalla', 'pantallaGiroCuello', 'pantallaLejos', 'pantallaReflejos', 'pantallaSinAtril', 'tiempoPantalla'],
+    telefono: ['telefono', 'telefonoCuelloHombro', 'telefonoSinManosLibres', 'tiempoTelefono'],
+    raton: ['raton', 'ratonPinza', 'ratonAlturaDistinta', 'ratonReposamanosDuro', 'tiempoRaton'],
+    teclado: ['teclado', 'tecladoDesviacion', 'tecladoAlto', 'tecladoAlcanceCabeza', 'tecladoNoRegulable', 'tiempoTeclado'],
+  },
+};
+
+/** Compara los valores actuales con los que sugirió la IA. */
+function origenes(m: Metodo, s: Estado, lado?: 'izq' | 'der'): Record<string, Origen> {
+  const ia = s.ia[m]?.valores as Record<string, Record<string, unknown>> | undefined;
+  const leer = (fuente: 'actual' | 'ia', ruta: string): unknown => {
+    if (m === 'rosa') return fuente === 'actual' ? (s.rosa as unknown as Record<string, unknown>)[ruta] : (ia as unknown as Record<string, unknown> | undefined)?.[ruta];
+    const [g, k] = ruta.split('.');
+    const grupo = g === 'C' ? 'comun' : lado!;
+    const obj = fuente === 'actual' ? (s[m] as unknown as Record<string, Record<string, unknown>>)[grupo] : ia?.[grupo];
+    return obj?.[k];
+  };
+  return Object.fromEntries(
+    Object.entries(CAMPOS[m]).map(([clave, rutas]) => {
+      if (!ia) return [clave, 'Manual' as Origen];
+      const igual = rutas.every((r) => leer('actual', r) === leer('ia', r));
+      return [clave, (igual ? 'IA' : 'IA, corregido a mano') as Origen];
+    }),
+  );
 }
 
 export const pct = (v: number, max: number) => Math.round((v / max) * 100);
@@ -97,6 +150,7 @@ export function informeRula(s: Estado): InformeModelo {
     const r = calcularRula(s.rula[l], s.rula.comun);
     return {
       nombre: l === 'izq' ? 'Lado izquierdo' : 'Lado derecho',
+      origen: origenes('rula', s, l),
       final: r.final,
       nivel: r.nivel,
       factores: r.factores,
@@ -175,6 +229,7 @@ export function informeReba(s: Estado): InformeModelo {
     const r = calcularReba(s.reba[l], s.reba.comun);
     return {
       nombre: l === 'izq' ? 'Lado izquierdo' : 'Lado derecho',
+      origen: origenes('reba', s, l),
       final: r.final,
       nivel: r.nivel,
       factores: r.factores,
@@ -252,6 +307,7 @@ export function informeRosa(s: Estado): InformeModelo {
   const r = calcularRosa(s.rosa);
   const lado: LadoInforme = {
     nombre: 'Puesto de oficina',
+    origen: origenes('rosa', s),
     final: r.final,
     nivel: r.nivel,
     factores: r.factores,

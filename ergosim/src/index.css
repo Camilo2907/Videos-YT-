@@ -2,24 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Concepto: mesa de trabajo de un evaluador de SST — formulario a la izquierda,
-   lectura en vivo a la derecha, informe tipo documento técnico debajo. */
+/* Concepto: oficina de un evaluador de SST — barra lateral azul marino de navegación,
+   escenario con el personaje animado y el medidor de riesgo, informe tipo documento técnico. */
 :root {
-  --fondo: #f2f5f6;
+  --fondo: #f3f4f9;
   --superficie: #ffffff;
-  --hundido: #e8eef0;
-  --tinta: #10232a;
-  --tinta-2: #3f535b;
-  --tenue: #687b83;
-  --linea: #d3dde0;
-  --acento: #0f5f73;
-  --acento-suave: #dcecf0;
+  --hundido: #eaedf5;
+  --tinta: #141a2e;
+  --tinta-2: #454d68;
+  --tenue: #6e7693;
+  --linea: #dce0ec;
+  --acento: #2f54d4;
+  --acento-suave: #e5eafc;
   --sobre-acento: #ffffff;
-  /* Serie categórica (lado izquierdo / derecho, base / modificadores) */
+  --barra: #111a33;
+  --barra-tinta: #e8ebf7;
+  --barra-tenue: #929bbb;
+  --barra-activo: #24305c;
+  --escenario: #e8ecf7;
   --serie-1: #2a78d6;
   --serie-2: #eb6834;
-  --rejilla: #e3e9eb;
-  /* Riesgo (paleta de estado accesible; siempre acompañada de texto) */
+  --rejilla: #e4e7f0;
+  --sombra: 0 1px 2px rgba(17, 26, 51, 0.06), 0 8px 24px rgba(17, 26, 51, 0.07);
+  /* Riesgo: paleta de estado accesible, siempre acompañada de texto */
   --r-verde: #0ca30c;
   --r-amarillo: #fab219;
   --r-naranja: #ec835a;
@@ -32,23 +37,52 @@
   --r-amarillo-tinta: #6b4a00;
   --r-naranja-tinta: #85361a;
   --r-rojo-tinta: #8e1f1f;
-  --sombra: 0 1px 2px rgba(16, 35, 42, 0.06), 0 4px 16px rgba(16, 35, 42, 0.05);
+  /* Personaje y escena */
+  --p-piel: #f1c19b;
+  --p-piel-sombra: #d49c74;
+  --p-camisa: #3f6fd8;
+  --p-camisa-sombra: #2c52a8;
+  --p-chaleco: #1f3a7a;
+  --p-reflectivo: #cfd6e6;
+  --p-cinturon: #1b2238;
+  --p-pantalon: #2e3856;
+  --p-pantalon-sombra: #1f2740;
+  --p-zapato: #4a3426;
+  --p-zapato-sombra: #33241a;
+  --p-suela: #1a1a1a;
+  --p-pelo: #3b2a22;
+  --p-ojo: #1d1d2b;
+  --p-casco: #f7f8fc;
+  --p-casco-ala: #d6dbe8;
+  --p-sombra-suelo: rgba(17, 26, 51, 0.12);
+  --p-mueble: #59627e;
+  --p-mueble-2: #7d86a3;
+  --p-mesa: #b08a62;
+  --p-equipo: #2a3046;
+  --p-equipo-2: #4a5270;
+  --p-pantalla: #6d8fe0;
+  --p-reflejo: #eef3ff;
+  --esqueleto: #14d3a0;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --fondo: #0d1619;
-    --superficie: #142126;
-    --hundido: #1a2a30;
-    --tinta: #e4eef0;
-    --tinta-2: #b4c4c9;
-    --tenue: #8a9da3;
-    --linea: #283a40;
-    --acento: #5cb6cb;
-    --acento-suave: #1b3a43;
-    --sobre-acento: #0d1619;
+    --fondo: #0c1020;
+    --superficie: #151b30;
+    --hundido: #1c2440;
+    --tinta: #e8ebf6;
+    --tinta-2: #b5bcd4;
+    --tenue: #8790ae;
+    --linea: #283152;
+    --acento: #829dff;
+    --acento-suave: #212c55;
+    --sobre-acento: #0c1020;
+    --barra: #080b17;
+    --barra-activo: #1d2850;
+    --escenario: #18203a;
     --serie-1: #3987e5;
     --serie-2: #d95926;
-    --rejilla: #22333a;
+    --rejilla: #232c4a;
+    --sombra: 0 1px 2px rgba(0, 0, 0, 0.35);
     --r-verde-fondo: #12301a;
     --r-amarillo-fondo: #3a2f10;
     --r-naranja-fondo: #3d2419;
@@ -57,24 +91,33 @@
     --r-amarillo-tinta: #ffd57a;
     --r-naranja-tinta: #ffb899;
     --r-rojo-tinta: #ff9f9f;
-    --sombra: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --p-casco: #e9edf7;
+    --p-sombra-suelo: rgba(0, 0, 0, 0.35);
+    --p-mueble: #6a7392;
+    --p-mueble-2: #8a93b0;
+    --p-equipo: #0e1222;
+    --p-equipo-2: #39415e;
     color-scheme: dark;
   }
 }
 :root[data-theme='dark'] {
-  --fondo: #0d1619;
-  --superficie: #142126;
-  --hundido: #1a2a30;
-  --tinta: #e4eef0;
-  --tinta-2: #b4c4c9;
-  --tenue: #8a9da3;
-  --linea: #283a40;
-  --acento: #5cb6cb;
-  --acento-suave: #1b3a43;
-  --sobre-acento: #0d1619;
+  --fondo: #0c1020;
+  --superficie: #151b30;
+  --hundido: #1c2440;
+  --tinta: #e8ebf6;
+  --tinta-2: #b5bcd4;
+  --tenue: #8790ae;
+  --linea: #283152;
+  --acento: #829dff;
+  --acento-suave: #212c55;
+  --sobre-acento: #0c1020;
+  --barra: #080b17;
+  --barra-activo: #1d2850;
+  --escenario: #18203a;
   --serie-1: #3987e5;
   --serie-2: #d95926;
-  --rejilla: #22333a;
+  --rejilla: #232c4a;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.35);
   --r-verde-fondo: #12301a;
   --r-amarillo-fondo: #3a2f10;
   --r-naranja-fondo: #3d2419;
@@ -83,7 +126,12 @@
   --r-amarillo-tinta: #ffd57a;
   --r-naranja-tinta: #ffb899;
   --r-rojo-tinta: #ff9f9f;
-  --sombra: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --p-casco: #e9edf7;
+  --p-sombra-suelo: rgba(0, 0, 0, 0.35);
+  --p-mueble: #6a7392;
+  --p-mueble-2: #8a93b0;
+  --p-equipo: #0e1222;
+  --p-equipo-2: #39415e;
   color-scheme: dark;
 }
 
@@ -93,18 +141,26 @@ body {
   color: var(--tinta);
 }
 body {
-  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: var(--barra);
 }
 h1,
 h2,
 h3,
 h4 {
-  font-family: Archivo, 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
   text-wrap: balance;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 .num {
   font-variant-numeric: tabular-nums;
@@ -116,14 +172,14 @@ h4 {
 .etiqueta {
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
+  letter-spacing: 0.09em;
+  font-weight: 700;
   color: var(--tenue);
 }
 .tarjeta {
   background: var(--superficie);
   border: 1px solid var(--linea);
-  border-radius: 10px;
+  border-radius: 18px;
 }
 :focus-visible {
   outline: 2px solid var(--acento);
@@ -131,13 +187,6 @@ h4 {
 }
 input[type='range'] {
   accent-color: var(--acento);
-}
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-    scroll-behavior: auto !important;
-  }
 }
 .recharts-text {
   fill: var(--tinta-2);
@@ -150,13 +199,46 @@ input[type='range'] {
 .recharts-default-tooltip {
   background: var(--superficie) !important;
   border-color: var(--linea) !important;
-  border-radius: 8px;
+  border-radius: 10px;
 }
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0 0 auto;
-  height: env(safe-area-inset-top, 0px);
-  z-index: 30;
-  background: var(--superficie);
+
+/* Animaciones del personaje y del medidor */
+.respira {
+  animation: respira 3.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+@keyframes respira {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.012, 1.025);
+  }
+}
+.parpadeo {
+  animation: parpadeo 4.2s infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+@keyframes parpadeo {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+.aguja {
+  transition: transform 0.7s cubic-bezier(0.34, 1.45, 0.5, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
 }

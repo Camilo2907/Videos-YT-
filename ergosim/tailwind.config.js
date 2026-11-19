@@ -16,9 +16,9 @@ export default {
         'sobre-acento': 'var(--sobre-acento)',
       },
       fontFamily: {
-        titulo: ['Archivo', 'Segoe UI', 'system-ui', 'sans-serif'],
-        cuerpo: ['"Source Sans 3"', 'Segoe UI', 'system-ui', 'sans-serif'],
-        datos: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        titulo: ['"Bricolage Grotesque"', 'Segoe UI', 'system-ui', 'sans-serif'],
+        cuerpo: ['"Plus Jakarta Sans"', 'Segoe UI', 'system-ui', 'sans-serif'],
+        datos: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
     },
   },

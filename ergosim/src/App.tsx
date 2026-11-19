@@ -5,7 +5,8 @@ import { FormRula } from './components/FormRula';
 import { FormReba } from './components/FormReba';
 import { FormRosa } from './components/FormRosa';
 import { Informe } from './components/Informe';
-import { VistaComparar } from './components/Comparar';
+import { VistaComparar, usarComparacion } from './components/Comparar';
+import { FotoIA } from './components/FotoIA';
 
 const VISTAS: { v: Vista; texto: string; sub: string }[] = [
   { v: 'rula', texto: 'RULA', sub: 'Miembro superior' },
@@ -31,7 +32,7 @@ function leerTema(): Tema {
 }
 
 function DatosEvaluacion() {
-  const { datos, setDatos, foto, setFoto } = useErgo();
+  const { datos, setDatos } = useErgo();
   const [abierto, setAbierto] = useState(false);
   const campo = (k: keyof typeof datos, label: string, tipo = 'text') => (
     <label htmlFor={`dato-${k}`} className="grid gap-1 text-sm">
@@ -59,7 +60,7 @@ function DatosEvaluacion() {
             · {datos.area} · {datos.fecha}
           </span>
         </span>
-        <span className="text-sm font-medium text-acento">{abierto ? 'Ocultar' : 'Editar datos y foto'}</span>
+        <span className="text-sm font-medium text-acento">{abierto ? 'Ocultar' : 'Editar datos'}</span>
       </button>
       {abierto && (
         <div className="grid gap-4 border-t border-linea p-4">
@@ -75,30 +76,6 @@ function DatosEvaluacion() {
             <span className="font-medium text-tinta2">Descripción de la tarea</span>
             <textarea id="dato-tarea" rows={3} value={datos.tarea} onChange={(e) => setDatos({ tarea: e.target.value })} className="rounded-md border border-linea bg-superficie px-2.5 py-1.5" />
           </label>
-          <div className="flex flex-wrap items-center gap-3 text-sm">
-            <label htmlFor="dato-foto" className="cursor-pointer rounded-lg border border-linea px-3 py-1.5 font-medium hover:border-tenue">
-              {foto ? 'Cambiar foto de la tarea' : 'Agregar foto de la tarea'}
-            </label>
-            <input
-              id="dato-foto"
-              type="file"
-              accept="image/*"
-              className="sr-only"
-              onChange={(e) => {
-                const f = e.target.files?.[0];
-                if (!f) return;
-                const r = new FileReader();
-                r.onload = () => setFoto(String(r.result));
-                r.readAsDataURL(f);
-              }}
-            />
-            {foto && (
-              <button type="button" onClick={() => setFoto(null)} className="text-tenue underline underline-offset-2">
-                Quitar foto
-              </button>
-            )}
-            <span className="text-xs text-tenue">La foto se queda en este navegador y aparece en el informe.</span>
-          </div>
         </div>
       )}
     </section>
@@ -152,55 +129,23 @@ export default function App() {
   const metodo = vista === 'comparar' ? null : vista;
 
   return (
-    <div className="min-h-full">
-      <header className="sticky top-[env(safe-area-inset-top,0px)] z-20 border-b border-linea bg-superficie/95 backdrop-blur">
-        <div className="gutter mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-2 py-3">
-          <div className="flex items-baseline gap-2">
-            <span className="font-titulo text-xl font-extrabold tracking-tight">
-              Ergo<span className="text-acento">Sim</span>
-            </span>
-            <span className="hidden text-xs text-tenue sm:inline">Evaluación ergonómica de puestos de trabajo</span>
-          </div>
-          <nav aria-label="Métodos" className="order-3 -mx-1 flex w-full gap-1 overflow-x-auto sm:order-2 sm:w-auto">
-            {VISTAS.map((x) => (
-              <button
-                key={x.v}
-                type="button"
-                onClick={() => ir(x.v)}
-                aria-current={vista === x.v ? 'page' : undefined}
-                className={`shrink-0 rounded-lg px-3 py-1.5 text-left leading-tight transition-colors ${vista === x.v ? 'bg-acento text-sobre-acento' : 'hover:bg-hundido'}`}
-              >
-                <span className="block text-sm font-semibold">{x.texto}</span>
-                <span className={`block text-[11px] ${vista === x.v ? 'opacity-80' : 'text-tenue'}`}>{x.sub}</span>
-              </button>
-            ))}
-          </nav>
-          <label htmlFor="tema" className="order-2 flex items-center gap-1.5 text-xs text-tenue sm:order-3">
-            Tema
-            <select id="tema" value={tema} onChange={(e) => setTema(e.target.value as Tema)} className="rounded-md border border-linea bg-superficie px-1.5 py-1 text-tinta">
-              <option value="sistema">Sistema</option>
-              <option value="claro">Claro</option>
-              <option value="oscuro">Oscuro</option>
-            </select>
-          </label>
-        </div>
-      </header>
-
-      <main className="gutter mx-auto grid max-w-7xl gap-5 py-6">
+    <div className="min-h-full lg:grid lg:grid-cols-[260px_minmax(0,1fr)]">
+      <BarraLateral vista={vista} ir={ir} tema={tema} setTema={setTema} />
+      <main className="gutter mx-auto grid w-full max-w-[1240px] content-start gap-5 py-6">
         {metodo && informe === metodo ? (
           <Informe modelo={construirInforme(metodo, estado)} onCerrar={() => setInforme(null)} />
         ) : (
           <>
-            <DatosEvaluacion />
             {metodo && (
-              <div className="flex flex-wrap items-end justify-between gap-3">
-                <div className="max-w-2xl">
-                  <h1 className="text-2xl font-bold">{metodo.toUpperCase()}</h1>
-                  <p className="text-tinta2">{DESCRIPCION[metodo]}</p>
-                </div>
-                <span className="rounded-full border border-linea px-3 py-1 text-xs text-tenue">Abre con un caso de ejemplo: cambie los valores por los de su puesto</span>
+              <div className="grid gap-1">
+                <p className="etiqueta">Método {VISTAS.find((x) => x.v === metodo)?.sub.toLowerCase()}</p>
+                <h1 className="text-3xl font-extrabold sm:text-4xl">{metodo.toUpperCase()}</h1>
+                <p className="max-w-3xl text-tinta2">{DESCRIPCION[metodo]}</p>
               </div>
             )}
+            <DatosEvaluacion />
+            {metodo && <FotoIA metodo={metodo} />}
+            {metodo && <p className="text-xs text-tenue">El formulario abre con un caso de ejemplo. Use una foto o cambie los valores por los de su puesto.</p>}
             {vista === 'rula' && <FormRula onInforme={() => generar('rula')} />}
             {vista === 'reba' && <FormReba onInforme={() => generar('reba')} />}
             {vista === 'rosa' && <FormRosa onInforme={() => generar('rosa')} />}
@@ -212,5 +157,69 @@ export default function App() {
         </p>
       </main>
     </div>
+  );
+}
+
+function BarraLateral({ vista, ir, tema, setTema }: { vista: Vista; ir: (v: Vista) => void; tema: Tema; setTema: (t: Tema) => void }) {
+  const comp = usarComparacion();
+  return (
+    <aside className="sticky top-[env(safe-area-inset-top,0px)] z-20 lg:top-0 lg:h-screen" style={{ background: 'var(--barra)', color: 'var(--barra-tinta)' }}>
+      <div className="gutter flex flex-wrap items-center justify-between gap-3 py-3 lg:flex lg:h-full lg:flex-col lg:flex-nowrap lg:items-stretch lg:justify-start lg:gap-6 lg:py-6">
+        <div className="flex items-center gap-2.5">
+          <svg viewBox="0 0 32 32" width={30} height={30} aria-hidden="true">
+            <rect width={32} height={32} rx={9} fill="var(--acento)" />
+            <circle cx={17} cy={9} r={3.4} fill="#fff" />
+            <path d="M16 13 L13 21 L9 24 M13 21 L19 23 L21 28 M15 15 L22 17" stroke="#fff" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          </svg>
+          <div className="leading-tight">
+            <span className="font-titulo text-xl font-extrabold tracking-tight">ErgoSim</span>
+            <span className="hidden text-[11px] lg:block" style={{ color: 'var(--barra-tenue)' }}>
+              Evaluación ergonómica de puestos
+            </span>
+          </div>
+        </div>
+        <nav aria-label="Métodos" className="order-3 -mx-1 flex w-full gap-1 overflow-x-auto lg:order-none lg:mx-0 lg:grid lg:gap-1.5 lg:overflow-visible">
+          {VISTAS.map((x) => {
+            const c = comp.find((f) => f.clave === x.v);
+            const activo = vista === x.v;
+            return (
+              <button
+                key={x.v}
+                type="button"
+                onClick={() => ir(x.v)}
+                aria-current={activo ? 'page' : undefined}
+                className="flex shrink-0 items-center justify-between gap-3 rounded-xl px-3 py-2 text-left transition-colors"
+                style={{ background: activo ? 'var(--barra-activo)' : 'transparent' }}
+              >
+                <span className="leading-tight">
+                  <span className="block font-bold">{x.texto}</span>
+                  <span className="block text-[11px]" style={{ color: 'var(--barra-tenue)' }}>
+                    {x.sub}
+                  </span>
+                </span>
+                {c && c.evaluado && (
+                  <span className="num rounded-full px-2 py-0.5 font-datos text-xs font-bold" style={{ background: `var(--r-${c.nivel.color})`, color: '#111' }} title={`Riesgo ${c.nivel.riesgo.toLowerCase()}`}>
+                    {c.final}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </nav>
+        <div className="order-2 flex items-center gap-2 lg:order-none lg:mt-auto lg:grid lg:gap-3">
+          <label htmlFor="tema" className="flex items-center gap-2 text-xs" style={{ color: 'var(--barra-tenue)' }}>
+            Tema
+            <select id="tema" value={tema} onChange={(e) => setTema(e.target.value as Tema)} className="rounded-lg border-0 px-2 py-1 text-sm" style={{ background: 'var(--barra-activo)', color: 'var(--barra-tinta)' }}>
+              <option value="sistema">Sistema</option>
+              <option value="claro">Claro</option>
+              <option value="oscuro">Oscuro</option>
+            </select>
+          </label>
+          <p className="hidden text-[11px] leading-snug lg:block" style={{ color: 'var(--barra-tenue)' }}>
+            RULA, REBA y ROSA según Ergonautas (UPV), INSST y los artículos originales.
+          </p>
+        </div>
+      </div>
+    </aside>
   );
 }
