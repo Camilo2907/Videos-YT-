@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Concepto: mesa de trabajo de un evaluador de SST — formulario a la izquierda,
+   lectura en vivo a la derecha, informe tipo documento técnico debajo. */
+:root {
+  --fondo: #f2f5f6;
+  --superficie: #ffffff;
+  --hundido: #e8eef0;
+  --tinta: #10232a;
+  --tinta-2: #3f535b;
+  --tenue: #687b83;
+  --linea: #d3dde0;
+  --acento: #0f5f73;
+  --acento-suave: #dcecf0;
+  --sobre-acento: #ffffff;
+  /* Serie categórica (lado izquierdo / derecho, base / modificadores) */
+  --serie-1: #2a78d6;
+  --serie-2: #eb6834;
+  --rejilla: #e3e9eb;
+  /* Riesgo (paleta de estado accesible; siempre acompañada de texto) */
+  --r-verde: #0ca30c;
+  --r-amarillo: #fab219;
+  --r-naranja: #ec835a;
+  --r-rojo: #d03b3b;
+  --r-verde-fondo: #e3f4e3;
+  --r-amarillo-fondo: #fdf1d6;
+  --r-naranja-fondo: #fbe6dd;
+  --r-rojo-fondo: #f8e0e0;
+  --r-verde-tinta: #0b5e0b;
+  --r-amarillo-tinta: #6b4a00;
+  --r-naranja-tinta: #85361a;
+  --r-rojo-tinta: #8e1f1f;
+  --sombra: 0 1px 2px rgba(16, 35, 42, 0.06), 0 4px 16px rgba(16, 35, 42, 0.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --fondo: #0d1619;
+    --superficie: #142126;
+    --hundido: #1a2a30;
+    --tinta: #e4eef0;
+    --tinta-2: #b4c4c9;
+    --tenue: #8a9da3;
+    --linea: #283a40;
+    --acento: #5cb6cb;
+    --acento-suave: #1b3a43;
+    --sobre-acento: #0d1619;
+    --serie-1: #3987e5;
+    --serie-2: #d95926;
+    --rejilla: #22333a;
+    --r-verde-fondo: #12301a;
+    --r-amarillo-fondo: #3a2f10;
+    --r-naranja-fondo: #3d2419;
+    --r-rojo-fondo: #3c1a1a;
+    --r-verde-tinta: #8fe08f;
+    --r-amarillo-tinta: #ffd57a;
+    --r-naranja-tinta: #ffb899;
+    --r-rojo-tinta: #ff9f9f;
+    --sombra: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --fondo: #0d1619;
+  --superficie: #142126;
+  --hundido: #1a2a30;
+  --tinta: #e4eef0;
+  --tinta-2: #b4c4c9;
+  --tenue: #8a9da3;
+  --linea: #283a40;
+  --acento: #5cb6cb;
+  --acento-suave: #1b3a43;
+  --sobre-acento: #0d1619;
+  --serie-1: #3987e5;
+  --serie-2: #d95926;
+  --rejilla: #22333a;
+  --r-verde-fondo: #12301a;
+  --r-amarillo-fondo: #3a2f10;
+  --r-naranja-fondo: #3d2419;
+  --r-rojo-fondo: #3c1a1a;
+  --r-verde-tinta: #8fe08f;
+  --r-amarillo-tinta: #ffd57a;
+  --r-naranja-tinta: #ffb899;
+  --r-rojo-tinta: #ff9f9f;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--fondo);
+  color: var(--tinta);
+}
+body {
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Archivo, 'Segoe UI', system-ui, sans-serif;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+}
+.gutter {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.etiqueta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--tenue);
+}
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+}
+:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+}
+input[type='range'] {
+  accent-color: var(--acento);
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+.recharts-text {
+  fill: var(--tinta-2);
+}
+.recharts-cartesian-grid line,
+.recharts-polar-grid line,
+.recharts-polar-grid polygon {
+  stroke: var(--rejilla);
+}
+.recharts-default-tooltip {
+  background: var(--superficie) !important;
+  border-color: var(--linea) !important;
+  border-radius: 8px;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: var(--superficie);
+}
