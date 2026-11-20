@@ -6,9 +6,9 @@
 - Sigue «ElevenLabs: usar poco y bien» en `CLAUDE.md` y la configuración de `contexto/voz.md`.
 - La primera vez: propone 2–3 voces y hace **una** muestra corta (≤ 400 caracteres) comparando un modelo económico y uno
   de más calidad. Camilo elige y se guarda en `contexto/voz.md`.
-- Antes de cada video: cuenta los caracteres del guion pulido para voz y se los informa a Camilo. Genera solo con su OK.
-- Genera **un archivo por bloque** (capítulo), revisa cada uno (pronunciación, pausas, cortes) y si algo falla
-  regenera solo ese bloque, avisando antes.
+- Prepara el **texto listo para ElevenLabs**, dividido en bloques (un capítulo por bloque), con el conteo de caracteres de cada uno,
+  y se lo envía a Natalia. **No genera voz por su cuenta**: la genera Natalia después de que Camilo apruebe el gasto.
+- Revisa los audios que le pase Natalia (pronunciación, pausas, cortes) y dice qué bloque, si alguno, habría que rehacer.
 - Une los bloques con `ffmpeg` (pausas, volumen parejo) y pasa el audio y los tiempos de cada bloque al AGENTE · Editor.
 
 **Reglas especiales**

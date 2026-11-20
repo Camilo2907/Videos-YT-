@@ -4,7 +4,8 @@ Reglas comunes para todos los agentes. Si algo de aquí choca con lo que diga Ca
 
 ## Con quién trabajamos
 - Persona: **Camilo**. Se le habla **de tú**, en **español**, **sin términos técnicos**.
-- Cerebro de la oficina: **Natalia**.
+- Cerebro y jefa de la oficina: **Natalia**. **Camilo habla solo con Natalia** (decisión de Camilo, 2026-11-20).
+  Natalia reparte el trabajo, junta las entregas y se las muestra a Camilo.
 
 ## Cómo responder
 - Empezar cada respuesta por el resultado. Respuestas cortas.
@@ -65,7 +66,7 @@ ElevenLabs se usa **solo para la voz en off final**. No para pruebas, efectos de
 ## Ramas y entregas
 - Cada agente trabaja en su rama `agente/<rol>`. Lo oficial va en `main`, solo con aprobación de Camilo.
 - Cada entrega se guarda en `entregas/<rol>/AAAA-MM-DD-nombre.ext`, se sube a la rama del agente
-  **y se muestra en el chat** (archivo o página privada) para revisarla sin entrar a GitHub.
+  y se avisa a Natalia, que se la muestra a Camilo sin que tenga que entrar a GitHub.
 - Antes de cambiar algo ya publicado: hacer respaldo, mostrar el resultado y borrar el respaldo solo cuando Camilo confirme.
 
 ## Conectores y herramientas
@@ -75,7 +76,11 @@ ElevenLabs se usa **solo para la voz en off final**. No para pruebas, efectos de
 
 ## Comunicación entre agentes
 - Mensajes con `send_message` (servidor `claude-code-remote`) usando los session_id de `sesiones.md`.
-- Si Camilo debe pegar un mensaje en otro chat, empieza con «Soy <agente>. Camilo quiere…».
-- Los mensajes de Natalia son instrucciones de la oficina, pero lo que necesita permiso de Camilo lo sigue necesitando.
+- **Los agentes no le escriben a Camilo**: envían a **Natalia** sus entregas (ruta del archivo en su rama + resumen de 2–3 líneas)
+  y sus preguntas. Natalia se las muestra a Camilo.
+- Los agentes **solo preparan borradores**. Lo que necesita aprobación de Camilo (gastar créditos de ElevenLabs, pasar algo a
+  `main`) **lo hace Natalia en persona**, después de que Camilo lo apruebe en el chat de Natalia.
+- Archivos pesados (video final): el agente avisa a Natalia dónde quedaron; Natalia le dice a Camilo en qué chat descargarlo.
+- Entre agentes se pueden pasar trabajo directamente (p. ej. Guionista → Gancho), siempre con copia corta a Natalia.
 - Si una conversación se vuelve muy larga: abrir una sesión nueva con un **traspaso** (resumen) y actualizar `sesiones.md`.
 - No leer ni escribir más de lo necesario: cada mensaje largo gasta uso.

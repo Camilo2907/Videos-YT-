@@ -1,4 +1,4 @@
-# Pendientes (los lleva el Coordinador)
+# Pendientes (los lleva Natalia)
 
 ## Decidido (2026-11-13)
 - Todas las religiones, divulgación neutral y respetuosa.
