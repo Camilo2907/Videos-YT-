@@ -5,7 +5,7 @@ No toqué citas, fuentes ni etiquetas TEXTO / TRADICIÓN / ESTUDIOS. Solo cambia
 ## 1. GANCHO (0:00–0:30) · ≈68 palabras (igual que ahora)
 
 **Opción A (recomendada)** · pregunta + misterio, abre con lo que sí dice el texto
-> En la Biblia hay cuatro versículos que casi nadie se atreve a explicar.
+> En la Biblia hay cuatro versículos que que todavía dividen a los lectores.
 > Hablan de unos seres llamados «hijos de Dios».
 > De mujeres humanas.
 > Y de unos hijos misteriosos: los nefilim.
@@ -14,7 +14,7 @@ No toqué citas, fuentes ni etiquetas TEXTO / TRADICIÓN / ESTUDIOS. Solo cambia
 > Hace más de dos mil años, un libro antiguo contó esta historia con nombres, un juramento y una montaña. Y terminó fuera de casi todas las Biblias.
 > Hoy vamos a ver qué dice el texto, qué contaron las tradiciones… y qué proponen los historiadores.
 
-Por qué: cambia «incomodan» por «casi nadie se atreve a explicar» (no juzga al lector), y la promesa final anuncia las tres partes del video (TEXTO / TRADICIÓN / ESTUDIOS), así que no promete nada que el video no cumpla.
+Por qué: cambia «incomodan» por «que todavía dividen a los lectores» (no juzga al lector ni exagera; ajuste pedido por el Guionista), y la promesa final anuncia las tres partes del video (TEXTO / TRADICIÓN / ESTUDIOS), así que no promete nada que el video no cumpla.
 
 **Opción B** · dato sorprendente
 > Cuatro versículos. Eso es todo lo que la Biblia dice de los nefilim.
