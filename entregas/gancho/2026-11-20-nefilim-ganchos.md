@@ -5,7 +5,7 @@ No toqué citas, fuentes ni etiquetas TEXTO / TRADICIÓN / ESTUDIOS. Solo cambia
 ## 1. GANCHO (0:00–0:30) · ≈68 palabras (igual que ahora)
 
 **Opción A (recomendada)** · pregunta + misterio, abre con lo que sí dice el texto
-> En la Biblia hay cuatro versículos que que todavía dividen a los lectores.
+> En la Biblia hay cuatro versículos que todavía dividen a los lectores.
 > Hablan de unos seres llamados «hijos de Dios».
 > De mujeres humanas.
 > Y de unos hijos misteriosos: los nefilim.
