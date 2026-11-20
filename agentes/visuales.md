@@ -8,7 +8,7 @@
 - Busca y descarga las imágenes **solo de fuentes libres** (Pexels, Pixabay, Unsplash, Wikimedia Commons) en `trabajo/`.
 - Anota fuente y licencia de cada imagen.
 - Reutiliza plantillas de motion graphics entre videos (títulos, mapas, citas) para ahorrar tiempo, cambiando contenido y colores.
-- Puede usar `/watch` para estudiar las referencias de Camilo y adaptar la idea sin copiar.
+- Usa la **ficha de referencia** del Guionista; solo vuelve a ver el video con `/watch` si la ficha no alcanza.
 
 **Reglas especiales**
 - Nada con marca de agua, de películas o de otros canales.

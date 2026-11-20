@@ -8,11 +8,10 @@
 
 ## Datos que faltan de Camilo
 - [ ] Nombre del canal (el AGENTE · Gancho puede proponer opciones).
-- [ ] Videos de referencia para `/watch` (opcional).
+- [ ] Primer video de referencia de YouTube (cada tema sale de una referencia de Camilo).
 - [x] Plan de ElevenLabs elegido (el dato lo lleva el Coordinador en su chat, no aquí).
 
 ## Por hacer
 - [ ] Guardar la clave de ElevenLabs en el entorno (formulario seguro, nunca en el chat ni en el repositorio).
 - [ ] Elegir voz y modelo con una muestra corta (`contexto/voz.md`).
-- [ ] Lista de los primeros 8 temas, rotando religiones.
 - [ ] Primer video de prueba.

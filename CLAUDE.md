@@ -21,7 +21,10 @@ Reglas comunes para todos los agentes. Si algo de aquí choca con lo que diga Ca
 - Estilo y estructura aprobados: `contexto/estilo-video.md`. Todos los agentes lo siguen.
 - Formato **16:9 horizontal**, **1080p**, duración **10 a 13 minutos, objetivo ~12** (decisión de Camilo, para cuidar los créditos de voz).
 - Receta: **imágenes de stock + voz en off + mucho motion graphics** (mapas, líneas de tiempo, citas, títulos animados).
-- Edición **siempre con HyperFrames**. Referencias de Camilo: se ven con **`/watch`** y se **adapta la idea** sin copiar.
+- Edición **siempre con HyperFrames**.
+- **Cada video nace de una referencia de YouTube que manda Camilo.** Se ve **una sola vez** con **`/watch`** (AGENTE · Guionista)
+  y se hace una **ficha de referencia** que usan todos. De la referencia se toma el **tema, la estructura y lo que engancha**;
+  el guion, la investigación, las imágenes y el montaje son **propios** (nunca copiar el texto ni las imágenes).
 - **Gancho inicial**: los primeros 30 s deben atrapar (pregunta, dato sorprendente o misterio).
 - **Retención**: un mini gancho cada 2 o 3 minutos («pero lo más extraño viene después…»). Cambio visual cada 3 a 6 s.
 - Cierre: resumen corto + invitación natural al siguiente video. Sin pedir «like» de forma insistente.
