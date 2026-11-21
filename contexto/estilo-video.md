@@ -17,7 +17,7 @@ Definido por Natalia con autorización de Camilo (2026-11-13). Se ajusta si Cami
 - **Imágenes de stock con movimiento:** acercamientos lentos, paneos y capas (nunca una imagen quieta).
 - **Arte clásico de dominio público** (pinturas, manuscritos, mosaicos) para personajes y escenas antiguas.
 - **Más dinamismo (decisión de Camilo, 2026-11-21):**
-  - **Clips de video de stock libres** (Pexels, Pixabay): tormentas, lluvia, mar, desierto, montañas, ruinas, velas, pergaminos,
+  - **Clips de video de stock libres** (Mixkit, Coverr, NASA, Internet Archive): tormentas, lluvia, mar, desierto, montañas, ruinas, velas, pergaminos,
     estrellas, humo. Al menos **uno cada 20–40 s**, sobre todo en ganchos y momentos de tensión. Nada de películas ni de otros canales.
   - **Imágenes animadas**: efecto de profundidad (2.5D / parallax) en pinturas, capas que se mueven, y encima partículas, polvo,
     rayos de luz, humo o fuego de HyperFrames.
