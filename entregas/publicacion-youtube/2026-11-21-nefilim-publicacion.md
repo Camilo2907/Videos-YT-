@@ -98,7 +98,7 @@ Archivo: `entregas/publicacion-youtube/2026-11-21-nefilim-miniatura-A.png` (1280
 ## 7. Revisión antes de publicar
 | Revisión | Estado |
 |---|---|
-| Contenido alterado o sintético | **Responder «No»** (aprobado por Camilo, 2026-11-21): no hay imágenes realistas hechas con IA (la silueta es un dibujo) y la voz en off no imita a ninguna persona real. |
+| Contenido alterado o sintético | **Responder «Sí»** (criterio de Natalia, 2026-11-21, según la ayuda de YouTube: la voz generada con IA para narrar el video requiere declaración). Motivo: la voz en off es sintética (ElevenLabs). Las imágenes no son realistas hechas con IA (la silueta es un dibujo). Regla para todos los videos. |
 | Música | «Lightless Dawn», Kevin MacLeod, CC BY 4.0. Pide mención: **ya está en los créditos**. |
 | Imágenes con derechos | Todas son de Wikimedia Commons con dominio público, CC0 o CC BY/CC BY-SA. Clips de stock de Mixkit (no piden mención). Sin imágenes de películas ni marcas de agua. |
 | Créditos CC | Incluidos en la descripción (10 imágenes + música), tal como los dejó el Editor. |
