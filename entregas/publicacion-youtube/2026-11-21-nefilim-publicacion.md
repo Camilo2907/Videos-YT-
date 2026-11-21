@@ -1,13 +1,13 @@
 # Los Nefilim · Paquete de publicación (borrador 1)
-Estado: **BORRADOR**. No se ha publicado nada: Camilo publica.
+Estado: **VERSIÓN FINAL para aprobación de Camilo** (versión 3). No se ha publicado nada: Camilo publica.
 Base: guion final (`entregas/guionista/2026-11-20-nefilim.md`), título y miniatura A (`entregas/gancho/2026-11-20-nefilim-ganchos.md`) y guion visual con licencias (`entregas/visuales/2026-11-20-nefilim-guion-visual.md`).
-Pendiente: los **capítulos con tiempos reales** (esperan al Editor, video ≈14:54) y el **nombre del canal** (POR DEFINIR).
+Capítulos y créditos ya con los datos reales del Editor. Pendiente solo el **nombre del canal** (POR DEFINIR).
 
 ## 1. Título
 `Los Nefilim: 4 versículos que nadie termina de explicar` (53 caracteres)
 Alternativa B por si Camilo la prefiere: `Los Nefilim: ¿Quiénes eran los «hijos de Dios»?`
 
-## 2. Descripción (lista para pegar · 3.279 de 5.000 caracteres)
+## 2. Descripción (lista para pegar · 3.523 de 5.000 caracteres)
 Las tres primeras líneas son las que se ven antes de «Mostrar más»: llevan el tema y la promesa.
 
 ```
@@ -21,7 +21,14 @@ En este video:
 • Lo que proponen los historiadores: Gilgamesh, los dólmenes de Basán y los «esqueletos gigantes» de internet
 
 CAPÍTULOS
-[Se completan con los tiempos reales del video final]
+0:00 Cuatro versículos misteriosos
+0:43 Introducción
+1:52 I · Lo que dice el texto
+4:28 II · El Libro de Enoc
+7:34 III · ¿Ángeles o hombres?
+10:02 IV · Gigantes después del diluvio
+12:04 V · Lo que proponen los historiadores
+13:49 Cierre
 
 NOTA SOBRE EL ENFOQUE
 Este canal explica textos, personajes y símbolos de las religiones con respeto y sin tomar partido. En cada video separamos lo que dice el texto, lo que cuenta la tradición y lo que proponen los estudios. Nada de esto se presenta como hecho comprobado.
@@ -36,22 +43,19 @@ CRÉDITOS
 Música: «Lightless Dawn» de Kevin MacLeod (incompetech.com). Licencia Creative Commons Atribución 4.0: http://creativecommons.org/licenses/by/4.0/
 Imágenes de Wikimedia Commons: casi todas son arte de dominio público (Gustave Doré, Miguel Ángel, Bruegel, Botticelli, Blake, Guido Reni y otros) o CC0. Las siguientes piden mención:
 • Libro de Enoc en ge'ez: Francesco Bini, CC BY-SA 4.0
-• Monte Hermón nevado: Someone35, CC BY-SA 3.0
+• Nieve en el monte Hermón: Someone35, CC BY-SA 3.0
 • Cueva 4 de Qumrán: Bahnfrend, CC BY-SA 4.0
-• Relieve del héroe con león (Louvre): autor desconocido, CC BY-SA 3.0
+• Héroe dominando un león (Louvre AO 19862): autor desconocido, CC BY-SA 3.0
 • Dolmen de Gamla: שועל, CC BY-SA 4.0
 • Dolmen en el sendero de Gamla: Mboesch, CC BY-SA 4.0
-• Langosta (grabado): Wellcome Collection, CC BY 4.0
+• Langosta, grabado: Wellcome Collection, CC BY 4.0
 • Vía Láctea sobre el desierto: Steve Jurvetson, CC BY 2.0
 • Desierto de Judea: James Emery, CC BY 2.0
 • Desierto del Néguev: Rosewoman, CC BY 2.0
-• Colinas de Judea: zeevveez, CC BY 2.0
-Videos de stock: Mixkit (licencia gratuita de Mixkit).
+Mapas: Natural Earth (dominio público). Videos de stock: Mixkit (licencia gratuita de Mixkit). Efectos de sonido: Pixabay (licencia de Pixabay).
 
 #Nefilim #Génesis #Religión
 ```
-
-Cómo se completa: cuando el Editor pase los tiempos, se reemplaza la línea de «CAPÍTULOS» con la tabla del punto 5.
 
 ## 3. Etiquetas (≈ 330 caracteres, el límite es 500)
 ```
@@ -68,21 +72,21 @@ Recuerda cómo ordenamos el video: lo que dice el texto, lo que contaron las tra
 Si quieres que expliquemos otro personaje, texto o símbolo, escríbelo aquí abajo.
 ```
 
-## 5. Capítulos (YouTube exige empezar en 0:00, mínimo 3 capítulos y 10 s cada uno)
-Tiempos **ESTIMADOS** del guion (≈1.910 palabras). **No pegar** hasta tener los reales del Editor.
+## 5. Capítulos (tiempos reales del Editor · video de 14:56)
+Ya van pegados en la descripción. Cumplen lo que pide YouTube: empiezan en 0:00, son más de 3 y duran más de 10 s.
 
-| Tiempo (estimado) | Título del capítulo |
+| Tiempo | Capítulo |
 |---|---|
-| 0:00 | Cuatro versículos que dividen a los lectores |
-| 0:35 | Un pasaje de solo cuatro versículos |
-| 1:35 | Lo que dice el texto: Génesis 6 |
-| 3:45 | El Libro de Enoc: los Vigilantes |
-| 6:25 | ¿Ángeles o hombres? El gran debate |
-| 8:30 | Gigantes después del diluvio |
-| 10:15 | Lo que proponen los historiadores |
-| 11:45 | Conclusión: ¿quiénes eran los nefilim? |
+| 0:00 | Cuatro versículos misteriosos |
+| 0:43 | Introducción |
+| 1:52 | I · Lo que dice el texto |
+| 4:28 | II · El Libro de Enoc |
+| 7:34 | III · ¿Ángeles o hombres? |
+| 10:02 | IV · Gigantes después del diluvio |
+| 12:04 | V · Lo que proponen los historiadores |
+| 13:49 | Cierre |
 
-Aviso: el video final dura ≈14:54, más que el guion (≈12:45). Los tiempos reales van a cambiar bastante.
+Aviso: el video dura 14:56, por encima del máximo de 13 min fijado por Camilo. Natalia ya lo sabe; no afecta a la publicación.
 
 ## 6. Miniatura A (diseño)
 Archivo: `entregas/publicacion-youtube/2026-11-21-nefilim-miniatura-A.png` (1280×720).
@@ -97,18 +101,15 @@ Archivo: `entregas/publicacion-youtube/2026-11-21-nefilim-miniatura-A.png` (1280
 | Contenido alterado o sintético | **Responder «No»** (aprobado por Camilo, 2026-11-21): no hay imágenes realistas hechas con IA (la silueta es un dibujo) y la voz en off no imita a ninguna persona real. |
 | Música | «Lightless Dawn», Kevin MacLeod, CC BY 4.0. Pide mención: **ya está en los créditos**. |
 | Imágenes con derechos | Todas son de Wikimedia Commons con dominio público, CC0 o CC BY/CC BY-SA. Clips de stock de Mixkit (no piden mención). Sin imágenes de películas ni marcas de agua. |
-| Créditos CC | Incluidos en la descripción (11 imágenes). |
+| Créditos CC | Incluidos en la descripción (10 imágenes + música), tal como los dejó el Editor. |
 | Respeto | Tono explicativo. Se separan texto, tradición y estudios. No se muestran las fotos virales de «esqueletos». |
 | Contenido repetitivo | Guion, investigación y montaje propios. La referencia solo aportó el tema. |
-| Subtítulos | Subir el archivo de subtítulos (no van quemados en el video). |
+| Subtítulos | Subir `entregas/editor/2026-11-21-nefilim-subtitulos.srt` (rama agente/editor) en el idioma español; no van quemados en el video. |
 
-### Pendientes de revisar (avísame y lo cierro)
-1. **Capilla Sixtina:** Camilo aprobó usar **I03 (Miguel Ángel, dominio público)** en vez de I50. I50 ya no está en los créditos. El Editor no debe usar I50.
-2. **Imágenes de reserva (I35 espadas, I46 Qumrán, I47 códice):** no están en los créditos. Si el Editor las usa, agrego su autor (I35 y I46 piden mención).
-3. **Imágenes finalmente usadas:** al terminar, el Editor debe confirmar cuáles quedaron en el video, para dejar solo esos créditos.
-4. **Nombre del canal:** POR DEFINIR (la descripción no lo necesita, pero la tarjeta final del video sí).
-5. **Fuentes marcadas «POR VERIFICAR» por el Guionista:** la cifra de dólmenes (no se menciona) y el año del concurso de fotos (no se menciona). Nada que corregir en la descripción.
-6. Las citas de Génesis y Números están en Reina-Valera 1909 (dominio público).
+### Pendientes
+1. **Nombre del canal:** POR DEFINIR (la descripción no lo necesita).
+2. Las imágenes de reserva (I35, I46, I47) no quedaron en el video: no llevan crédito.
+3. Citas de Génesis y Números en Reina-Valera 1909 (dominio público).
 
 ## Qué debe revisar Camilo
-Que le gusten la descripción, las etiquetas, el comentario fijado y la miniatura A. Los capítulos se completan cuando el Editor pase los tiempos reales.
+Aprobar descripción, capítulos, etiquetas, comentario fijado y miniatura A. Luego Camilo sube el video con el archivo de subtítulos y publica.
