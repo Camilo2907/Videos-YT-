@@ -7,7 +7,7 @@
 - Paleta, tipografía y texto en pantalla: ver `contexto/estilo-video.md`.
 
 ## Datos que faltan de Camilo
-- [ ] Nombre del canal (el AGENTE · Gancho puede proponer opciones).
+- [x] Nombre del canal: Raíces de la Fe. Logo y banner hechos por Natalia.
 - [ ] Primer video de referencia de YouTube (cada tema sale de una referencia de Camilo).
 - [x] Plan de ElevenLabs elegido (el dato lo lleva el Coordinador en su chat, no aquí).
 
