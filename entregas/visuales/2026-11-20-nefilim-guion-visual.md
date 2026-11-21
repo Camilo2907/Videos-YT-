@@ -1,11 +1,11 @@
-# Los Nefilim: 4 versículos que nadie termina de explicar · Guion visual (versión 3)
+# Los Nefilim: 4 versículos que nadie termina de explicar · Guion visual (versión 4)
 Basado en el **guion final aprobado por Camilo**: `entregas/guionista/2026-11-20-nefilim.md` (rama agente/guionista, con el gancho A y los mini ganchos narrados).
 Estado: **BORRADOR** del guion visual, para que Camilo lo apruebe.
 
 ## Resumen
 - **183 escenas**, ≈ **13:05** según mi conteo de palabras (150 por minuto). Ese total incluye 18 s de títulos de capítulo sin voz. Si los títulos van debajo de la primera frase de cada capítulo, el video queda en ≈ 12:45, como calcula el Guionista. Los tiempos finales se ajustan a la voz real.
 - Cambio visual cada **2 a 6 s**. Las 19 escenas que pasan de 6,5 s llevan una marca de **cortes**: se dividen en dos o tres tomas, con otro encuadre de la misma imagen o un gráfico encima.
-- **43 clips de video de stock** (uno cada 20 a 39 s), marcados en la columna **Clip**. Están pendientes de la clave de Pexels y Pixabay; los detalles están después de la tabla.
+- **43 clips de video de stock** (uno cada 20 a 39 s), marcados en la columna **Clip**. Hay 28 clips de Mixkit descargados y la lista está después de la tabla.
 - **51 imágenes libres** de Wikimedia Commons, casi todas de arte clásico en dominio público. La lista con fuentes y licencias está al final.
 - **Sin rostros creados con IA.** Ángeles, Vigilantes y gigantes aparecen como **siluetas de luz sin rostro** dibujadas como gráfico, o en arte clásico. No se usan las fotos virales de «esqueletos gigantes»: solo un dibujo genérico con el sello FALSO.
 
@@ -253,17 +253,19 @@ Movimiento por defecto: ninguna imagen queda quieta. Hay acercamientos lentos, p
 | 180 | 12:50–12:57 | En este canal seguimos recorriendo los textos, los personajes y los símbolos de las grandes religiones. |  | I05 → I33 → I21 | montaje lento de manuscritos | paneos lentos |
 | 181 | 12:57–13:01 | Con respeto, y siempre separando el texto, la tradición y la historia. |  | — | P3 las tres tarjetas en fila | fijo + animación |
 | 182 | 13:01–13:04 | Si estas preguntas te interesan, quédate cerca. | **V07** | I39 | — | zoom muy lento |
-| 183 | 13:04–13:07 | Nos vemos en el próximo video. |  | — | tarjeta final: nombre del canal (POR DEFINIR) + «Nos vemos en el próximo video» sobre pergamino | fundido a negro |
+| 183 | 13:04–13:07 | Nos vemos en el próximo video. |  | — | tarjeta final, sin nombre del canal por ahora (decisión de Camilo): «Nos vemos en el próximo video» sobre pergamino | fundido a negro |
 ## Clips de video de stock (más dinamismo, decisión de Camilo del 2026-11-21)
 - **43 clips** repartidos en el video, con un máximo de **39 s** entre uno y otro. Hay más en el gancho (5 clips en los primeros 30 s) y en los momentos de tensión (diluvio, Vigilantes, gigantes).
 - En la tabla aparecen en la columna **Clip**. El clip es el fondo de esa escena y la imagen o el gráfico va encima o se alterna con él.
   En las citas largas, el clip va desenfocado detrás de la tarjeta.
 - Duración de uso: 2 a 6 s por clip, en cámara lenta si hace falta. Son **12 tipos de clip** que se repiten con tomas distintas.
 - Regla: **sin rostros de personas modernas** haciendo de personajes bíblicos. Solo naturaleza, objetos y, como mucho, manos.
-- **Estado: PENDIENTE.** Pexels y Pixabay bloquean la entrada desde la nube y su buscador pide una clave gratis. Ya le avisé a Natalia.
-  Licencias: la de Pexels y la de Pixabay permiten usar los clips gratis en YouTube sin mencionar al autor. Igual se anota la fuente de cada uno.
+- **Estado: 28 clips DESCARGADOS** de **Mixkit**, en 720p (1280×720) y horizontales, sin personas ni objetos modernos (revisé un cuadro de cada clip).
+  **Licencia:** «Mixkit Stock Video Free License»: gratis, permite usarlos en YouTube y no obliga a mencionar al autor. Igual dejo anotada la fuente de cada clip.
+  Pexels y Pixabay quedaron descartados: bloquean la nube y Pexels pausó las claves nuevas.
+  Nota: en 720p se ven un poco menos nítidos que el video final en 1080p. Como van de fondo, con movimiento y con gráficos encima, no se nota mucho.
 
-| Código | Clip | Buscar en Pexels / Pixabay | Escenas |
+| Código | Clip | Palabras de búsqueda | Escenas |
 |---|---|---|---|
 | V01 | Tormenta con relámpagos, cielo oscuro | `lightning storm night`, `thunderstorm dark clouds` | 5, 53, 77, 79 |
 | V02 | Lluvia intensa (gotas, charcos, cortina de agua) | `heavy rain slow motion`, `rain dark` | 31, 171 |
@@ -278,16 +280,39 @@ Movimiento por defecto: ninguna imagen queda quieta. Hay acercamientos lentos, p
 | V11 | Nubes rápidas (timelapse), cielo que se oscurece | `dark clouds timelapse`, `storm clouds moving` | 15, 46, 99, 124, 178 |
 | V12 | Fuego o brasas | `fire flames dark`, `embers` | 76, 117 |
 
-**Respaldo en Wikimedia Commons** (mientras no haya clave). Son clips libres, pero la calidad está por revisar y Wikimedia está frenando las descargas.
+### Clips descargados
+| Clip | Archivo en `trabajo/nefilim/clips/` | Qué se ve | Duración | Fuente |
+|---|---|---|---|---|
+| V01 | V01_mixkit-25004.mp4 | night sky light with lightning storm | 10 s | [Mixkit #25004](https://mixkit.co/free-stock-video/night-sky-light-with-lightning-storm-25004/) |
+| V01 | V01_mixkit-4422.mp4 | thunderstorm at night | 17 s | [Mixkit #4422](https://mixkit.co/free-stock-video/thunderstorm-at-night-4422/) |
+| V01 | V01_mixkit-47948.mp4 | lightning strike and thunders | 9 s | [Mixkit #47948](https://mixkit.co/free-stock-video/lightning-strike-and-thunders-47948/) |
+| V01 | V01_mixkit-9704.mp4 | dark stormy clouds in the sky · también sirve como V11 | 18 s | [Mixkit #9704](https://mixkit.co/free-stock-video/dark-stormy-clouds-in-the-sky-9704/) |
+| V02 | V02_mixkit-10058.mp4 | agresive rapids in the river in slow motion · rápidos de río (diluvio) | 65 s | [Mixkit #10058](https://mixkit.co/free-stock-video/agresive-rapids-in-the-river-in-slow-motion-10058/) |
+| V02 | V02_mixkit-18312.mp4 | rain falling on the water of a lake | 15 s | [Mixkit #18312](https://mixkit.co/free-stock-video/rain-falling-on-the-water-of-a-lake-18312/) |
+| V03 | V03_mixkit-7194.mp4 | big wave crashing | 15 s | [Mixkit #7194](https://mixkit.co/free-stock-video/big-wave-crashing-7194/) |
+| V03 | V03_mixkit-7271.mp4 | waves crashing ocean background | 32 s | [Mixkit #7271](https://mixkit.co/free-stock-video/waves-crashing-ocean-background-7271/) |
+| V03 | V03_mixkit-9294.mp4 | sea waves breaking on the rocks front view | 16 s | [Mixkit #9294](https://mixkit.co/free-stock-video/sea-waves-breaking-on-the-rocks-front-view-9294/) |
+| V04 | V04_mixkit-46203.mp4 | stardust and clouds over mountains at night | 12 s | [Mixkit #46203](https://mixkit.co/free-stock-video/stardust-and-clouds-over-mountains-at-night-46203/) |
+| V04 | V04_mixkit-4695.mp4 | clouds covering the mountains | 22 s | [Mixkit #4695](https://mixkit.co/free-stock-video/clouds-covering-the-mountains-4695/) |
+| V04 | V04_mixkit-50943.mp4 | white thick mist continuously flows at a fast pace | 16 s | [Mixkit #50943](https://mixkit.co/free-stock-video/white-thick-mist-continuously-flows-at-a-fast-pace-50943/) |
+| V05 | V05_mixkit-4149.mp4 | dunes in the sahara desert | 11 s | [Mixkit #4149](https://mixkit.co/free-stock-video/dunes-in-the-sahara-desert-4149/) |
+| V05 | V05_mixkit-47724.mp4 | cloudy desert in a hot day | 13 s | [Mixkit #47724](https://mixkit.co/free-stock-video/cloudy-desert-in-a-hot-day-47724/) |
+| V06 | V06_mixkit-41547.mp4 | huge rocks on a plain seen from above · rocas grandes en una llanura (reserva para dólmenes) | 26 s | [Mixkit #41547](https://mixkit.co/free-stock-video/huge-rocks-on-a-plain-seen-from-above-41547/) |
+| V06 | V06_mixkit-45399.mp4 | towering temple ruins of egypt against a blue sky · columnas de templo antiguo (genérico, no es Israel) | 29 s | [Mixkit #45399](https://mixkit.co/free-stock-video/towering-temple-ruins-of-egypt-against-a-blue-sky-45399/) |
+| V07 | V07_mixkit-39768.mp4 | night sky covered with stars | 12 s | [Mixkit #39768](https://mixkit.co/free-stock-video/night-sky-covered-with-stars-39768/) |
+| V07 | V07_mixkit-4148.mp4 | milky way seen at night | 16 s | [Mixkit #4148](https://mixkit.co/free-stock-video/milky-way-seen-at-night-4148/) |
+| V07 | V07_mixkit-46119.mp4 | starry night in the desert | 13 s | [Mixkit #46119](https://mixkit.co/free-stock-video/starry-night-in-the-desert-46119/) |
+| V08 | V08_mixkit-34203.mp4 | three candles lit in the dark together | 40 s | [Mixkit #34203](https://mixkit.co/free-stock-video/three-candles-lit-in-the-dark-together-34203/) |
+| V08 | V08_mixkit-48919.mp4 | candle flame on black background closeup | 30 s | [Mixkit #48919](https://mixkit.co/free-stock-video/candle-flame-on-black-background-closeup-48919/) |
+| V09 | V09_mixkit-21612.mp4 | ancient map of the world in the dark lit by candle · mapa antiguo con lupa a la luz de vela | 10 s | [Mixkit #21612](https://mixkit.co/free-stock-video/ancient-map-of-the-world-in-the-dark-lit-by-candle-21612/) |
+| V09 | V09_mixkit-25185.mp4 | pages of a book moving in the wind | 13 s | [Mixkit #25185](https://mixkit.co/free-stock-video/pages-of-a-book-moving-in-the-wind-25185/) |
+| V10 | V10_mixkit-50951.mp4 | a trail of smoke rapidly twirls over a dark background | 23 s | [Mixkit #50951](https://mixkit.co/free-stock-video/a-trail-of-smoke-rapidly-twirls-over-a-dark-background-50951/) |
+| V10 | V10_mixkit-50957.mp4 | a thick mist twists and settles on a dark surface | 6 s | [Mixkit #50957](https://mixkit.co/free-stock-video/a-thick-mist-twists-and-settles-on-a-dark-surface-50957/) |
+| V11 | V11_mixkit-9624.mp4 | storm clouds moving in the sky | 35 s | [Mixkit #9624](https://mixkit.co/free-stock-video/storm-clouds-moving-in-the-sky-9624/) |
+| V12 | V12_mixkit-45676.mp4 | fire of a bonfire against black | 20 s | [Mixkit #45676](https://mixkit.co/free-stock-video/fire-of-a-bonfire-against-black-45676/) |
+| V12 | V12_mixkit-52312.mp4 | mesmerizing close up of flames over a black background | 19 s | [Mixkit #52312](https://mixkit.co/free-stock-video/mesmerizing-close-up-of-flames-over-a-black-background-52312/) |
 
-| Clip | Archivo | Licencia | Autor |
-|---|---|---|---|
-| V01 | [Lightning storm over Colorado, USA](https://commons.wikimedia.org/wiki/File:Lightning_storm_over_Colorado,_USA.ogg) | CC0 | NathanScientific |
-| V07 | [Milky Way Timelapse](https://commons.wikimedia.org/wiki/File:Milky_Way_Timelapse.webm) | CC BY 3.0 | Gamer noscope |
-| V11 | [Timelapse Clouds Compilation](https://commons.wikimedia.org/wiki/File:Timelapse_Clouds_Compilation.ogv) | Dominio público | brownpau |
-| V11 | [Moving clouds timelapse](https://commons.wikimedia.org/wiki/File:Moving_clouds_timelapse_1152x694x10fps.ogv) | Dominio público | Stefan von Halenbach |
-| V04 | [Fog covering mountain time lapse](https://commons.wikimedia.org/wiki/File:Fog_covering_mountain_time_lapse.webm) | CC BY-SA 4.0 | Athulvis |
-| V05 | [Dune du Pilat 2018](https://commons.wikimedia.org/wiki/File:Dune_du_Pilat_2018.webm) | CC BY 4.0 | Manuel Ramirez |
+**Respaldo** (no descargado): seis clips libres de Wikimedia Commons, con licencias CC0, CC BY y dominio público. Están en la versión 3 de este archivo.
 
 Humo, niebla, partículas, polvo, rayos de luz y fuego también los puede hacer el Editor con los efectos de HyperFrames, así que V10 y V12 no dependen de Pexels.
 
@@ -345,7 +370,7 @@ Las imágenes se guardan en `trabajo/nefilim/img/` (no se suben al repositorio).
 | I38 | Langosta, grabado (Wellcome) | Wellcome Collection | CC BY 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_locust._Wood_engraving._Wellcome_V0022515.jpg) | pendiente |
 | I39 | Vía Láctea sobre el desierto (foto) | Steve Jurvetson | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg) | pendiente |
 | I40 | Desierto de Judea (foto) | James Emery from Douglasville, United States | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Judean_Wilderness_1423_%28509724469%29.jpg) | pendiente |
-| I41 | Desierto del Néguev (foto) | Rosewoman | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Negev_Desert_landscape.jpg) | sí |
+| I41 | Desierto del Néguev (foto) | Rosewoman | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Negev_Desert_landscape.jpg) | pendiente |
 | I42 | Colinas de Judea (foto) | zeevveez from Jerusalem, Israel | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Judean_Hills_-_Landscape_%287442364628%29.jpg) | pendiente |
 | I43 | Papiro 78, carta de Judas (s. III–IV) | Unknown author Unknown author | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:P078-Jud-1_4-5-POxy2684-III-IV.jpg) | pendiente |
 | I44 | William Blake, Enoc (litografía, 1807) | William Blake | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Blake_Enoch_Lithograph_1807.jpg) | pendiente |
