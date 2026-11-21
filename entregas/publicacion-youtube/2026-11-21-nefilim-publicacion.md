@@ -7,7 +7,7 @@ Pendiente: los **capítulos con tiempos reales** (esperan al Editor, video ≈14
 `Los Nefilim: 4 versículos que nadie termina de explicar` (53 caracteres)
 Alternativa B por si Camilo la prefiere: `Los Nefilim: ¿Quiénes eran los «hijos de Dios»?`
 
-## 2. Descripción (lista para pegar · 3354 de 5.000 caracteres)
+## 2. Descripción (lista para pegar · 3.279 de 5.000 caracteres)
 Las tres primeras líneas son las que se ven antes de «Mostrar más»: llevan el tema y la promesa.
 
 ```
@@ -46,7 +46,6 @@ Imágenes de Wikimedia Commons: casi todas son arte de dominio público (Gustave
 • Desierto de Judea: James Emery, CC BY 2.0
 • Desierto del Néguev: Rosewoman, CC BY 2.0
 • Colinas de Judea: zeevveez, CC BY 2.0
-• Capilla Sixtina, «El diluvio» (foto): autor POR CONFIRMAR, CC BY-SA 2.0
 Videos de stock: Mixkit (licencia gratuita de Mixkit).
 
 #Nefilim #Génesis #Religión
@@ -95,16 +94,16 @@ Archivo: `entregas/publicacion-youtube/2026-11-21-nefilim-miniatura-A.png` (1280
 ## 7. Revisión antes de publicar
 | Revisión | Estado |
 |---|---|
-| Contenido alterado o sintético | No hay imágenes realistas hechas con IA (la silueta es un dibujo). La **voz en off** es sintética (ElevenLabs): no imita a ninguna persona real. Al subir, YouTube hace esta pregunta: Camilo responde con la opción que le parezca. **POR VERIFICAR** en el formulario. |
+| Contenido alterado o sintético | **Responder «No»** (aprobado por Camilo, 2026-11-21): no hay imágenes realistas hechas con IA (la silueta es un dibujo) y la voz en off no imita a ninguna persona real. |
 | Música | «Lightless Dawn», Kevin MacLeod, CC BY 4.0. Pide mención: **ya está en los créditos**. |
 | Imágenes con derechos | Todas son de Wikimedia Commons con dominio público, CC0 o CC BY/CC BY-SA. Clips de stock de Mixkit (no piden mención). Sin imágenes de películas ni marcas de agua. |
-| Créditos CC | Incluidos en la descripción (12 imágenes). |
+| Créditos CC | Incluidos en la descripción (11 imágenes). |
 | Respeto | Tono explicativo. Se separan texto, tradición y estudios. No se muestran las fotos virales de «esqueletos». |
 | Contenido repetitivo | Guion, investigación y montaje propios. La referencia solo aportó el tema. |
 | Subtítulos | Subir el archivo de subtítulos (no van quemados en el video). |
 
 ### Pendientes de revisar (avísame y lo cierro)
-1. **Foto de la Capilla Sixtina «El diluvio» (I50, CC BY-SA 2.0):** no pude confirmar su autor porque Wikimedia no respondió. Recomiendo **usar I03 (Miguel Ángel, dominio público)** y quitar esa línea de los créditos.
+1. **Capilla Sixtina:** Camilo aprobó usar **I03 (Miguel Ángel, dominio público)** en vez de I50. I50 ya no está en los créditos. El Editor no debe usar I50.
 2. **Imágenes de reserva (I35 espadas, I46 Qumrán, I47 códice):** no están en los créditos. Si el Editor las usa, agrego su autor (I35 y I46 piden mención).
 3. **Imágenes finalmente usadas:** al terminar, el Editor debe confirmar cuáles quedaron en el video, para dejar solo esos créditos.
 4. **Nombre del canal:** POR DEFINIR (la descripción no lo necesita, pero la tarjeta final del video sí).
