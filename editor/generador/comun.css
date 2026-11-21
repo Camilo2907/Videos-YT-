@@ -1,0 +1,182 @@
+    @font-face { font-family: "Cinzel"; src: url("assets/fonts/cinzel.woff2") format("woff2"); font-weight: 400 900; }
+    @font-face { font-family: "Hebreo"; src: url("assets/fonts/hebreo.woff2") format("woff2"); unicode-range: U+0590-05FF, U+FB1D-FB4F; }
+    @font-face { font-family: "Griego"; src: url("assets/fonts/griego.woff2") format("woff2"); unicode-range: U+0370-03FF, U+1F00-1FFF; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0f1b2d; font-family: "Montserrat", sans-serif; color: #f2e8d5; }
+    #root .shot, #root .capa { position: absolute; inset: 0; overflow: hidden; }
+    #root .shot { background: #0f1b2d; }
+    #root .kb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #root .vid { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+    #root .vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(15,27,45,0) 45%, rgba(15,27,45,0.85) 100%); }
+    #root .oscuro { position: absolute; inset: 0; background: #0a1220; }
+    #root .tinte { position: absolute; inset: 0; background: rgba(122,31,43,0.35); mix-blend-mode: multiply; }
+    #root .fx { position: absolute; inset: 0; width: 1920px; height: 1080px; pointer-events: none; }
+    #root .rayos { position: absolute; inset: -30%; mix-blend-mode: screen; transform-origin: 18% 0%;
+      background: repeating-conic-gradient(from 150deg at 18% 0%, rgba(242,232,213,0) 0deg, rgba(242,232,213,0.13) 2.5deg, rgba(242,232,213,0) 6deg, rgba(242,232,213,0) 11deg);
+      -webkit-mask-image: radial-gradient(ellipse at 18% 0%, #000 0%, rgba(0,0,0,0.4) 45%, transparent 75%); mask-image: radial-gradient(ellipse at 18% 0%, #000 0%, rgba(0,0,0,0.4) 45%, transparent 75%); }
+    #root .lluvia { position: absolute; inset: -200px; background-image: repeating-linear-gradient(105deg, rgba(242,232,213,0) 0px, rgba(242,232,213,0) 26px, rgba(242,232,213,0.14) 27px, rgba(242,232,213,0) 29px); }
+    #root .niebla { position: absolute; left: -20%; width: 140%; height: 60%; bottom: -10%;
+      background: radial-gradient(ellipse at 30% 60%, rgba(220,225,235,0.3), rgba(220,225,235,0) 55%), radial-gradient(ellipse at 75% 70%, rgba(220,225,235,0.24), rgba(220,225,235,0) 50%); }
+    #root .fondo-noche { background: radial-gradient(ellipse at 50% 45%, #1e3150, #0f1b2d 68%); background-size: 140% 140%; }
+    #root .fondo-perg { background: radial-gradient(ellipse at 50% 45%, #f6eedd, #e2d2b0 80%); }
+    #root .fondo-oscuro { background: #070d18; }
+    #root .centro { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+    #root .marco { position: absolute; left: 50%; top: 50%; width: 1240px; height: 760px; margin: -380px 0 0 -620px; display: flex; align-items: center; justify-content: center; }
+    #root .marco img { width: 100%; height: 100%; object-fit: contain; }
+
+    #root .rotulo-caja { position: absolute; left: 130px; bottom: 120px; display: flex; align-items: center; gap: 22px; padding: 18px 34px 18px 22px;
+      background: rgba(15,27,45,0.82); border-radius: 6px; font-family: "Cinzel", "Hebreo", "Griego", serif; font-weight: 700; font-size: 48px; color: #f2e8d5; letter-spacing: 0.04em; max-width: 1500px; }
+    #root .rotulo-caja span { display: block; width: 8px; height: 58px; background: #c9a227; border-radius: 3px; }
+    #root .rotulo-caja.vino span { background: #c23a4d; }
+
+    #root .g-grande { font-family: "Cinzel", "Hebreo", "Griego", serif; font-weight: 700; font-size: 120px; color: #c9a227; text-align: center; max-width: 1600px; line-height: 1.12; text-shadow: 0 6px 40px rgba(0,0,0,0.7); }
+    #root .g-grande.chico { font-size: 84px; color: #f2e8d5; }
+    #root .g-grande.abajo { position: absolute; bottom: 130px; left: 160px; right: 160px; max-width: none; }
+    #root .g-sub { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 38px; letter-spacing: 0.22em; text-transform: uppercase; color: #d8cdb6; text-align: center; }
+    #root .g-sub.abajo2 { position: absolute; bottom: 120px; left: 0; right: 0; }
+
+    #root .t-num { position: absolute; top: 250px; left: 0; right: 0; text-align: center; font-family: "Cinzel", serif; font-size: 90px; color: #c9a227; letter-spacing: 0.2em; }
+    #root .t-txt { position: absolute; top: 400px; left: 120px; right: 120px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 104px; line-height: 1.1; color: #f2e8d5; text-shadow: 0 6px 40px rgba(0,0,0,0.6); }
+    #root .t-linea { position: absolute; top: 700px; left: 660px; width: 600px; height: 4px; background: #c9a227; }
+    #root .t-sello { position: absolute; right: 150px; bottom: 120px; padding: 16px 30px; border: 5px solid #c9a227; color: #c9a227; font-family: "Cinzel", serif; font-weight: 700; font-size: 40px; letter-spacing: 0.15em; border-radius: 8px; }
+
+    #root .cita { width: 1500px; padding: 70px 90px 56px; background: #f2e8d5; border-radius: 14px; box-shadow: 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 5px #c9a227, inset 0 0 0 14px #f2e8d5, inset 0 0 0 16px rgba(201,162,39,0.5);
+      font-family: "EB Garamond", Georgia, serif; font-style: italic; color: #13223a; line-height: 1.32; }
+    #root .cita .oro { color: #9a6f00; font-weight: 600; }
+    #root .cita-ref { margin-top: 30px; text-align: right; font-family: "Montserrat", sans-serif; font-style: normal; font-size: 26px; font-weight: 600; letter-spacing: 0.12em; color: #7a1f2b; }
+
+    #root .p-caja { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 40px 80px; }
+    #root .p-caja.panel { background: rgba(15,27,45,0.85); border-radius: 12px; }
+    #root .p-heb { font-family: "Hebreo", serif; font-size: 190px; color: #c9a227; line-height: 1.1; direction: rtl; text-shadow: 0 6px 50px rgba(201,162,39,0.35); }
+    #root .p-tr { font-family: "Cinzel", serif; font-weight: 700; font-size: 84px; color: #f2e8d5; }
+    #root .p-sig { font-family: "Montserrat", sans-serif; font-size: 42px; color: #d8cdb6; letter-spacing: 0.06em; }
+
+    #root .sello { padding: 26px 60px; border: 10px double #f2e8d5; background: rgba(122,31,43,0.94); color: #f2e8d5; font-family: "Cinzel", serif; font-weight: 700; font-size: 92px; letter-spacing: 0.1em; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); text-align: center; max-width: 1500px; }
+    #root .c-num { font-family: "Cinzel", serif; font-weight: 700; font-size: 260px; color: #c9a227; line-height: 1; text-shadow: 0 6px 50px rgba(201,162,39,0.35); }
+    #root .c-suf { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 48px; letter-spacing: 0.3em; color: #f2e8d5; }
+
+    #root .l-tit { position: absolute; left: 200px; top: 190px; font-family: "Cinzel", serif; font-weight: 700; font-size: 66px; color: #c9a227; }
+    #root .l-lista { position: absolute; left: 230px; top: 350px; display: flex; flex-direction: column; gap: 46px; }
+    #root .l-item { position: relative; font-family: "Cinzel", serif; font-size: 72px; color: #f2e8d5; }
+    #root .l-item i { position: absolute; left: -10px; right: -10px; top: 52%; height: 8px; background: #c23a4d; transform-origin: 0 50%; border-radius: 4px; }
+
+    #root .fila { display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap; max-width: 1700px; }
+    #root .f-item { padding: 26px 46px; border: 4px solid #c9a227; border-radius: 12px; background: rgba(15,27,45,0.86); font-family: "Cinzel", serif; font-weight: 700; font-size: 66px; color: #c9a227; }
+    #root .flecha { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center; max-width: 1760px; }
+    #root .fl-item { padding: 24px 40px; border-radius: 12px; background: rgba(15,27,45,0.88); border: 3px solid rgba(201,162,39,0.7); font-family: "Cinzel", "Hebreo", "Griego", serif; font-weight: 700; font-size: 58px; color: #f2e8d5; }
+    #root .fl-item:last-child { color: #c9a227; border-color: #c9a227; }
+    #root .fl-flecha { font-size: 80px; color: #c9a227; }
+
+    #root .libro { position: absolute; left: 0; right: 0; margin: 0 auto; width: max-content; bottom: 110px; display: flex; align-items: center; gap: 36px; padding: 30px 56px 30px 40px; background: #f2e8d5; border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,0.6), inset 0 0 0 5px #c9a227; }
+    #root .libro svg { width: 110px; height: 110px; }
+    #root .lb-n { font-family: "Cinzel", serif; font-weight: 700; font-size: 60px; color: #0f1b2d; white-space: nowrap; }
+    #root .lb-f { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 30px; color: #7a1f2b; letter-spacing: 0.1em; }
+
+    #root .fi-marco { position: absolute; left: 220px; top: 150px; width: 560px; height: 760px; border: 8px solid #c9a227; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 90px rgba(0,0,0,0.7); background: #0f1b2d; }
+    #root .fi-marco img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+    #root .fi-txt { position: absolute; left: 880px; top: 420px; right: 120px; }
+    #root .fi-txt.solo { left: 0; right: 0; top: auto; bottom: 0; padding: 60px 0 110px; text-align: center; background: linear-gradient(to top, rgba(10,18,32,0.92), rgba(10,18,32,0)); }
+    #root .fi-n { font-family: "Cinzel", serif; font-weight: 700; font-size: 96px; color: #c9a227; line-height: 1.05; }
+    #root .fi-s { margin-top: 20px; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 42px; color: #f2e8d5; letter-spacing: 0.08em; }
+
+    #root .gh-osc { position: absolute; inset: 0; background: #05080f; }
+    #root .gh-heb { position: relative; font-family: "Hebreo", serif; font-size: 220px; color: #c23a4d; direction: rtl; }
+    #root .gh-txt { position: relative; max-width: 1600px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 92px; color: #e05468; text-shadow: 0 6px 40px rgba(0,0,0,0.8); }
+
+    #root .t3-fila { display: flex; gap: 70px; }
+    #root .t3 { width: 420px; height: 470px; border-radius: 18px; background: #f2e8d5; box-shadow: 0 30px 80px rgba(0,0,0,0.55), inset 0 0 0 6px #c9a227; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; }
+    #root .t3 svg { width: 170px; height: 170px; }
+    #root .t3 h3 { font-family: "Cinzel", serif; font-weight: 700; font-size: 50px; color: #0f1b2d; letter-spacing: 0.08em; }
+
+    #root .bz { position: relative; width: 1500px; height: 600px; }
+    #root .bz-brazo { position: absolute; left: 0; right: 0; top: 160px; height: 16px; background: #c9a227; border-radius: 8px; display: flex; justify-content: space-between; transform-origin: 50% 50%; }
+    #root .bz-c { margin-top: -150px; width: 320px; height: 130px; border-radius: 12px; background: #f2e8d5; box-shadow: inset 0 0 0 5px #c9a227; display: flex; align-items: center; justify-content: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 44px; color: #0f1b2d; }
+    #root .bz-pie { position: absolute; left: 720px; top: 170px; width: 0; height: 0; border-left: 30px solid transparent; border-right: 30px solid transparent; border-bottom: 300px solid #c9a227; }
+
+    #root .t4 { width: 1100px; padding: 50px 70px; background: #f2e8d5; border-radius: 14px; box-shadow: 0 40px 100px rgba(0,0,0,0.35), inset 0 0 0 5px #c9a227; }
+    #root .t4.chica { width: 900px; }
+    #root .t4-t { font-family: "Cinzel", serif; font-weight: 700; font-size: 60px; color: #0f1b2d; margin-bottom: 30px; }
+    #root .t4-l { display: flex; align-items: center; gap: 30px; height: 70px; }
+    #root .t4-l b { font-family: "Cinzel", serif; font-size: 40px; color: #7a1f2b; width: 90px; }
+    #root .t4-l i { display: block; height: 18px; border-radius: 9px; background: rgba(15,27,45,0.25); }
+
+    #root .vn-cont { position: absolute; inset: 0; }
+    #root .vn { position: absolute; width: 360px; height: 230px; border-radius: 10px; background: #e9e4da; box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
+    #root .vn i { display: block; height: 34px; background: #2a3a52; }
+    #root .vn b { display: block; height: 16px; margin: 0 24px; width: 85%; border-radius: 8px; background: rgba(15,27,45,0.25); }
+
+    #root .interroga { font-family: "Cinzel", serif; font-weight: 700; font-size: 560px; color: #c23a4d; line-height: 1; text-shadow: 0 10px 60px rgba(0,0,0,0.6); }
+    #root .sil { position: absolute; left: 660px; top: 80px; width: 600px; height: 960px; transform-origin: 50% 100%; }
+    #root .sil-n { position: absolute; left: 0; right: 0; bottom: 90px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 110px; color: #c9a227; letter-spacing: 0.1em; text-shadow: 0 6px 40px rgba(0,0,0,0.8); }
+    #root .horizonte { position: absolute; left: 0; right: 0; bottom: 0; height: 300px; background: linear-gradient(to top, rgba(201,162,39,0.18), rgba(201,162,39,0)); }
+
+    #root .m-cont { position: absolute; left: 0; top: 0; width: 3257px; height: 3800px; transform-origin: 0 0; }
+    #root .m-img { position: absolute; left: 0; top: 0; width: 3257px; height: 3800px; }
+    #root .m-ruta { position: absolute; left: 0; top: 0; }
+    #root .m-ruta path { fill: none; stroke: #c9a227; }
+    #root .m-pt, #root .m-zona, #root .m-et { position: absolute; width: 0; height: 0; }
+    #root .m-pt i { position: absolute; left: calc(-12px * var(--s)); top: calc(-12px * var(--s)); width: calc(24px * var(--s)); height: calc(24px * var(--s)); border-radius: 50%; background: #c9a227; box-shadow: 0 0 calc(30px * var(--s)) #c9a227; }
+    #root .m-pt b { position: absolute; left: calc(-12px * var(--s)); top: calc(-12px * var(--s)); width: calc(24px * var(--s)); height: calc(24px * var(--s)); border-radius: 50%; border: calc(3px * var(--s)) solid #c9a227; }
+    #root .m-pt span, #root .m-zona span { position: absolute; left: calc(26px * var(--s)); top: calc(-30px * var(--s)); white-space: nowrap; font-family: "Cinzel", serif; font-weight: 700; color: #f2e8d5; text-shadow: 0 0 calc(12px * var(--s)) #0b1626; }
+    #root .m-zona i { position: absolute; left: calc(-70px * var(--s)); top: calc(-70px * var(--s)); width: calc(140px * var(--s)); height: calc(140px * var(--s)); border-radius: 50%; background: radial-gradient(circle, rgba(194,58,77,0.75), rgba(194,58,77,0) 70%); }
+    #root .m-et { white-space: nowrap; font-family: "Montserrat", sans-serif; font-style: italic; color: #9db7da; }
+
+    #root .ti-linea { position: absolute; left: 180px; right: 180px; top: 560px; height: 6px; background: #c9a227; transform-origin: 0 50%; border-radius: 3px; }
+    #root .ti-h { position: absolute; top: 538px; width: 0; }
+    #root .ti-h i { position: absolute; left: -22px; top: 0; width: 44px; height: 44px; border-radius: 50%; background: #0f1b2d; border: 6px solid #c9a227; box-sizing: border-box; }
+    #root .ti-h b { position: absolute; left: -170px; width: 340px; top: -110px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 40px; color: #f2e8d5; }
+    #root .ti-h span { position: absolute; left: -170px; width: 340px; top: 80px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 30px; color: #c9a227; }
+
+    #root .es-cont { position: absolute; inset: 0; transform-origin: 0 0; }
+    #root .es-suelo { position: absolute; left: 0; right: 0; top: 960px; height: 4px; background: #c9a227; opacity: 0.6; }
+    #root .es-f { position: absolute; display: block; }
+    #root .es-cama { background: #8a6d4a; border: 3px solid #c9a227; border-radius: 6px; }
+    #root .es-regla { position: absolute; width: 14px; background: repeating-linear-gradient(to top, #c9a227 0 3px, transparent 3px 35px); border-left: 3px solid #c9a227; }
+    #root .es-labs { position: absolute; left: 130px; top: 120px; display: flex; flex-direction: column; gap: 22px; }
+    #root .es-lab { padding: 14px 28px; background: rgba(15,27,45,0.85); border-left: 8px solid #c9a227; font-family: "Cinzel", serif; font-weight: 700; font-size: 50px; color: #f2e8d5; }
+    #root .es-nota { position: absolute; right: 130px; top: 130px; font-family: "Montserrat", sans-serif; font-style: italic; font-size: 34px; color: #d8cdb6; }
+
+    #root .co-fila { position: absolute; left: 160px; right: 160px; top: 300px; height: 420px; display: flex; gap: 50px; }
+    #root .co-fila.baja { top: 330px; }
+    #root .mapa-fondo { background: #0b1626; }
+    #root .co { flex: 1; border-radius: 16px; background: rgba(15,27,45,0.88); border: 4px solid currentColor; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 30px; gap: 34px; }
+    #root .co.oro { color: #c9a227; } #root .co.azul { color: #7fa3d6; } #root .co.vino { color: #e05468; }
+    #root .co h4 { font-family: "Cinzel", serif; font-weight: 700; font-size: 54px; text-align: center; line-height: 1.15; }
+    #root .co p { font-family: "Cinzel", serif; font-size: 50px; color: #f2e8d5; text-align: center; }
+    #root .co-pie { position: absolute; left: 0; right: 0; bottom: 90px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 64px; color: #f2e8d5; }
+
+    #root .arbol { position: absolute; left: 160px; right: 160px; top: 150px; bottom: 210px; display: flex; flex-direction: column; justify-content: space-around; }
+    #root .ar-f { display: flex; justify-content: space-around; }
+    #root .ar-n { min-width: 300px; padding: 20px 36px; text-align: center; border-radius: 12px; background: rgba(15,27,45,0.9); border: 4px solid rgba(242,232,213,0.5); font-family: "Cinzel", serif; font-weight: 700; font-size: 54px; color: #f2e8d5; }
+    #root .ar-n.oro { border-color: #c9a227; color: #c9a227; box-shadow: 0 0 40px rgba(201,162,39,0.4); }
+    #root .ar-n.vacio { visibility: hidden; }
+    #root .ar-nota { position: absolute; left: 0; right: 0; bottom: 100px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 40px; color: #c9a227; letter-spacing: 0.08em; }
+
+    #root .tira { position: absolute; left: 0; right: 0; top: 50%; height: 230px; margin-top: -115px; overflow: hidden; border-top: 4px solid #c9a227; border-bottom: 4px solid #c9a227; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+    #root .tira img { height: 230px; width: auto; max-width: none; display: block; }
+
+    #root .pg-cont { position: relative; width: 340px; height: 440px; }
+    #root .pg { position: absolute; inset: 0; background: #f2e8d5; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 0 4px #c9a227; display: flex; flex-direction: column; justify-content: center; gap: 30px; padding: 40px; }
+    #root .pg i { display: block; height: 16px; border-radius: 8px; background: rgba(15,27,45,0.3); }
+    #root .cd { width: 300px; height: 390px; }
+    #root .huecos { position: absolute; inset: 0; }
+    #root .huecos i { position: absolute; height: 46px; border-radius: 6px; background: #05080f; }
+    #root .cu-4 { position: absolute; font-family: "Cinzel", serif; font-weight: 700; font-size: 520px; color: #c9a227; }
+    #root .cu-q { position: absolute; inset: 0; }
+    #root .cu-q b { position: absolute; font-family: "Cinzel", serif; font-size: 120px; color: #c23a4d; }
+    #root .cu-p { position: absolute; font-family: "Cinzel", serif; font-size: 300px; color: #f2e8d5; }
+    #root .pulso { width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(194,58,77,0.8), rgba(194,58,77,0) 65%); }
+    #root .cruce { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+    #root .cruce path { fill: none; stroke-width: 12; stroke-linecap: round; stroke-dasharray: 2000; }
+    #root .cr-l { position: absolute; font-family: "Cinzel", serif; font-weight: 700; font-size: 70px; }
+    #root .cr-l.l1 { left: 150px; top: 840px; color: #c9a227; } #root .cr-l.l2 { left: 150px; top: 110px; color: #e05468; }
+    #root .esp { position: absolute; left: 400px; top: 0; }
+    #root .esp i { position: absolute; left: 0; width: 22px; height: 22px; border-radius: 50%; }
+    #root .esp i.oro { background: #c9a227; box-shadow: 0 0 20px #c9a227; } #root .esp i.vino { background: #e05468; }
+    #root .lupa { position: absolute; width: 260px; height: 260px; }
+    #root .esq-marco { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 80px; border: 4px dashed rgba(242,232,213,0.5); border-radius: 16px; }
+    #root .esq { width: 300px; height: 630px; }
+    #root .esq-marco span { font-family: "Cinzel", serif; font-size: 50px; color: #d8cdb6; }
+    #root .pincel { width: 220px; height: 220px; }
+    #root .fin-t { font-family: "Cinzel", serif; font-weight: 700; font-size: 96px; color: #0f1b2d; text-align: center; }
+    #root .fin-l { position: relative; top: auto; left: auto; }
+    #root .fin-s { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.4em; color: #7a1f2b; }
