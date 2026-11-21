@@ -15,12 +15,26 @@ Estado: **BORRADOR**. Falta que Camilo lo vea y lo apruebe antes de publicarlo.
 
 ## Cambios respecto al guion visual
 - No hay imagen de las espadas (I35): en la escena de Asael va el clip de fuego.
-- En lugar de I47 (Códice Alejandrino) va I07, y en lugar de I03 (Miguel Ángel) va un recorte del arca de I50, sin desnudos.
+- En lugar de I47 (Códice Alejandrino) va I07.
+- **I50 no se usa** (decisión de Camilo: autor sin confirmar). En su lugar va **I03** (Miguel Ángel, dominio público), solo un recorte
+  del arca y el árbol, sin personas desnudas, dentro de un marco porque es una imagen pequeña.
 - **I33 (manuscrito etíope) no se usa:** al acercar la cámara se ven Adán y Eva desnudos. Va I34 (libro plegable etíope).
 - Los títulos de capítulo se muestran sobre los primeros 2,7 s de cada capítulo, porque la voz no deja silencio para ellos.
 - Las figuras se separan del fondo solo en las pinturas principales: las recorté a mano, porque no se pudo instalar la
   herramienta que lo hace sola (ver abajo).
 - I29 (dolmen de Gamla) va recortado, sin el cartel.
+
+## Capítulos para YouTube (tiempos reales)
+```
+0:00 Cuatro versículos misteriosos
+0:43 Introducción
+1:52 I · Lo que dice el texto
+4:28 II · El Libro de Enoc
+7:34 III · ¿Ángeles o hombres?
+10:02 IV · Gigantes después del diluvio
+12:04 V · Lo que proponen los historiadores
+13:49 Cierre
+```
 
 ## Créditos para la descripción de YouTube (agente de Publicación)
 ```
@@ -39,12 +53,9 @@ Imágenes (Wikimedia Commons):
 - Vía Láctea sobre el desierto · Steve Jurvetson · CC BY 2.0
 - Desierto de Judea · James Emery · CC BY 2.0
 - Desierto del Néguev · Rosewoman · CC BY 2.0
-- Capilla Sixtina, «El diluvio» (foto) · POR DEFINIR (autor de Flickr) · CC BY-SA 2.0
 El resto de las imágenes son de dominio público o CC0. Mapas: Natural Earth (dominio público).
 Clips de video: Mixkit (licencia gratuita de Mixkit). Efectos de sonido: Pixabay.
 ```
-- **POR DEFINIR:** el nombre del fotógrafo de la foto de la Capilla Sixtina (I50). Wikimedia no me dejó consultarlo.
-  Lo puede completar Visuales o Publicación desde la página de la fuente.
 
 ## Pendiente
 - **Recorte automático de figuras:** el permiso de Camilo me llegó a través de Natalia, pero la instalación quedó bloqueada en
