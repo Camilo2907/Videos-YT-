@@ -326,58 +326,58 @@ Humo, niebla, partículas, polvo, rayos de luz y fuego también los puede hacer 
 
 ## Lista de imágenes (fuente y licencia)
 Todas son de **Wikimedia Commons**. Las que tienen licencia CC BY o CC BY-SA **piden mencionar al autor**: esa lista va en la descripción del video (se la paso al agente de Publicación).
-Las imágenes se guardan en `trabajo/nefilim/img/` (no se suben al repositorio).
+Las imágenes se guardan en `trabajo/nefilim/img/` (no se suben al repositorio). El Editor las baja de la página privada https://claude.ai/artifact/Fs1TrG8BydAr8TbhgXPsrb (rutas `img/<código>.jpg`).
 
 | ID | Qué es | Autor | Licencia | Página de la fuente | Bajada |
 |---|---|---|---|---|---|
 | I01 | Doré, «El diluvio» (grabado, 1866) | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_-_The_Holy_Bible_-_Plate_I%2C_The_Deluge.jpg) | sí |
-| I02 | Doré, «El mundo destruido por el agua» (grabado) | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:006.The_World_Is_Destroyed_by_Water.jpg) | pendiente |
+| I02 | Doré, «El mundo destruido por el agua» (grabado) | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:006.The_World_Is_Destroyed_by_Water.jpg) | sí |
 | I03 | Miguel Ángel, «El diluvio», detalle (Capilla Sixtina) | Miguel Ángel | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Michelangelo%2C_Deluge_02.jpg) | sí |
-| I04 | Doré, familia en el diluvio (grabado) | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Family_drowning_in_flood_-_Dore.jpg) | pendiente |
+| I04 | Doré, familia en el diluvio (grabado) | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Family_drowning_in_flood_-_Dore.jpg) | sí |
 | I05 | Gran Rollo de Isaías, Qumrán | Unknown artist Unknown artist | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_Great_Isaiah_Scroll_MS_A_%281QIsa%29_-_Google_Art_Project.jpg) | sí |
 | I06 | Códice de Leningrado (s. XI), página hebrea ilustrativa | unknown, scan by USC Dornsife | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Leningrad_Codex_Folio_008a.jpg) | sí |
-| I07 | Códice Alejandrino, Génesis en griego (Septuaginta) | The 72 translators who produced the Septuagint (3rd century CE) | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Genesis_10_19_Codex_Alexandrinus.jpg) | pendiente |
-| I08 | William Blake, «Cuando las estrellas del alba cantaban» (Job) | William Blake | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Blake_-_Book_of_Job%2C_Plate_14%2C_When_the_Morning_Stars_Sang_Together_-_B1978.43.1516_-_Yale_Center_for_British_Art.jpg) | pendiente |
+| I07 | Códice Alejandrino, Génesis en griego (Septuaginta) | The 72 translators who produced the Septuagint (3rd century CE) | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Genesis_10_19_Codex_Alexandrinus.jpg) | sí |
+| I08 | William Blake, «Cuando las estrellas del alba cantaban» (Job) | William Blake | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Blake_-_Book_of_Job%2C_Plate_14%2C_When_the_Morning_Stars_Sang_Together_-_B1978.43.1516_-_Yale_Center_for_British_Art.jpg) | sí |
 | I09 | Libro de Enoc en ge'ez, s. XVIII (foto en exposición) | Francesco Bini | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Etiopia%2C_libro_di_enoch_%28in_ge%27ez%29%2C_xviii_secolo_%28bnf%29.jpg) | sí |
-| I10 | Monte Hermón nevado (foto) | Someone35 | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Snow_in_mount_hermon%2C_Golan_Heights.jpg) | pendiente |
+| I10 | Monte Hermón nevado (foto) | Someone35 | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Snow_in_mount_hermon%2C_Golan_Heights.jpg) | sí |
 | I11 | Cueva 4 de Qumrán (foto, 2019) | Bahnfrend | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cave_4Q%2C_Caves_of_Qumran%2C_2019_%2801%29.jpg) | sí |
 | I12 | Bruegel el Viejo, «La caída de los ángeles rebeldes» (1562) | Pieter Bruegel el Viejo | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Pieter_Bruegel_the_Elder_-_The_Fall_of_the_Rebel_Angels_-_Google_Art_Project.jpg) | sí |
 | I13 | Doré, «El paraíso perdido», lámina 9 (reserva) *(reserva)* | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Paradise_Lost_9.jpg) | sí |
 | I14 | Guido Reni, «San Miguel arcángel» | Guido Reni | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg) | sí |
 | I15 | Flavio Josefo, grabado (Rijksmuseum) | Rijksmuseum | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Portret_van_Flavius_Josephus%2C_RP-P-1906-2507.jpg) | sí |
-| I16 | Filón de Alejandría, grabado de Thevet (s. XVI) | André Thevet | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:PhiloThevet.jpg) | pendiente |
-| I17 | Botticelli, «San Agustín en su estudio» | Sandro Botticelli | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_St_Augustin_dans_son_cabinet_de_travail.jpg) | pendiente |
+| I16 | Filón de Alejandría, grabado de Thevet (s. XVI) | André Thevet | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:PhiloThevet.jpg) | sí |
+| I17 | Botticelli, «San Agustín en su estudio» | Sandro Botticelli | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_St_Augustin_dans_son_cabinet_de_travail.jpg) | sí |
 | I18 | Tertuliano, grabado | anónimo | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tertullian.jpg) | sí |
 | I19 | Teófanes el Cretense, icono de san Justino | Teófanes el Cretense | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg) | sí |
 | I20 | Sinagoga de Rashi en Worms (Jewish Encyclopedia, 1906) | Jewish Encyclopedia | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:V10p325001_Rashi_Synagogue.jpg) | sí |
 | I21 | Manuscrito con Targum (hebreo y arameo) | anónimo | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Targum.jpg) | sí |
 | I22 | Fra Bartolomeo, «Adán y Eva con Caín y Abel» (usar recortes sin desnudos) | Fra Bartolomeo | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fra_Bartolomeo%2C_Adam_and_Eve_with_Cain_and_Abel.jpg) | sí |
-| I23 | Doré, «El regreso de los espías» | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dore_Return_of_the_Spies_From_the_Land_of_Promise.jpg) | pendiente |
-| I24 | Doré, «Moisés baja del Sinaí» | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:039.Moses_Comes_Down_from_Mount_Sinai.jpg) | pendiente |
-| I25 | Doré, «David mata a Goliat» | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:071A.David_Slays_Goliath.jpg) | pendiente |
+| I23 | Doré, «El regreso de los espías» | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dore_Return_of_the_Spies_From_the_Land_of_Promise.jpg) | sí |
+| I24 | Doré, «Moisés baja del Sinaí» | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:039.Moses_Comes_Down_from_Mount_Sinai.jpg) | sí |
+| I25 | Doré, «David mata a Goliat» | Gustave Doré | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:071A.David_Slays_Goliath.jpg) | sí |
 | I26 | Probst, «La cama de Og» (grabado s. XVIII; baja resolución, solo en recuadro) | Johann Balthasar Probst | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Og%27s_Bed_%28crop%29.jpg) | sí |
 | I27 | Tablilla del diluvio, Epopeya de Gilgamesh (Museo Británico) | Museo Británico (foto) | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:British_Museum_Flood_Tablet.jpg) | sí |
 | I28 | Relieve del héroe con león, identificado a menudo con Gilgamesh (Louvre) | Unknown author Unknown author | CC BY-SA 3.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hero_mastering_a_lion%2C_AO19862_%281818%29.jpg) | sí |
 | I29 | Dolmen de Gamla, Golán (recortar el cartel) | שועל | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gamla_Dolmen.jpg) | sí |
-| I30 | Dolmen en el sendero de Gamla | Mboesch | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gamla-dolmen-trail-dolmen-b.JPG) | pendiente |
+| I30 | Dolmen en el sendero de Gamla | Mboesch | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gamla-dolmen-trail-dolmen-b.JPG) | sí |
 | I31 | Exhumación del Gigante de Cardiff, 1869 (baja resolución, recuadro) | anónimo | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cardiff_giant_exhumed_1869.jpg) | sí |
-| I32 | Miniatura maniquea (Asia central) | Shahryâr Zâdag | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Manichaean_Miniature_Image.jpg) | pendiente |
+| I32 | Miniatura maniquea (Asia central) | Shahryâr Zâdag | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Manichaean_Miniature_Image.jpg) | sí |
 | I33 | Manuscrito iluminado etíope, s. XVIII | Ethiopian | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ethiopian%2C_Illuminated_Manuscript%2C_18th_century.jpg) | sí |
 | I34 | Libro plegable iluminado etíope (Walters) | Anonymous ( Ethiopia ) Unknown author | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ethiopian_-_Sensul_%28Folding_Illuminated_Book%29_-_Walters_3610_-_Open.jpg) | sí |
 | I35 | Espadas de la Edad del Bronce (museo de Zrenjanin) | Jozefsu | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bronze_Age_swords_%28closeup%29%2C_museum_Zrenjanin.jpg) | pendiente |
-| I36 | Frasco de kohl egipcio (Met) | Metropolitan Museum | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kohl_Container_Decorated_with_Bes-images_MET_DP112631.jpg) | pendiente |
-| I37 | Círculo del zodiaco, manuscrito medieval (NLW) | Unknown author Unknown author | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:F4.v._zodiac_circle_with_planets_-_NLW_MS_735C.png) | pendiente |
-| I38 | Langosta, grabado (Wellcome) | Wellcome Collection | CC BY 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_locust._Wood_engraving._Wellcome_V0022515.jpg) | pendiente |
-| I39 | Vía Láctea sobre el desierto (foto) | Steve Jurvetson | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg) | pendiente |
-| I40 | Desierto de Judea (foto) | James Emery from Douglasville, United States | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Judean_Wilderness_1423_%28509724469%29.jpg) | pendiente |
-| I41 | Desierto del Néguev (foto) | Rosewoman | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Negev_Desert_landscape.jpg) | pendiente |
-| I42 | Colinas de Judea (foto) | zeevveez from Jerusalem, Israel | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Judean_Hills_-_Landscape_%287442364628%29.jpg) | pendiente |
-| I43 | Papiro 78, carta de Judas (s. III–IV) | Unknown author Unknown author | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:P078-Jud-1_4-5-POxy2684-III-IV.jpg) | pendiente |
-| I44 | William Blake, Enoc (litografía, 1807) | William Blake | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Blake_Enoch_Lithograph_1807.jpg) | pendiente |
-| I45 | «Las ciudades gigantes de Basán» (libro de 1874) | Internet Archive Book Images | Sin restricciones conocidas (Flickr Commons) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_giant_cities_of_Bashan%3B_and_Syria%27s_holy_places_%281874%29_%2814779017832%29.jpg) | pendiente |
-| I46 | Cuevas de Qumrán (reserva, baja resolución) *(reserva)* | Hoshvilim | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Qumran_Caves%2C_Dead_Sea%2C_Palestine_-_near_shore_of_the_Dead_Sea.jpg) | pendiente |
+| I36 | Frasco de kohl egipcio (Met) | Metropolitan Museum | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kohl_Container_Decorated_with_Bes-images_MET_DP112631.jpg) | sí |
+| I37 | Círculo del zodiaco, manuscrito medieval (NLW) | Unknown author Unknown author | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:F4.v._zodiac_circle_with_planets_-_NLW_MS_735C.png) | sí |
+| I38 | Langosta, grabado (Wellcome) | Wellcome Collection | CC BY 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:A_locust._Wood_engraving._Wellcome_V0022515.jpg) | sí |
+| I39 | Vía Láctea sobre el desierto (foto) | Steve Jurvetson | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky_Black_Rock_Desert_Nevada.jpg) | sí |
+| I40 | Desierto de Judea (foto) | James Emery from Douglasville, United States | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Judean_Wilderness_1423_%28509724469%29.jpg) | sí |
+| I41 | Desierto del Néguev (foto) | Rosewoman | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Negev_Desert_landscape.jpg) | sí |
+| I42 | Colinas de Judea (foto) | zeevveez from Jerusalem, Israel | CC BY 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Judean_Hills_-_Landscape_%287442364628%29.jpg) | sí |
+| I43 | Papiro 78, carta de Judas (s. III–IV) | Unknown author Unknown author | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:P078-Jud-1_4-5-POxy2684-III-IV.jpg) | sí |
+| I44 | William Blake, Enoc (litografía, 1807) | William Blake | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:William_Blake_Enoch_Lithograph_1807.jpg) | sí |
+| I45 | «Las ciudades gigantes de Basán» (libro de 1874) | Internet Archive Book Images | Sin restricciones conocidas (Flickr Commons) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:The_giant_cities_of_Bashan%3B_and_Syria%27s_holy_places_%281874%29_%2814779017832%29.jpg) | sí |
+| I46 | Cuevas de Qumrán (reserva, baja resolución) *(reserva)* | Hoshvilim | CC BY-SA 4.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Qumran_Caves%2C_Dead_Sea%2C_Palestine_-_near_shore_of_the_Dead_Sea.jpg) | sí |
 | I47 | Códice Alejandrino, facsímil | E. M. Thompson: Facsimile of the Codex Alexandrinus. Trustees of the British Museum, Londo | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:CodexAlexandrinus_0022.jpg) | pendiente |
 | I48 | David y Goliat, grabado (Rijksmuseum) | Rijksmuseum | CC0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:David_en_Goliat%2C_RP-P-OB-16.175.jpg) | sí |
-| I49 | Monte Hermón, foto histórica (Colección Matson, Biblioteca del Congreso) | Matson Collection | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mount_Hermon_and_vicinity._Pharpar_and_Hermon._Snow_clad_Hermon_from_Nahar_Barbar_LOC_matpc.00224.jpg) | pendiente |
+| I49 | Monte Hermón, foto histórica (Colección Matson, Biblioteca del Congreso) | Matson Collection | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mount_Hermon_and_vicinity._Pharpar_and_Hermon._Snow_clad_Hermon_from_Nahar_Barbar_LOC_matpc.00224.jpg) | sí |
 | I50 | Miguel Ángel, «El diluvio» (foto de la Capilla Sixtina) | foto de Flickr (ver autor en la página) | CC BY-SA 2.0 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sistine_Chapel_ceiling_-_Deluge_%285387917576%29.jpg) | sí |
-| I51 | Gigante de Cardiff, foto de época | Unknown author Unknown author | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cardiff_Giant_2.jpg) | pendiente |
+| I51 | Gigante de Cardiff, foto de época | Unknown author Unknown author | Dominio público | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Cardiff_Giant_2.jpg) | sí |
