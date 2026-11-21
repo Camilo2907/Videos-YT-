@@ -20,3 +20,14 @@ La página de Pixabay Music bloquea la nube (error 403). Kevin MacLeod es músic
 - **Recorte automático de figuras**: HyperFrames trae una herramienta gratuita para recortar figuras, pero necesita
   **instalar** un complemento y eso requiere el permiso de Camilo. Sin él, recorto a mano las imágenes principales
   y el resto lleva acercamientos con efectos encima.
+
+## Versión 3 (con clips de video)
+Mismo enlace de revisión. Se sumaron 6 clips de **Mixkit** (licencia gratis de Mixkit, válida para YouTube, sin crédito obligatorio),
+bajados en 720p desde los enlaces del guion visual v4 de Visuales:
+- 0:00 páginas al viento (#25185) → luego el códice
+- 0:06 cielo estrellado (#46119) con «hijos de Dios»
+- 0:10 humo sobre la silueta de los nefilim (#50951)
+- 0:15 relámpago con trueno (#47948) → luego el diluvio de Doré
+- 0:30 montaña de noche (#46203) con «una montaña»
+- 0:57 nubes de tormenta (#9624) → luego «Génesis 6»
+Volumen medido: −13 LUFS, pico −1,0 dB.
