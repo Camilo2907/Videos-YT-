@@ -53,6 +53,7 @@ ElevenLabs se usa **solo para la voz en off final**. No para pruebas, efectos de
 
 ## Imágenes de stock
 - Solo fuentes con licencia libre: **Pexels, Pixabay, Unsplash** y **Wikimedia Commons** (arte clásico de dominio público, ideal para religión).
+  Los **clips de video** de stock salen de **Pexels** y **Pixabay** (licencia libre).
 - Anotar fuente y licencia de cada imagen en la entrega. Nada de imágenes de otros videos, películas o marcas de agua.
 - Las imágenes descargadas no se suben al repositorio (`trabajo/`).
 

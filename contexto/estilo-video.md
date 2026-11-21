@@ -16,6 +16,12 @@ Definido por Natalia con autorización de Camilo (2026-11-13). Se ajusta si Cami
   comparaciones lado a lado, flechas y resaltados, contadores de fechas.
 - **Imágenes de stock con movimiento:** acercamientos lentos, paneos y capas (nunca una imagen quieta).
 - **Arte clásico de dominio público** (pinturas, manuscritos, mosaicos) para personajes y escenas antiguas.
+- **Más dinamismo (decisión de Camilo, 2026-11-21):**
+  - **Clips de video de stock libres** (Pexels, Pixabay): tormentas, lluvia, mar, desierto, montañas, ruinas, velas, pergaminos,
+    estrellas, humo. Al menos **uno cada 20–40 s**, sobre todo en ganchos y momentos de tensión. Nada de películas ni de otros canales.
+  - **Imágenes animadas**: efecto de profundidad (2.5D / parallax) en pinturas, capas que se mueven, y encima partículas, polvo,
+    rayos de luz, humo o fuego de HyperFrames.
+  - Gratis: no se usan créditos de ningún servicio para esto.
 - Cambio visual cada **3 a 6 segundos**.
 - **Paleta:** azul noche `#0F1B2D` (fondo), pergamino `#F2E8D5` (texto y tarjetas), dorado `#C9A227` (resaltados),
   vino `#7A1F2B` (alertas y giros). Cada religión puede tener un color de acento propio en mapas y líneas de tiempo.
