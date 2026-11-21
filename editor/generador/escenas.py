@@ -173,7 +173,7 @@ S[153] = dict(base=[f("mapa")], g=[dict(t="mapa", vista="region", desde="region"
 S[154] = dict(base=[i("I28", "50% 25%", "in"), i("I27", "50% 50%", "in")], g=[dict(t="ficha", img=None, nombre="Gilgamesh", siglo="«dos tercios dios»", at="Gilgamesh", soloTexto=True)])
 S[155] = dict(base=[v(OLAS, 10), i("I27", "50% 40%", "left"), i("I03a", marco=True)], g=[dict(t="flecha", items=["Gilgamesh", "Génesis 6"], at="Génesis")])
 S[156] = dict(base=[i("I41", "50% 50%", "in", fondo=True)], g=[dict(t="rotulo", txt="Números 13:33")])
-S[157] = dict(base=[f()], g=[dict(t="columnas", cols=[("Hebreo", "oro"), ("Griego antiguo", "azul")], textos=["«…hijos de Anac, raza de los gigantes…»", "— la frase no está —"], arriba=False)])
+S[157] = dict(base=[f()], g=[dict(t="columnas", span=2, cols=[("Hebreo", "oro"), ("Griego antiguo", "azul")], textos=["«…hijos de Anac, raza de los gigantes…»", "— la frase no está —"], arriba=False)])
 S[158] = dict(base=["sigue"], g=[dict(t="sello", txt="¿AÑADIDO?", at="añadida")])
 S[159] = dict(base=[v(PIEDRAS, 8)])
 S[160] = dict(base=[i("I29", "30% 55%", "in", z=2.0, origen="15% 55%"), i("I30", "50% 50%", "right"), f("mapa")], g=[dict(t="mapa", vista="golan", desde="levante", zonas=[("dólmenes", 35.75, 32.9), ("", 35.85, 33.05), ("", 35.95, 32.75), ("", 35.7, 32.7)], at="dólmenes", tarde=0.6)])

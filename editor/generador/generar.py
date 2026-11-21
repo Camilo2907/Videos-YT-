@@ -77,7 +77,8 @@ def plano_imagen(c, n, j, img, o, a, b):
         inner.append('<div class="oscuro" style="opacity:0.45"></div>')
         inner.append(f'<div id="{sid}-mc" class="marco"><img src="assets/img/{img}.jpg" alt="{img}" /></div>')
         c.tw(f'tl.fromTo("#{sid}-bg", {{scale: 1.1}}, {{scale: 1.2, duration: {d}, ease: "none"}}, {st});')
-        c.tw(f'tl.fromTo("#{sid}-mc", {{scale: 0.94, opacity: 0}}, {{scale: 1.03, opacity: 1, duration: {d}, ease: "none"}}, {st});')
+        c.tw(f'tl.fromTo("#{sid}-mc", {{scale: 0.94}}, {{scale: 1.04, duration: {d}, ease: "none"}}, {st});')
+        c.tw(f'tl.fromTo("#{sid}-mc img", {{opacity: 0}}, {{opacity: 1, duration: 0.5, ease: "power1.out"}}, {st});')
     elif o.get("fondo"):
         inner.append(f'<img id="{sid}-i" class="kb" src="assets/img/{img}-fondo.jpg" style="{sty}" alt="{img}" />')
         inner.append('<div class="oscuro" style="opacity:0.5"></div>')
