@@ -17,3 +17,7 @@
 3. **Guionista** investiga y escribe un guion **propio** → **Gancho** afina inicio, retención y título. Camilo aprueba el guion.
 4. **Visuales** arma el guion visual y junta las imágenes → **Voz** prepara el texto y los caracteres; con el OK de Camilo, **Natalia** genera la voz por bloques.
 5. **Editor** monta con HyperFrames → **Publicación YouTube** prepara textos y miniatura. Camilo revisa y publica.
+
+## Aparte: videos de GTA VI
+El subagente `editor-gtavi` hace videos verticales de GTA VI en la carpeta `gtavi/` (rama `agente/editor-gtavi`).
+No es parte del flujo de religión: sus reglas están en `gtavi/CLAUDE.md`.

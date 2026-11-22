@@ -1,0 +1,7 @@
+# La raíz ignora *.mp3 y *.wav; aquí se permiten los efectos de sonido de la plantilla (licencia Pixabay)
+# y el sonido de la ruleta, que se genera por código. Los videos (.mp4/.mov) siguen sin subirse.
+!*.mp3
+!*.wav
+*/assets/footage/
+*/.hyperframes/
+*/renders/
