@@ -26,6 +26,9 @@ plantilla. Ejemplo: 8,8 + 14 = 22,8 s. Lo ideal según Camilo es grabar unos 15 
    - `gtavi/pasos-cta/assets/`: banner, avatar y efectos de sonido (licencia Pixabay, ver `sfx/CREDITS.md`).
    - `gtavi/herramientas/sonido_ruleta.py`: sonido de la ruleta sincronizado.
    - `gtavi/ejemplo-ruleta/`: proyecto de ejemplo completo. Cópialo como punto de partida.
+   - `trabajo/gtavi/ruleta.html`: la ruleta que graba Camilo (Vice Spin Wheel). **No se sube** porque trae el logo y la
+     portada de GTA VI y el logo de PayPal. Si no está en la sesión, pídesela a Camilo. Sirve para revisar casillas,
+     colores y sonidos: 8 casillas, giro de 5,6 s que frena así: 1 − (1 − p)⁴.
 
 ## 1. Revisar el video de Camilo
 
@@ -84,9 +87,11 @@ El sonido sale del HTML original de la ruleta: un "tic" por casilla (onda cuadra
    # -> T0=0.650  E=64.42  R0=0.448
    ```
    Comprueba que los "tic modelo" coincidan con los cambios detectados de la zona lenta (±0,03 s).
-4. Genera el audio. Argumentos: duración del video, T0, E, R0 y el segundo de la fanfarria (= `T_RESULTADO`):
+4. Genera el audio. Argumentos: duración del video, T0, E, R0, el segundo de la fanfarria (= `T_RESULTADO`) y el
+   resultado: `gana` si cae en WIN GTA VI o BONUS (5 notas) o `pierde` si cae en SO CLOSE, TRY AGAIN, ALMOST o
+   SPIN AGAIN (2 notas graves). Sin ese último dato, es `gana`:
    ```bash
-   python3 -I herramientas/sonido_ruleta.py generar $NUEVO/assets/sfx/ruleta-giro.wav 8.8 0.65 64.5 0.45 6.27
+   python3 -I herramientas/sonido_ruleta.py generar $NUEVO/assets/sfx/ruleta-giro.wav 8.8 0.65 64.5 0.45 6.27 gana
    ```
 
 ## 6. Configurar `intro.json`
@@ -125,6 +130,8 @@ Diseño fijo del intro:
 - Al caer: **"IT LANDED ON GTA VI!"** en el mismo lugar.
 - **Sin letreros abajo.** Camilo pidió quitar "WATCH WHERE IT STOPS", "ONE TAKE · NO CUTS" y la franja de la nota.
 - Cambia el texto del gancho solo si el premio es otro, y siempre en inglés.
+- Si la ruleta **no** cae en un premio, no pongas "IT LANDED ON GTA VI!": pídele a Camilo el texto (en inglés) y
+  nunca muestres un premio que no salió.
 
 ## 8. Generar y revisar
 

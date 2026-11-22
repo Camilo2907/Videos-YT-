@@ -3,7 +3,8 @@
 La ruleta (Vice_Spin_Wheel / ruleta.html) gira así:
   ángulo(t) = inicio + E * (1 - (1 - p)^4),  p = (t - t0) / 5.6 s,  8 casillas.
 Cada vez que una casilla cruza la flecha suena un "tic" (onda cuadrada 1100 Hz, 0.12 -> 0.001 en 40 ms).
-Al terminar suena la fanfarria (triángulo 523-659-784-1047-1319 Hz cada 0.11 s, 0.25 -> 0.001 en 0.5 s).
+Al terminar suena la fanfarria (triángulo cada 0.11 s, 0.25 -> 0.001 en 0.5 s):
+  si gana (WIN GTA VI o BONUS): 523-659-784-1047-1319 Hz; si no gana (SO CLOSE, TRY AGAIN, ALMOST, SPIN AGAIN): 392-330 Hz.
 
 Uso:
   1) Detectar cambios de casilla bajo la flecha (para ajustar):
@@ -12,7 +13,8 @@ Uso:
   2) Ajustar el modelo con dos tics consecutivos del final (los lentos, fiables) y el momento del resultado:
      python3 -I sonido_ruleta.py ajustar T_RESULTADO TIC_PENULTIMO TIC_ULTIMO
   3) Generar el audio (WAV mono 48 kHz):
-     python3 -I sonido_ruleta.py generar SALIDA.wav DURACION T0 E R0 T_FANFARRIA
+     python3 -I sonido_ruleta.py generar SALIDA.wav DURACION T0 E R0 T_FANFARRIA [gana|pierde]
+        (si no se pone nada, es "gana")
 """
 import math, struct, subprocess, sys, wave
 
@@ -56,7 +58,7 @@ def tics(t0, E, r0):
     return sorted(out)
 
 
-def generar(salida, dur, t0, E, r0, t_fan):
+def generar(salida, dur, t0, E, r0, t_fan, resultado="gana"):
     SR = 48000
     buf = [0.0] * int(SR * dur)
     env = lambda tt, g0, T: g0 * (0.001 / g0) ** (min(tt, T) / T)
@@ -66,7 +68,8 @@ def generar(salida, dur, t0, E, r0, t_fan):
             tt = i / SR
             sq = 1.0 if math.sin(2 * math.pi * 1100 * tt) >= 0 else -1.0
             if 0 <= s + i < len(buf): buf[s + i] += sq * env(tt, .12, .04)
-    for k, f in enumerate([523, 659, 784, 1047, 1319]):
+    notas = [392, 330] if resultado == "pierde" else [523, 659, 784, 1047, 1319]
+    for k, f in enumerate(notas):
         s = int((t_fan + k * .11) * SR)
         for i in range(int(.55 * SR)):
             tt = i / SR; tri = 4 * abs((f * tt) % 1 - .5) - 1
@@ -81,4 +84,7 @@ if __name__ == "__main__":
     cmd, a = sys.argv[1], sys.argv[2:]
     if cmd == "detectar": detectar(a[0], float(a[1]), float(a[2]))
     elif cmd == "ajustar": ajustar(*map(float, a))
-    elif cmd == "generar": generar(a[0], *map(float, a[1:]))
+    elif cmd == "generar":
+        res = a[6] if len(a) > 6 else "gana"
+        if res not in ("gana", "pierde"): sys.exit("El último argumento debe ser gana o pierde")
+        generar(a[0], *map(float, a[1:6]), res)

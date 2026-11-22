@@ -12,6 +12,10 @@ en español sencillo, preguntar antes de inventar, nada sale sin su aprobación 
 - **Datos del canal (POR DEFINIR):** nombre, @usuario, link de la bio, banner y foto. Se piden a Camilo; nunca se inventan.
 - **Nunca se suben:** los videos de Camilo (`assets/footage/`), su cara, datos de participantes ni los MP4 finales.
   Los renders quedan en `trabajo/gtavi/` y se entregan en el chat.
+- **Sorteo real** (lo confirmó Camilo): los premios que muestra la ruleta (GTA VI y el bono de PayPal €10) se entregan de
+  verdad y las reglas están en el link. Cada video lleva "Giveaway rules at the link". El video muestra lo que salió
+  en la ruleta, sin cortes ni trucos.
+- La ruleta (`trabajo/gtavi/ruleta.html`) **no se sube** porque trae logos y arte oficial. Si falta, se le pide a Camilo.
 - Siempre va "Not affiliated with Rockstar Games". Sin cifras falsas, sin ganadores inventados y sin decir que el
   espectador ya ganó.
 - Rama: `agente/editor-gtavi`.

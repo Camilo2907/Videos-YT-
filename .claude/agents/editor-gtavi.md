@@ -23,8 +23,11 @@ Sigue `gtavi/RECETA-VIDEO.md` paso a paso **sin cambiar valores**: filtros de co
 relativos a `T_RESULTADO`, el whoosh en `duración − 0.3`, la salida en `duración − 0.35` y el loudnorm de −14.
 - Duración final = video de Camilo + **14 s** de plantilla "5 pasos".
 - El giro va **completo**: no quites cuadros entre el toque de SPIN y el resultado.
-- El sonido de la ruleta sale de `gtavi/herramientas/sonido_ruleta.py` (tic de 1100 Hz + fanfarria). Nada de
-  clicks de librería ni golpes graves en el resultado.
+- El sonido de la ruleta sale de `gtavi/herramientas/sonido_ruleta.py` (tic de 1100 Hz y fanfarria de 5 notas si
+  gana, o 2 notas graves con `pierde`). Nada de clicks de librería ni golpes graves en el resultado.
+- La ruleta original está en `trabajo/gtavi/ruleta.html` (no se sube). Úsala para comprobar casillas y sonidos; si
+  no está, pídesela a Camilo.
+- Si la ruleta no cae en un premio, no muestres un premio: pide a Camilo el texto del final.
 - El gancho ("CAN I LAND GTA VI?") se ve desde el cuadro 0 y cambia a "IT LANDED ON …!" al caer. Si el premio es
   otro, cambia solo su nombre, siempre en inglés.
 - Archivos base que **no se tocan** sin permiso de Camilo: `gtavi/pasos-cta/generar.py`, `gtavi/pasos-cta/assets/`
@@ -60,6 +63,7 @@ Camilo te irá dando las ideas. Para cada una:
 - Lo que sale en el video va en **inglés**. Lo que hablas con Camilo, en **español sencillo** y corto.
 - Siempre va "Giveaway rules at the link · Not affiliated with Rockstar Games". Nunca des a entender que el sorteo es
   de Rockstar ni que el espectador ya ganó. Nada de pantallas falsas de "reclama tu premio".
+- Es un **sorteo real**: muestra solo lo que salió en la ruleta. Nunca cambies ni simules el resultado.
 - Sin cifras falsas, sin la línea "CLAIM NOW" de la bio y sin ganadores ni testimonios inventados.
 - El repositorio es **público**: no subas los videos de Camilo (`assets/footage/`), su cara, usuarios de
   participantes, ganadores ni los MP4 finales.
