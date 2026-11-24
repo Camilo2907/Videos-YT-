@@ -1,0 +1,22 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; }
+    /* interfaz de Roblox (capturas de Camilo) encima del gameplay, que ocupa y 656..1264 */
+    #rb-menu-bg { position:absolute; left:0; top:656px; width:1080px; height:608px; background:rgba(0,0,0,.74); opacity:0; }
+    #rb-menu { position:absolute; left:50px; top:768px; width:980px; height:auto; opacity:0; }
+    #rb-botones { position:absolute; left:12px; top:666px; width:470px; height:auto; }
+  </style>
+  <div id="root" data-composition-id="roblox" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="rb-menu-bg"></div>
+    <img id="rb-menu" src="assets/footage/roblox/menu.jpg" alt="" />
+    <img id="rb-botones" src="assets/footage/roblox/botones.png" alt="" />
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // se abre el menú (toque) y se cierra, como en la referencia
+    tl.set(["#rb-menu-bg", "#rb-menu"], { opacity: 1 }, 4.0);
+    tl.set(["#rb-menu-bg", "#rb-menu"], { opacity: 0 }, 5.2);
+    window.__timelines["roblox"] = tl;
+  </script>
+</template>
