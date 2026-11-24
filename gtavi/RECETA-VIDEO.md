@@ -5,7 +5,7 @@
 > de prueba; antes de **publicar** se cambia por el link real de las reglas del sorteo. La plantilla real que genera `generar.py` es de 5 pasos.
 
 Receta exacta para que cualquier agente haga los videos **iguales** al aprobado por Camilo
-(versión 3). Sigue los pasos en orden y no cambies valores sin
+(`gtavi/2026-11-24-ruleta-gta/`, aprobado el 24-11-2026: primer video de xNeonVice, con el fondo nuevo). Sigue los pasos en orden y no cambies valores sin
 permiso de Camilo.
 
 **Resultado:** MP4 vertical 1080×1920, 30 fps, H.264 + AAC. Dura lo que dure el video de Camilo más 14 s de
