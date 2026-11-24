@@ -16,12 +16,12 @@
   <script>
     window.__timelines = window.__timelines || {};
     const tl = gsap.timeline({ paused: true });
-    // se abre el menú (toque) y se cierra, como en la referencia
-    tl.set(["#rb-menu-bg", "#rb-menu"], { opacity: 1 }, 4.0);
-    tl.set(["#rb-menu-bg", "#rb-menu"], { opacity: 0 }, 5.2);
-    // aviso de salir del juego justo antes del corte al inicio de Roblox
-    tl.set(["#rb-menu-bg", "#rb-salir"], { opacity: 1 }, 9.3);
-    tl.set("#rb-botones", { opacity: 0 }, 9.3);
+    // gameplay seguido; al final: menú de opciones -> se cierra -> 0,4 s después el aviso de salir -> corte al inicio
+    tl.set(["#rb-menu-bg", "#rb-menu"], { opacity: 1 }, 10.0);
+    tl.set("#rb-menu", { opacity: 0 }, 11.2);
+    tl.set("#rb-menu-bg", { opacity: 0 }, 11.2);
+    tl.set(["#rb-menu-bg", "#rb-salir"], { opacity: 1 }, 11.6);
+    tl.set("#rb-botones", { opacity: 0 }, 11.6);
     window.__timelines["roblox"] = tl;
   </script>
 </template>
