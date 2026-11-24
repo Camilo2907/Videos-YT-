@@ -292,8 +292,8 @@ body = head(sid, 5, [("VISIT THE", False), ("CHANNEL", True)]) + f"""
     <svg viewBox="0 0 24 24" width="46" height="46" style="position:absolute;left:880px;top:27px;"><circle cx="12" cy="5" r="2" fill="#f1f1f1"/><circle cx="12" cy="12" r="2" fill="#f1f1f1"/><circle cx="12" cy="19" r="2" fill="#f1f1f1"/></svg>
     <img id="{sid}-banner" src="assets/banner.jpg" style="position:absolute;left:35px;top:100px;width:890px;height:245px;border-radius:20px;object-fit:cover;" />
     <img id="{sid}-av" src="assets/avatar-yt.jpg" style="position:absolute;left:35px;top:378px;width:160px;height:160px;border-radius:50%;object-fit:cover;" />
-    <div style="position:absolute;left:228px;top:392px;font:700 48px/1.1 'Roboto';letter-spacing:-.01em;">Channel Name</div>
-    <div style="position:absolute;left:228px;top:456px;font:500 30px 'Roboto';color:#f1f1f1;">@channelname</div>
+    <div style="position:absolute;left:228px;top:392px;font:700 48px/1.1 'Roboto';letter-spacing:-.01em;">xNeonVice</div>
+    <div style="position:absolute;left:228px;top:456px;font:500 30px 'Roboto';color:#f1f1f1;">@xNeonVice</div>
     <div id="{sid}-link" style="position:absolute;left:216px;top:494px;padding:6px 12px;border-radius:12px;font:500 28px 'Roboto';color:#f1f1f1;">
       <svg viewBox="0 0 24 24" width="30" height="30" style="vertical-align:-7px;margin-right:6px;"><path id="{sid}-link-i" d="{ICON['link']}" fill="#f1f1f1"/></svg><span id="{sid}-link-t">your-link.com</span></div>
     <div id="{sid}-btn" style="position:absolute;left:35px;top:572px;width:890px;height:76px;border-radius:38px;background:#f1f1f1;">

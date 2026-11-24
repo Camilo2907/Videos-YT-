@@ -1,7 +1,7 @@
 # Receta: video de la ruleta + plantilla "5 pasos"
 
-> **Estado:** los datos del canal en el paso 5 (nombre, @usuario, link, banner y foto) son de ejemplo y están
-> **POR DEFINIR**. El agente los pide antes del primer render. La plantilla real que genera `generar.py` es de 5 pasos.
+> **Estado:** el paso 5 ya tiene el canal de Camilo: **xNeonVice**, @xNeonVice, banner y logo de `gtavi/marca/`.
+> Falta el **link de la bio** (POR DEFINIR; hoy sale "your-link.com"). El agente lo pide antes del render. La plantilla real que genera `generar.py` es de 5 pasos.
 
 Receta exacta para que cualquier agente haga los videos **iguales** al aprobado por Camilo
 (versión 3). Sigue los pasos en orden y no cambies valores sin
@@ -168,7 +168,7 @@ Dura 14 s y la genera `generar.py`. Ya está aprobada por Camilo (v3):
 | 2 · SUBSCRIBE | 2,2 s | "SUBSCRIBE" pasa a "SUBSCRIBED ✓" y luego se toca la campanita, que se mueve y se pone dorada |
 | 3 · DROP A COMMENT | 3,0 s | Se escribe "This channel is fire 💎", se envía y aparece publicado |
 | 4 · SHARE IT | 2,2 s | Se abre el menú de compartir y se toca "Copy link" |
-| 5 · VISIT THE CHANNEL | 4,6 s | Captura tipo YouTube en modo oscuro (banner, foto, nombre del canal, @usuario y link de la bio: **POR DEFINIR**, hoy salen datos de ejemplo). Se toca **Subscribe** → "🔔 Subscribed" y luego **el link de la bio**, que abre una página con barra de carga |
+| 5 · VISIT THE CHANNEL | 4,6 s | Captura tipo YouTube en modo oscuro (banner y logo de xNeonVice, @xNeonVice y el link de la bio, que está **POR DEFINIR**). Se toca **Subscribe** → "🔔 Subscribed" y luego **el link de la bio**, que abre una página con barra de carga |
 
 - Números: Montserrat 900 cursiva, relleno cromado y sombra rosa desplazada. Entran girando en 3D con rebote, un aro
   dorado, dos contornos (azul y rosa) y un brillo que los cruza.

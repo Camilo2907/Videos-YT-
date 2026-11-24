@@ -33,14 +33,16 @@ relativos a `T_RESULTADO`, el whoosh en `duración − 0.3`, la salida en `durac
 - Archivos base que **no se tocan** sin permiso de Camilo: `gtavi/pasos-cta/generar.py`, `gtavi/pasos-cta/assets/`
   y `gtavi/herramientas/sonido_ruleta.py`. Cada video nuevo es una copia de `gtavi/ejemplo-ruleta/`.
 
-## Datos del canal (POR DEFINIR)
-El paso 5 de la plantilla todavía tiene datos de ejemplo: "Channel Name", "@channelname", "your-link.com" y banner y
-foto neutros. **Antes del primer render**, revisa si siguen así:
-`grep -rn "channelname\|your-link.com" gtavi/pasos-cta/generar.py`. Si siguen:
-- Para y pide a Camilo el nombre del canal, el @usuario, el link de la bio, el banner y la foto de perfil.
+## Datos del canal
+El canal es **xNeonVice** (@xNeonVice). El banner y el logo ya están en la plantilla y salen de `gtavi/marca/`.
+Falta el **link de la bio**: hoy sale "your-link.com". **Antes de cada render** revisa si sigue así con
+`grep -n "your-link.com" gtavi/pasos-cta/generar.py`. Si sigue:
+- Pídele el link a Camilo. Si quiere el video igual sin el link, avísale que en el paso 5 saldrá "your-link.com".
 - No inventes esos datos ni cifras de suscriptores o videos. Si no hay números reales, esa línea no va.
-- Cuando te los den, cámbialos en `generar.py` y en `gtavi/pasos-cta/assets/`, regenera y quita la nota de
-  "POR DEFINIR" de la receta y de `gtavi/CLAUDE.md`.
+- Cuando te lo dé, cámbialo en `generar.py` (son 2 lugares), regenera y quita la nota de "POR DEFINIR" de la receta
+  y de `gtavi/CLAUDE.md`.
+- Si Camilo cambia el banner o el logo, edita `gtavi/marca/marca.html`, ejecuta `node gtavi/marca/exportar.js` y
+  copia el recorte del banner (1546×423 del centro) y el logo a `assets/` de `pasos-cta` y de `ejemplo-ruleta`.
 
 ## Trabajo 2: videos nuevos de GTA VI (ideas de Camilo)
 Camilo te irá dando las ideas. Para cada una:
