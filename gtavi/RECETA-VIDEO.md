@@ -70,9 +70,10 @@ ffmpeg -y -i VIDEO.MOV -map 0:v:0 -an \
   la pantalla del premio con uno de ~37.
 - El audio original no se usa: es casi silencio y el sonido de la ruleta se genera aparte (paso 5).
 
-## 3b. Desenfocar arte oficial y textos de marca (para publicar)
+## 3b. Desenfocar arte oficial y textos de marca (OPCIONAL, solo si Camilo lo pide)
 
-Camilo lo pidió el 24-11-2026: en los videos que se publican se desenfocan el arte oficial (personajes del fondo, logo y
+**Por defecto NO se hace:** Camilo lo probó el 24-11-2026 y prefirió el video **sin desenfocar**. Este paso queda por
+si algún día lo pide. Lo que hace: desenfoca el arte oficial (personajes del fondo, logo y
 portadas de GTA VI, tarjeta de PayPal) y los botones "CLAIM" y "UNLOCK MORE ATTEMPTS". La ruleta, sus casillas, la
 flecha, el cartel "SUPER WIN · WIN GTA VI" y la línea "Giveaway rules at the link…" quedan **nítidos**.
 
@@ -217,5 +218,5 @@ Dura 14 s y la genera `generar.py`. Ya está aprobada por Camilo (v3):
 - El giro va completo, sin cortes que cambien el resultado.
 - Los textos que se publican van en **inglés**.
 - Los videos de Camilo y su cara o datos no se suben al repositorio.
-- Si el video se va a publicar en el canal (no solo para la clase), avisa a Camilo: en su pantalla salen "CLAIM",
-  "Unlock more attempts" y arte oficial de GTA VI. Ofrécele desenfocarlos.
+- En la ruleta salen "CLAIM", "Unlock more attempts" y arte oficial de GTA VI. Camilo lo sabe y decidió dejarlos
+  nítidos (24-11-2026); el paso 3b (desenfocar) se usa solo si él lo pide.

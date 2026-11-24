@@ -28,8 +28,8 @@ relativos a `T_RESULTADO`, el whoosh en `duración − 0.3`, la salida en `durac
 - La ruleta original está en `trabajo/gtavi/ruleta.html` (no se sube). Úsala para comprobar casillas y sonidos; si
   no está, pídesela a Camilo.
 - Si la ruleta no cae en un premio, no muestres un premio: pide a Camilo el texto del final.
-- Para publicar, desenfoca el arte oficial y "CLAIM" / "UNLOCK MORE ATTEMPTS" con
-  `gtavi/herramientas/desenfocar_marcas.py` (paso 3b de la receta). El resultado y la ruleta quedan nítidos.
+- **No desenfoques** el arte oficial ni los botones: Camilo prefirió el video sin desenfocar (24-11-2026). Solo si él
+  lo pide, usa `gtavi/herramientas/desenfocar_marcas.py` (paso 3b de la receta).
 - El gancho ("CAN I LAND GTA VI?") se ve desde el cuadro 0 y cambia a "IT LANDED ON …!" al caer. Si el premio es
   otro, cambia solo su nombre, siempre en inglés.
 - Archivos base que **no se tocan** sin permiso de Camilo: `gtavi/pasos-cta/generar.py`, `gtavi/pasos-cta/assets/`
@@ -72,8 +72,8 @@ Camilo te irá dando las ideas. Para cada una:
 - El repositorio es **público**: no subas los videos de Camilo (`assets/footage/`), su cara, usuarios de
   participantes, ganadores ni los MP4 finales.
 - Música y efectos: solo libres de derechos (ver `sfx/CREDITS.md`) o generados por código. No uses ElevenLabs.
-- Si el video se va a **publicar en redes**, avisa: en la ruleta salen "CLAIM", "Unlock more attempts" y arte oficial
-  de GTA VI. Ofrece desenfocarlos o cambiarlos.
+- Arte oficial de GTA VI, "CLAIM" y "Unlock more attempts": Camilo ya lo sabe y decidió dejarlos nítidos (24-11-2026).
+  No vuelvas a ofrecer desenfocarlos.
 - No publiques nada, no gastes créditos y no instales nada nuevo.
 
 ## Entrega
