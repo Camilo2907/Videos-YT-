@@ -60,15 +60,28 @@ ffmpeg -y -i VIDEO.MOV -map 0:v:0 -an \
   -c:v libx264 -crf 17 -preset medium -g 15 -movflags +faststart $NUEVO/assets/footage/ruleta.mp4
 ```
 - Si el video **no es HDR**, usa solo `-vf "scale=1080:1920,eq=saturation=1.12:contrast=1.04"`.
+- **Grabación de pantalla del iPhone** (1290×2796, 60 fps, SDR): arriba salen la barra del iPhone y la del visor de
+  archivos. Recorta la página a 9:16 y baja a 30 fps:
+  `-vf "crop=1290:2293:0:370,scale=1080:1920,fps=30,eq=saturation=1.12:contrast=1.04,format=yuv420p"`.
+  Revisa un cuadro antes: el `crop` empieza justo debajo de esas barras (y=370 en el video del 24-11).
+- **Espera antes del toque y pantalla del premio al final:** se recortan para que el toque quede en ~0,65 s y el
+  video termine ~2,5 s después del resultado (`-ss INICIO -t DURACION`). El giro entre el toque y el resultado **no se
+  toca**. Para hallar el toque y el resultado, mide la diferencia entre cuadros: el giro arranca con un salto de ~8 y
+  la pantalla del premio con uno de ~37.
 - El audio original no se usa: es casi silencio y el sonido de la ruleta se genera aparte (paso 5).
 
-## 4. Fondo de la plantilla (último cuadro, poco oscuro y poco desenfocado)
+## 4. Fondo de la plantilla (último cuadro, nítido y desenfoque suave)
 
+Sale del **video original** de Camilo (no de `ruleta.mp4`) para que no pierda calidad. `T_FONDO` = segundo del original
+que corresponde al final del recorte, menos 0,1 s (en el ejemplo del 24-11: 1,133 + 8,8 − 0,1 = 9,833). Usa el mismo
+`crop` del paso 3 (si no hubo recorte, quítalo):
 ```bash
-ffmpeg -y -sseof -0.1 -i $NUEVO/assets/footage/ruleta.mp4 -frames:v 1 -update 1 \
-  -vf "boxblur=6:1,eq=brightness=-0.06:saturation=0.95" $NUEVO/assets/footage/fondo-final.jpg
+ffmpeg -y -ss T_FONDO -i VIDEO.MOV -frames:v 1 \
+  -vf "crop=1290:2293:0:370,scale=1080:1920:flags=lanczos,eq=saturation=1.12:contrast=1.04,gblur=sigma=8:steps=3,eq=brightness=-0.06:saturation=0.95" \
+  -q:v 1 -qmin 1 $NUEVO/assets/footage/fondo-final.jpg
 ```
-Camilo pidió que el fondo **no se vea tan oscuro ni tan difuminado**. No subas el blur de 6 ni oscurezcas más de -0.06.
+Camilo pidió (24-11-2026) el fondo **de mejor calidad y un poco más borroso**: desenfoque gaussiano `sigma=8` (antes
+`boxblur=6`) y JPG a máxima calidad. No lo oscurezcas más de -0.06 (pidió que no se vea oscuro).
 
 ## 5. Sonido de la ruleta (el mismo de su HTML, sincronizado)
 
