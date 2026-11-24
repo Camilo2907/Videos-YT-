@@ -1,0 +1,23 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; }
+    /* texto fijo estilo TikTok: blanco con borde oscuro, sobre la parte baja del gameplay */
+    #meme-text { position:absolute; left:20px; right:120px; top:1030px; text-align:center;
+      font:600 66px/1.28 'Poppins', sans-serif; color:#fff; letter-spacing:-.005em;
+      -webkit-text-stroke:7px rgba(0,0,0,.85); paint-order:stroke fill;
+      text-shadow:0 3px 10px rgba(0,0,0,.55); }
+    #meme-emoji { display:inline-block; height:60px; width:auto; vertical-align:-10px; margin-left:8px; }
+  </style>
+  <div id="root" data-composition-id="meme" data-width="1080" data-height="1920">
+    <div id="meme-text">
+      <div id="meme-l1" data-var-text="linea1">Rockstar: 13 years</div>
+      <div id="meme-l2"><span data-var-text="linea2">Roblox: 3 days</span> <img id="meme-emoji" src="assets/img/emoji.png" alt="" /></div>
+    </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#meme-text", { opacity: 1 }, 0);
+    window.__timelines["meme"] = tl;
+  </script>
+</template>
