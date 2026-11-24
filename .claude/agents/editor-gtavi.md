@@ -28,6 +28,8 @@ relativos a `T_RESULTADO`, el whoosh en `duración − 0.3`, la salida en `durac
 - La ruleta original está en `trabajo/gtavi/ruleta.html` (no se sube). Úsala para comprobar casillas y sonidos; si
   no está, pídesela a Camilo.
 - Si la ruleta no cae en un premio, no muestres un premio: pide a Camilo el texto del final.
+- Para publicar, desenfoca el arte oficial y "CLAIM" / "UNLOCK MORE ATTEMPTS" con
+  `gtavi/herramientas/desenfocar_marcas.py` (paso 3b de la receta). El resultado y la ruleta quedan nítidos.
 - El gancho ("CAN I LAND GTA VI?") se ve desde el cuadro 0 y cambia a "IT LANDED ON …!" al caer. Si el premio es
   otro, cambia solo su nombre, siempre en inglés.
 - Archivos base que **no se tocan** sin permiso de Camilo: `gtavi/pasos-cta/generar.py`, `gtavi/pasos-cta/assets/`

@@ -70,6 +70,27 @@ ffmpeg -y -i VIDEO.MOV -map 0:v:0 -an \
   la pantalla del premio con uno de ~37.
 - El audio original no se usa: es casi silencio y el sonido de la ruleta se genera aparte (paso 5).
 
+## 3b. Desenfocar arte oficial y textos de marca (para publicar)
+
+Camilo lo pidió el 24-11-2026: en los videos que se publican se desenfocan el arte oficial (personajes del fondo, logo y
+portadas de GTA VI, tarjeta de PayPal) y los botones "CLAIM" y "UNLOCK MORE ATTEMPTS". La ruleta, sus casillas, la
+flecha, el cartel "SUPER WIN · WIN GTA VI" y la línea "Giveaway rules at the link…" quedan **nítidos**.
+
+1. Copia `desenfoque.json` del último proyecto y mide en `ruleta.mp4` (con una cuadrícula sobre un cuadro): centro de la
+   ruleta, ángulo de cada imagen de premio en el cuadro 0 (0° = derecha, sentido horario), la flecha, el cartel del
+   premio y la línea de reglas. `t_resultado` = segundo de la pantalla del premio.
+2. Ajusta el giro con las imágenes de premio (deja `t0` y `e_grados` aproximados: `e_grados` ≡ giro final medido, más
+   vueltas completas) y copia el mejor resultado al JSON:
+   ```bash
+   python3 -I ../herramientas/desenfocar_marcas.py ajustar desenfoque.json assets/footage/ruleta.mp4
+   ```
+3. Aplica y **revisa una hoja de cuadros** (las manchas tienen que seguir a las imágenes mientras gira):
+   ```bash
+   mv assets/footage/ruleta.mp4 assets/footage/ruleta-original.mp4
+   python3 -I ../herramientas/desenfocar_marcas.py video desenfoque.json assets/footage/ruleta-original.mp4 assets/footage/ruleta.mp4
+   ```
+4. El fondo del paso 4 pasa por `desenfocar_marcas.py cuadro` antes del `gblur` (ver el proyecto del 24-11).
+
 ## 4. Fondo de la plantilla (último cuadro, nítido y desenfoque suave)
 
 Sale del **video original** de Camilo (no de `ruleta.mp4`) para que no pierda calidad. `T_FONDO` = segundo del original

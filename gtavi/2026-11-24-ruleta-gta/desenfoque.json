@@ -1,0 +1,6 @@
+{"centro": [537, 1263], "radio_ruleta": 400, "radio_premios": 255, "radio_mancha": 112,
+ "angulos_premios": [-68.7, 21.3, 156.3, -113.0],
+ "t0": 0.60, "dur": 5.65, "e_grados": 2998, "t_resultado": 6.267,
+ "proteger_giro": [[495, 840, 585, 935]], "proteger": [[0, 1835, 1080, 1900]],
+ "proteger_premio": [[195, 1160, 885, 1470]],
+ "fuerza": 28}
