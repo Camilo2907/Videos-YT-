@@ -10,8 +10,9 @@ en español sencillo, preguntar antes de inventar, nada sale sin su aprobación 
 - **Sin ElevenLabs:** estos videos no llevan voz en off. El sonido sale de `herramientas/sonido_ruleta.py` y de
   `pasos-cta/assets/sfx/` (licencia Pixabay).
 - **Canal:** **xNeonVice** (@xNeonVice), aprobado por Camilo el 24-11-2026. Banner y logo propios en `gtavi/marca/`
-  (`marca.html` es la fuente; `node gtavi/marca/exportar.js` los vuelve a sacar). El **link de la bio** sigue
-  **POR DEFINIR** (en la plantilla sale "your-link.com"): se pide a Camilo, nunca se inventa.
+  (`marca.html` es la fuente; `node gtavi/marca/exportar.js` los vuelve a sacar). El **link de la bio** es
+  **provisional**: `linktr.ee/xNeonVice` (puesto como ejemplo el 24-11-2026, no está registrado). Antes de **publicar** un
+  video hay que cambiarlo por el link real de las reglas del sorteo (o que Camilo registre ese Linktree).
 - **Nunca se suben:** los videos de Camilo (`assets/footage/`), su cara, datos de participantes ni los MP4 finales.
   Los renders quedan en `trabajo/gtavi/` y se entregan en el chat.
 - **Sorteo real** (lo confirmó Camilo): los premios que muestra la ruleta (GTA VI y el bono de PayPal €10) se entregan de

@@ -35,12 +35,12 @@ relativos a `T_RESULTADO`, el whoosh en `duración − 0.3`, la salida en `durac
 
 ## Datos del canal
 El canal es **xNeonVice** (@xNeonVice). El banner y el logo ya están en la plantilla y salen de `gtavi/marca/`.
-Falta el **link de la bio**: hoy sale "your-link.com". **Antes de cada render** revisa si sigue así con
-`grep -n "your-link.com" gtavi/pasos-cta/generar.py`. Si sigue:
-- Pídele el link a Camilo. Si quiere el video igual sin el link, avísale que en el paso 5 saldrá "your-link.com".
+El **link de la bio** es provisional: `linktr.ee/xNeonVice` (de ejemplo, no está registrado). Puedes hacer videos con él,
+pero en cada entrega recuérdale a Camilo que **antes de publicar** hay que cambiarlo por el link real de las reglas del
+sorteo (o registrar ese Linktree). Si te da el link real:
 - No inventes esos datos ni cifras de suscriptores o videos. Si no hay números reales, esa línea no va.
-- Cuando te lo dé, cámbialo en `generar.py` (son 2 lugares), regenera y quita la nota de "POR DEFINIR" de la receta
-  y de `gtavi/CLAUDE.md`.
+- Cámbialo en `generar.py` (son 2 lugares), regenera la plantilla y quita la nota de "provisional" de la receta y de
+  `gtavi/CLAUDE.md`.
 - Si Camilo cambia el banner o el logo, edita `gtavi/marca/marca.html`, ejecuta `node gtavi/marca/exportar.js` y
   copia el recorte del banner (1546×423 del centro) y el logo a `assets/` de `pasos-cta` y de `ejemplo-ruleta`.
 

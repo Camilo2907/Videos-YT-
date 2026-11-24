@@ -295,7 +295,7 @@ body = head(sid, 5, [("VISIT THE", False), ("CHANNEL", True)]) + f"""
     <div style="position:absolute;left:228px;top:392px;font:700 48px/1.1 'Roboto';letter-spacing:-.01em;">xNeonVice</div>
     <div style="position:absolute;left:228px;top:456px;font:500 30px 'Roboto';color:#f1f1f1;">@xNeonVice</div>
     <div id="{sid}-link" style="position:absolute;left:216px;top:494px;padding:6px 12px;border-radius:12px;font:500 28px 'Roboto';color:#f1f1f1;">
-      <svg viewBox="0 0 24 24" width="30" height="30" style="vertical-align:-7px;margin-right:6px;"><path id="{sid}-link-i" d="{ICON['link']}" fill="#f1f1f1"/></svg><span id="{sid}-link-t">your-link.com</span></div>
+      <svg viewBox="0 0 24 24" width="30" height="30" style="vertical-align:-7px;margin-right:6px;"><path id="{sid}-link-i" d="{ICON['link']}" fill="#f1f1f1"/></svg><span id="{sid}-link-t">linktr.ee/xNeonVice</span></div>
     <div id="{sid}-btn" style="position:absolute;left:35px;top:572px;width:890px;height:76px;border-radius:38px;background:#f1f1f1;">
       <div id="{sid}-b1" style="position:absolute;left:0;right:0;top:0;height:76px;display:flex;align-items:center;justify-content:center;font:500 32px 'Roboto';color:#0f0f0f;">Subscribe</div>
       <div id="{sid}-b2" style="position:absolute;left:0;right:0;top:0;height:76px;display:flex;align-items:center;justify-content:center;font:500 32px 'Roboto';color:#f1f1f1;opacity:0;">
@@ -305,7 +305,7 @@ body = head(sid, 5, [("VISIT THE", False), ("CHANNEL", True)]) + f"""
     <div id="{sid}-web" style="position:absolute;left:0;right:0;top:395px;bottom:0;background:#1f1f1f;border-radius:32px 32px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.6);">
       <div style="position:absolute;left:430px;top:14px;width:100px;height:8px;border-radius:4px;background:#5a5a5a;"></div>
       <div style="position:absolute;left:35px;top:44px;width:890px;height:76px;border-radius:38px;background:#2e2e2e;display:flex;align-items:center;padding-left:30px;font:500 32px 'Roboto';color:#f1f1f1;">
-        <svg viewBox="0 0 24 24" width="30" height="30" style="margin-right:14px;"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z" fill="#aaa"/></svg>your-link.com</div>
+        <svg viewBox="0 0 24 24" width="30" height="30" style="margin-right:14px;"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z" fill="#aaa"/></svg>linktr.ee/xNeonVice</div>
       <div style="position:absolute;left:35px;top:138px;width:890px;height:6px;border-radius:3px;background:#3a3a3a;overflow:hidden;">
         <div id="{sid}-load" style="width:100%;height:100%;background:#3ea6ff;transform-origin:0 50%;"></div></div>
       <div style="position:absolute;left:35px;top:180px;width:600px;height:34px;border-radius:10px;background:#2a2a2a;"></div>
