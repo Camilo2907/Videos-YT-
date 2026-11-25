@@ -1,0 +1,50 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; overflow:hidden; background:#000; }
+    /* meme "Rockstar vs Roblox": gameplay de GTA VI con la interfaz de Roblox (capturas de Camilo) y texto fijo */
+    #intro-gameplay { position:absolute; left:0; top:656px; width:1080px; height:608px; object-fit:cover; }
+    #intro-inicio { position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }
+
+    
+    /* interfaz de Roblox (capturas de Camilo) encima del gameplay, que ocupa y 656..1264 */
+    #rb-menu-bg { position:absolute; left:0; top:656px; width:1080px; height:608px; background:rgba(0,0,0,.74); opacity:0; }
+    #rb-menu { position:absolute; left:50px; top:768px; width:980px; height:auto; opacity:0; }
+    #rb-salir { position:absolute; left:0; top:712px; width:1080px; height:auto; opacity:0; }
+    #rb-botones { position:absolute; left:12px; top:666px; width:470px; height:auto; }
+  
+    
+    /* texto fijo estilo TikTok: blanco con borde oscuro, sobre la parte baja del gameplay */
+    #meme-text { position:absolute; left:20px; right:120px; top:1030px; text-align:center;
+      font:600 66px/1.28 'Poppins', sans-serif; color:#fff; letter-spacing:-.005em;
+      text-shadow:3.5px 0.0px 0 #111,3.2px 1.3px 0 #111,2.5px 2.5px 0 #111,1.3px 3.2px 0 #111,0.0px 3.5px 0 #111,-1.3px 3.2px 0 #111,-2.5px 2.5px 0 #111,-3.2px 1.3px 0 #111,-3.5px 0.0px 0 #111,-3.2px -1.3px 0 #111,-2.5px -2.5px 0 #111,-1.3px -3.2px 0 #111,-0.0px -3.5px 0 #111,1.3px -3.2px 0 #111,2.5px -2.5px 0 #111,3.2px -1.3px 0 #111,0 4px 12px rgba(0,0,0,.6); }
+    #meme-emoji { display:inline-block; height:60px; width:auto; vertical-align:-10px; margin-left:8px; }
+    </style>
+  <div id="root" data-composition-id="intro" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <video id="intro-gameplay" class="clip" src="assets/footage/gameplay.mp4" data-start="0" data-duration="12.3" muted playsinline></video>
+    <video id="intro-inicio" class="clip" src="assets/footage/roblox/inicio.mp4" data-start="12.3" data-duration="3.3" muted playsinline></video>
+
+    <div id="rb-menu-bg"></div>
+    <img id="rb-menu" src="assets/footage/roblox/menu.jpg" alt="" />
+    <img id="rb-salir" src="assets/footage/roblox/salir.jpg" alt="" />
+    <img id="rb-botones" src="assets/footage/roblox/botones.png" alt="" />
+  
+    <div id="meme-text">
+      <div id="meme-l1" data-var-text="linea1">Rockstar: 13 años</div>
+      <div id="meme-l2"><span data-var-text="linea2">Roblox: 3 días</span> <img id="meme-emoji" src="assets/img/emoji.png" alt="" /></div>
+    </div>
+    </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // gameplay seguido; al final: menú de opciones -> se cierra -> 0,4 s después el aviso de salir -> corte al inicio
+    tl.set(["#rb-menu-bg", "#rb-menu"], { opacity: 1 }, 10.0);
+    tl.set("#rb-menu", { opacity: 0 }, 11.2);
+    tl.set("#rb-menu-bg", { opacity: 0 }, 11.2);
+    tl.set(["#rb-menu-bg", "#rb-salir"], { opacity: 1 }, 11.6);
+    tl.set("#rb-botones", { opacity: 0 }, 11.6);
+    tl.set(["#rb-menu-bg", "#rb-salir"], { opacity: 0 }, 12.3);  // corte al inicio de Roblox
+    
+    tl.set("#meme-text", { opacity: 1 }, 0);
+        window.__timelines["intro"] = tl;
+  </script>
+</template>
