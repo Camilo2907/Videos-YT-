@@ -492,7 +492,9 @@ def g_pincel(c, o, a, b):
     sube(c, f"#{gid} .g-grande", st + 0.4, 0.6, 20); sube(c, f"#{gid} .g-sub", st + 0.9, 0.6, 20)
 
 def g_final(c, o, a, b):
-    gid, st, d = capa(c, "centro", a, b, '<div class="fin-t">Nos vemos en el próximo video</div><div class="t-linea fin-l"></div><div class="fin-s">LOS NEFILIM</div>')
+    logo = '<img class="fin-logo" src="assets/logo.png" alt="Raíces de la Fe" />' if os.path.exists(f"{PROY}/assets/logo.png") else ""
+    gid, st, d = capa(c, "centro", a, b, f'{logo}<div class="fin-t">Nos vemos en el próximo video</div><div class="t-linea fin-l"></div><div class="fin-s">RAÍCES DE LA FE</div>')
+    if logo: c.tw(f'tl.fromTo("#{gid} .fin-logo", {{opacity: 0, scale: 0.85}}, {{opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.5)"}}, {st});')
     sube(c, f"#{gid} .fin-t", st + 0.2, 0.8, 30)
     c.tw(f'tl.fromTo("#{gid} .fin-l", {{scaleX: 0}}, {{scaleX: 1, duration: 0.8}}, {st + 0.6});')
     sube(c, f"#{gid} .fin-s", st + 1.0, 0.6, 15)
