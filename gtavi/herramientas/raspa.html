@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Scratch &amp; Win</title>
+<!-- Raspa y gana de xNeonVice. Arte propio (sin logos ni arte oficial de Rockstar).
+     Resultado al azar con las mismas probabilidades que la ruleta: GTA VI 3/8, PayPal €10 1/8, nada 4/8. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Bebas+Neue&family=Rubik:wght@500;700;800&display=swap">
+<style>
+  :root{--night:#170a2e;--pink:#ff4fa3;--pink2:#ff9ec9;--teal:#2ee6d6;--gold:#ffc861;--ink:#fff4ea}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%;background:var(--night);color:var(--ink);font-family:"Rubik",system-ui,sans-serif;
+    overflow:hidden;overscroll-behavior:none;-webkit-user-select:none;user-select:none}
+  .stage{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.4vh;
+    padding:max(3vh,env(safe-area-inset-top)) 5vw max(3vh,env(safe-area-inset-bottom));overflow:hidden;
+    background:linear-gradient(180deg,#140829 0%,#3b1366 34%,#a3267f 60%,#ff5f7e 78%,#ffb36b 100%)}
+  /* sol a rayas y palmeras de fondo */
+  .sun{position:absolute;left:50%;bottom:-18vw;width:120vw;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+    background:linear-gradient(180deg,#fff1a8,#ffb347 45%,#ff3d8b);opacity:.55;
+    -webkit-mask:repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 30px);mask:repeating-linear-gradient(180deg,#000 0 22px,transparent 22px 30px)}
+  .palm{position:absolute;bottom:-2vh;width:46vw;fill:#12061f;opacity:.9}
+  .palm.l{left:-14vw}.palm.r{right:-14vw;transform:scaleX(-1)}
+  .head{position:relative;text-align:center;z-index:2}
+  .kicker{font:400 4.2vw "Bebas Neue",sans-serif;letter-spacing:.25em;color:#ffe2b8;opacity:.9}
+  .title{font:400 13vw/0.92 "Bungee",Impact,sans-serif;color:#fff;
+    text-shadow:0 0 6px #fff,0 0 18px var(--pink),0 0 42px var(--pink),0 6px 0 #7a1350}
+  .title .x{color:var(--gold);text-shadow:0 0 6px #fff4d6,0 0 20px var(--gold),0 6px 0 #7a3d10}
+  .rule{margin-top:1vh;font:400 6vw "Bebas Neue",sans-serif;letter-spacing:.18em;color:var(--teal);
+    text-shadow:0 0 10px rgba(46,230,214,.8),0 3px 0 #0b3b44}
+  /* tarjeta */
+  .card{position:relative;z-index:2;width:88vw;max-width:520px;aspect-ratio:1;border-radius:6vw;padding:4vw;
+    background:linear-gradient(160deg,#2a1150,#170a2e);border:3px solid var(--gold);
+    box-shadow:0 0 0 6px #2a1238,0 0 0 9px var(--pink),0 0 40px rgba(255,79,163,.7),0 20px 50px rgba(0,0,0,.5)}
+  .grid{position:relative;width:100%;height:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:2.6vw}
+  .cell{position:relative;border-radius:3.6vw;display:grid;place-items:center;text-align:center;
+    background:radial-gradient(circle at 50% 35%,#3d1a6e,#1d0c38);border:2px solid rgba(255,200,97,.35);transition:transform .3s}
+  .cell.win{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold),0 0 28px var(--gold);animation:pulse .8s ease-in-out infinite}
+  @keyframes pulse{50%{transform:scale(1.07)}}
+  .sym{font-size:13vw;line-height:1}
+  .sym.gta{font:400 8.2vw/0.9 "Bungee",Impact,sans-serif;color:#fff;
+    text-shadow:0 0 6px #fff,0 0 14px var(--pink),0 4px 0 #7a1350}
+  .sym.gta small{display:block;font:400 4.4vw "Bebas Neue",sans-serif;letter-spacing:.12em;color:var(--gold);text-shadow:none;margin-top:.6vw}
+  .sym.cash{font:700 8.6vw/1 "Rubik",sans-serif;color:#7dffb0;text-shadow:0 0 10px rgba(125,255,176,.7),0 3px 0 #0e5a33}
+  .sym.cash small{display:block;font:400 4.2vw "Bebas Neue",sans-serif;letter-spacing:.14em;color:#d9ffe8;margin-top:.6vw}
+  #scratch{position:absolute;inset:4vw;width:calc(100% - 8vw);height:calc(100% - 8vw);border-radius:3.6vw;touch-action:none;cursor:pointer;transition:opacity .6s}
+  .foot{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;gap:1.2vh;align-items:center}
+  .result{min-height:9vw;font:400 7vw/1.05 "Bungee",Impact,sans-serif;color:var(--gold);padding:1.6vw 4vw;border-radius:4vw;
+    background:rgba(23,10,46,.82);box-shadow:0 0 0 3px var(--gold),0 0 24px rgba(255,200,97,.6);
+    text-shadow:0 0 6px #fff4d6,0 0 18px var(--gold),0 3px 0 #7a3d10;opacity:0;transform:scale(.4);transition:all .45s cubic-bezier(.2,1.6,.4,1)}
+  .result.show{opacity:1;transform:scale(1)}
+  .result.lose{color:#fff;box-shadow:0 0 0 3px var(--pink),0 0 24px rgba(255,79,163,.6);text-shadow:0 0 10px var(--pink),0 3px 0 #7a1350}
+  .disc{font:500 2.9vw "Rubik",sans-serif;color:#fff;opacity:.85;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+  .again{font:700 3.6vw "Rubik",sans-serif;letter-spacing:.08em;color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.35);
+    border-radius:999px;padding:1.6vw 4.4vw;opacity:.55}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="sun"></div>
+  <svg class="palm l" viewBox="-460 -1320 920 1320" aria-hidden="true"><g id="palm"><path d="M-22 0 C -10 -300, 40 -650, 120 -960 L 146 -952 C 70 -650, 24 -300, 22 0 Z"/><g transform="translate(133,-958)"><path d="M0 0 C -120 -90 -300 -80 -430 30 C -300 -30 -150 -20 0 18 Z"/><path d="M0 0 C -90 -150 -260 -200 -380 -150 C -250 -140 -120 -80 0 14 Z"/><path d="M0 0 C -20 -160 -110 -260 -220 -300 C -120 -220 -60 -120 -6 10 Z"/><path d="M0 0 C 60 -170 180 -250 300 -250 C 190 -200 90 -110 8 12 Z"/><path d="M0 0 C 130 -110 300 -120 420 -40 C 290 -70 150 -40 4 18 Z"/><path d="M0 0 C 140 -20 290 40 380 160 C 260 70 130 40 0 22 Z"/><circle cx="0" cy="12" r="26"/></g></g></svg>
+  <svg class="palm r" viewBox="-460 -1320 920 1320" aria-hidden="true"><use href="#palm"/></svg>
+
+  <div class="head">
+    <div class="kicker"><span style="color:var(--gold)">x</span>NEONVICE · VICE CITY EDITION</div>
+    <div class="title">SCRATCH<br>&amp; WIN</div>
+    <div class="rule">MATCH 3 TO WIN</div>
+  </div>
+
+  <div class="card">
+    <div class="grid" id="grid"></div>
+    <canvas id="scratch" aria-label="Scratch the card"></canvas>
+  </div>
+
+  <div class="foot">
+    <div class="result" id="result"></div>
+    <div class="disc">Giveaway rules at the link · Not affiliated with Rockstar Games</div>
+    <button class="again" id="again">NEW CARD</button>
+  </div>
+</div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script>
+/* ---------- azar justo (crypto) ---------- */
+const rnd = n => { const a = new Uint32Array(1); crypto.getRandomValues(a); return a[0] % n; };
+const shuffle = arr => { for (let i = arr.length - 1; i > 0; i--) { const j = rnd(i + 1); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; };
+
+const GTA = { k: 'gta', html: 'GTA<br>VI<small>FULL GAME</small>', cls: 'gta', label: 'GTA VI!' };
+const CASH = { k: 'cash', html: '€10<small>PAYPAL</small>', cls: 'cash', label: 'PAYPAL €10!' };
+const FILL = ['🌴', '💎', '⭐', '🚤', '🌅', '🦩'].map(e => ({ k: e, html: e, cls: '' }));
+
+/* Mismas probabilidades que la ruleta: 3/8 GTA VI, 1/8 PayPal €10, 4/8 sin premio. */
+function newCard() {
+  const r = rnd(8);
+  const prize = r < 3 ? GTA : r < 4 ? CASH : null;
+  let cells = [];
+  if (prize) cells.push(prize, prize, prize);
+  // el resto: ningún símbolo 3 veces (los premios pueden salir 2 veces = "casi")
+  const pool = [GTA, CASH, ...FILL].filter(s => s !== prize);
+  const count = {};
+  while (cells.length < 9) {
+    const s = pool[rnd(pool.length)];
+    if ((count[s.k] || 0) >= 2) continue;
+    count[s.k] = (count[s.k] || 0) + 1; cells.push(s);
+  }
+  return { prize, cells: shuffle(cells) };
+}
+
+/* ---------- sonido (Web Audio) ---------- */
+let actx; const au = () => (actx = actx || new (window.AudioContext || window.webkitAudioContext)());
+let scratchGain = null, lastNoise = 0;
+function scratchSound() {
+  try {
+    const a = au(), now = a.currentTime; if (now - lastNoise < 0.045) return; lastNoise = now;
+    const len = Math.floor(a.sampleRate * 0.06), buf = a.createBuffer(1, len, a.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+    const src = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    f.type = 'bandpass'; f.frequency.value = 2600 + Math.random() * 1400; f.Q.value = .8;
+    g.gain.value = .22; src.buffer = buf; src.connect(f).connect(g).connect(a.destination); src.start();
+  } catch (e) {}
+}
+function fanfare(win) {
+  try {
+    const a = au();
+    (win ? [523, 659, 784, 1047, 1319] : [392, 330]).forEach((fr, i) => {
+      const o = a.createOscillator(), g = a.createGain(); o.type = 'triangle'; o.frequency.value = fr;
+      const t = a.currentTime + i * .11; g.gain.setValueAtTime(.16, t); g.gain.exponentialRampToValueAtTime(.001, t + .5);
+      o.connect(g).connect(a.destination); o.start(t); o.stop(t + .55);
+    });
+  } catch (e) {}
+}
+
+/* ---------- tarjeta ---------- */
+const grid = document.getElementById('grid'), cv = document.getElementById('scratch'), cx = cv.getContext('2d');
+const resultEl = document.getElementById('result');
+let card, done = false, drawing = false, last = null;
+
+function paintCover() {
+  const dpr = Math.min(3, window.devicePixelRatio || 1), w = cv.clientWidth, h = cv.clientHeight;
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  cx.globalCompositeOperation = 'source-over';
+  const g = cx.createLinearGradient(0, 0, w, h);
+  g.addColorStop(0, '#d9d4e6'); g.addColorStop(.35, '#a9a3bd'); g.addColorStop(.5, '#f3f0fa'); g.addColorStop(.65, '#a29cb6'); g.addColorStop(1, '#cfc9de');
+  cx.fillStyle = g; cx.beginPath(); cx.roundRect(0, 0, w, h, w * .04); cx.fill();
+  for (let i = 0; i < 2600; i++) { cx.fillStyle = `rgba(${Math.random() < .5 ? '255,255,255' : '60,50,90'},${Math.random() * .16})`; cx.fillRect(Math.random() * w, Math.random() * h, 1.5, 1.5); }
+  // líneas de las casillas y texto
+  cx.strokeStyle = 'rgba(80,60,120,.25)'; cx.lineWidth = 2;
+  for (let i = 1; i < 3; i++) { cx.beginPath(); cx.moveTo(w * i / 3, 8); cx.lineTo(w * i / 3, h - 8); cx.stroke(); cx.beginPath(); cx.moveTo(8, h * i / 3); cx.lineTo(w - 8, h * i / 3); cx.stroke(); }
+  cx.fillStyle = 'rgba(70,40,110,.75)'; cx.textAlign = 'center'; cx.textBaseline = 'middle';
+  cx.font = `${Math.round(w * .085)}px Bungee, Impact, sans-serif`; cx.fillText('SCRATCH HERE', w / 2, h / 2 - w * .03);
+  cx.font = `${Math.round(w * .05)}px "Bebas Neue", sans-serif`; cx.fillText('MATCH 3 TO WIN', w / 2, h / 2 + w * .07);
+}
+
+function deal() {
+  card = newCard(); done = false; resultEl.className = 'result'; resultEl.textContent = '';
+  grid.innerHTML = card.cells.map(s => `<div class="cell"><div class="sym ${s.cls}">${s.html}</div></div>`).join('');
+  cv.style.opacity = 1; cv.style.pointerEvents = 'auto'; paintCover();
+}
+
+function pos(e) { const r = cv.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
+function scratchAt(p) {
+  cx.globalCompositeOperation = 'destination-out'; cx.lineCap = 'round'; cx.lineJoin = 'round';
+  cx.strokeStyle = '#000'; cx.globalAlpha = 1; cx.lineWidth = cv.clientWidth * .11;
+  cx.beginPath(); if (last) cx.moveTo(last.x, last.y); else cx.moveTo(p.x - .1, p.y); cx.lineTo(p.x, p.y); cx.stroke();
+  last = p; scratchSound();
+}
+let checkT = 0;
+function checkCleared() {
+  const { width: w, height: h } = cv, data = cx.getImageData(0, 0, w, h).data; let clear = 0, n = 0;
+  for (let i = 3; i < data.length; i += 4 * 40) { n++; if (data[i] < 40) clear++; }
+  if (clear / n > .58) reveal();
+}
+function reveal() {
+  if (done) return; done = true; cv.style.opacity = 0; cv.style.pointerEvents = 'none';
+  const cells = [...grid.children];
+  if (card.prize) {
+    card.cells.forEach((s, i) => { if (s === card.prize) cells[i].classList.add('win'); });
+    resultEl.innerHTML = 'MATCHED 3:<br>' + card.prize.label; resultEl.className = 'result show';
+    fanfare(true); confetti();
+  } else {
+    resultEl.textContent = 'SO CLOSE!'; resultEl.className = 'result show lose'; fanfare(false);
+  }
+}
+cv.addEventListener('pointerdown', e => { if (done) return; drawing = true; last = null; cv.setPointerCapture(e.pointerId); au(); scratchAt(pos(e)); });
+cv.addEventListener('pointermove', e => { if (!drawing || done) return; scratchAt(pos(e)); const t = performance.now(); if (t - checkT > 150) { checkT = t; checkCleared(); } });
+['pointerup', 'pointercancel'].forEach(ev => cv.addEventListener(ev, () => { drawing = false; last = null; if (!done) checkCleared(); }));
+document.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
+document.getElementById('again').onclick = deal;
+addEventListener('resize', () => { if (!done) paintCover(); });
+
+/* ---------- confeti ---------- */
+function confetti() {
+  const c = document.getElementById('confetti'), x = c.getContext('2d'); c.width = innerWidth * 2; c.height = innerHeight * 2;
+  const cols = ['#ff4fa3', '#2ee6d6', '#ffc861', '#ffffff', '#b28cff'];
+  const ps = Array.from({ length: 170 }, () => ({ x: Math.random() * c.width, y: -30 - Math.random() * c.height * .6, vx: (Math.random() - .5) * 5, vy: 3 + Math.random() * 6, r: Math.random() * 6.28, vr: (Math.random() - .5) * .3, s: 10 + Math.random() * 12, col: cols[Math.floor(Math.random() * 5)] }));
+  const t0 = performance.now();
+  (function f(now) {
+    x.clearRect(0, 0, c.width, c.height);
+    ps.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += .04; p.r += p.vr; x.save(); x.translate(p.x, p.y); x.rotate(p.r); x.fillStyle = p.col; x.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); x.restore(); });
+    if (now - t0 < 3600) requestAnimationFrame(f); else x.clearRect(0, 0, c.width, c.height);
+  })(t0);
+}
+
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(deal);
+</script>
+</body>
+</html>
