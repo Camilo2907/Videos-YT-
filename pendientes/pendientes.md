@@ -20,3 +20,4 @@
 | Fecha | Tema | Religión |
 |---|---|---|
 | 2026-11-21 | Los Nefilim | Judaísmo / cristianismo |
+| 2026-11-28 | ¿Predijo Nostradamus el eclipse de 2026? | Cristianismo / profecía (divulgación) |
