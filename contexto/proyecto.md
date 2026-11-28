@@ -7,7 +7,7 @@
   (decisión de Camilo, 2026-11-20). No se proponen temas por cuenta propia salvo que Camilo lo pida.
 - **Perspectiva del canal:** **divulgación neutral y respetuosa**. Se explica qué cree cada tradición y qué dice la historia,
   sin decir cuál es la verdadera ni burlarse de ninguna.
-- **Nombre del canal:** POR DEFINIR (Camilo aún no lo elige).
+- **Nombre del canal:** **Raíces de la Fe** (elegido por Camilo el 2026-11-21). Lema: «Historia, textos y misterios de las religiones». Logo: árbol dorado con raíces dentro de un círculo, sobre azul noche.
 - **Frecuencia:** **1 video largo por semana** + **2 o 3 Shorts** sacados de ese mismo video.
 
 ## Producción
