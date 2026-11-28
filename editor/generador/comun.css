@@ -109,8 +109,8 @@
     #root .sil-n { position: absolute; left: 0; right: 0; bottom: 90px; text-align: center; font-family: "Cinzel", serif; font-weight: 700; font-size: 110px; color: #c9a227; letter-spacing: 0.1em; text-shadow: 0 6px 40px rgba(0,0,0,0.8); }
     #root .horizonte { position: absolute; left: 0; right: 0; bottom: 0; height: 300px; background: linear-gradient(to top, rgba(201,162,39,0.18), rgba(201,162,39,0)); }
 
-    #root .m-cont { position: absolute; left: 0; top: 0; width: 3257px; height: 3800px; transform-origin: 0 0; }
-    #root .m-img { position: absolute; left: 0; top: 0; width: 3257px; height: 3800px; }
+    #root .m-cont { position: absolute; left: 0; top: 0; width: 3111px; height: 2300px; transform-origin: 0 0; }
+    #root .m-img { position: absolute; left: 0; top: 0; width: 3111px; height: 2300px; }
     #root .m-ruta { position: absolute; left: 0; top: 0; }
     #root .m-ruta path { fill: none; stroke: #c9a227; }
     #root .m-pt, #root .m-zona, #root .m-et { position: absolute; width: 0; height: 0; }
@@ -181,3 +181,33 @@
     #root .fin-l { position: relative; top: auto; left: auto; }
     #root .fin-s { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.4em; color: #7a1f2b; }
     #root .fin-logo { width: 300px; height: 300px; object-fit: contain; }
+    #root .cuarteta { width: 1400px; padding: 60px 90px 50px; background: #f2e8d5; border-radius: 14px; box-shadow: 0 40px 100px rgba(0,0,0,0.6), inset 0 0 0 5px #c9a227; color: #13223a; position: relative; }
+    #root .cu-ref { font-family: "Cinzel", serif; font-weight: 700; font-size: 34px; color: #7a1f2b; letter-spacing: 0.12em; margin-bottom: 24px; }
+    #root .cu-fr, #root .cu-es { font-family: "EB Garamond", Georgia, serif; font-style: italic; font-size: 54px; line-height: 1.35; }
+    #root .cu-es { position: absolute; left: 90px; right: 90px; top: 118px; }
+    #root .cu-pie { margin-top: 26px; font-family: "Montserrat", sans-serif; font-size: 22px; color: #7a6a4a; letter-spacing: 0.08em; text-align: right; }
+    #root .tit { position: absolute; width: 700px; padding: 26px 30px; background: #eef0f3; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    #root .tit i { display: block; width: 120px; height: 14px; border-radius: 7px; background: #7a1f2b; margin-bottom: 14px; }
+    #root .tit b { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 38px; line-height: 1.15; color: #10161f; }
+    #root .tit-nota { position: absolute; right: 60px; bottom: 40px; font-family: "Montserrat", sans-serif; font-style: italic; font-size: 26px; color: #d8cdb6; }
+    #root .estatua { position: absolute; left: 640px; top: 60px; }
+    #root .es-p { position: absolute; left: 0; border-radius: 30px; box-shadow: inset 0 -20px 40px rgba(0,0,0,0.3); }
+    #root .es-labs2 { position: absolute; left: 980px; top: 60px; }
+    #root .es-l { position: absolute; left: 0; white-space: nowrap; font-family: "Cinzel", serif; font-weight: 700; font-size: 46px; color: #f2e8d5; }
+    #root .piedra { position: absolute; left: 560px; top: 860px; width: 140px; height: 110px; border-radius: 40% 50% 45% 55%; background: #8c8a84; }
+    #root .ecl { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+    #root .ecl-t { position: absolute; top: 800px; font-family: "Cinzel", serif; font-weight: 700; font-size: 56px; color: #f2e8d5; }
+    #root .ecl-t.e1 { left: 260px; } #root .ecl-t.e2 { left: 890px; } #root .ecl-t.e3 { left: 1560px; }
+    #root .blqs { display: grid; grid-template-columns: repeat(5, 230px); gap: 34px; }
+    #root .blq { height: 220px; border-radius: 12px; background: #f2e8d5; box-shadow: inset 0 0 0 5px #c9a227; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; }
+    #root .blq b { font-family: "Cinzel", serif; font-size: 64px; color: #0f1b2d; }
+    #root .blq i { display: block; width: 140px; height: 10px; border-radius: 5px; background: rgba(15,27,45,0.25); }
+    #root .busca { display: flex; align-items: center; gap: 30px; width: 1100px; height: 150px; padding: 0 50px; border-radius: 75px; background: #f2e8d5; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+    #root .bu-q { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 80px; color: #0f1b2d; }
+    #root .busca i { display: block; width: 6px; height: 80px; background: #0f1b2d; }
+    #root .bu-r { font-family: "Cinzel", serif; font-weight: 700; font-size: 64px; color: #e05468; }
+    #root .pegote { position: absolute; left: 1180px; top: 330px; padding: 20px 46px; background: #e8c547; color: #0f1b2d; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 90px; border-radius: 10px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    #root .cb { position: relative; display: flex; flex-direction: column; align-items: center; }
+    #root .cb-a { font-family: "Cinzel", serif; font-weight: 700; font-size: 170px; color: #c9a227; }
+    #root .cb-b { font-family: "Cinzel", serif; font-weight: 700; font-size: 130px; color: #e05468; }
+    #root .fr-fecha { position: absolute; right: 120px; top: 110px; padding: 18px 34px; background: rgba(15,27,45,0.88); border: 3px solid #c9a227; border-radius: 10px; font-family: "Cinzel", serif; font-weight: 700; font-size: 64px; color: #c9a227; letter-spacing: 0.1em; }

@@ -1,25 +1,31 @@
 # Genera las composiciones de HyperFrames de Los Nefilim (escenas 16–183) a partir de escenas.py y la voz alineada.
 import os, re, json, math, html
-from alinear import alinear, norm, OFF
+from alinear import alinear, norm, OFF, DUR
 from escenas import S, SECCIONES
 
-BASE = "/home/user/Videos-YT-/trabajo/nefilim"
+BASE = "/home/user/Videos-YT-/trabajo/nostradamus"
 PROY = f"{BASE}/proyecto"
-FIN = 894.25 + 1.6           # fin del video (voz + cola)
+FIN = sum(DUR) + 0.6 * 6 + 1.6           # fin del video (voz + cola)
 E, W = alinear()
 EN = {e["n"]: e for e in E}
 
 # ---------- tiempos ----------
 def inicio_seccion(nombre, n0):
-    if nombre == "intro2": return EN[16]["t"]
-    blk = {"cap1": 2, "cap2": 3, "cap3": 4, "cap4": 5, "giro": 6, "cierre": 7}[nombre]
+    blk = {"gancho": 0, "cap1": 1, "cap2": 2, "cap3": 3, "cap4": 4, "giro": 5, "cierre": 6}[nombre]
     return OFF[blk]
 SEC_T = [(nm, a, b, inicio_seccion(nm, a)) for nm, a, b in SECCIONES]
 
-def t_escena(n):
+def _t_crudo(n):
     e = EN[n]
     if e["t"] is not None: return e["t"]
     return EN[n + 1]["t"]          # títulos sin voz: empiezan con la escena siguiente
+TA = {}
+for _nm, _a, _b, _t0 in SEC_T:
+    cur = _t0
+    for _n in range(_a, _b + 1):
+        if "titulo" in S.get(_n, {}): TA[_n] = _t0; cur = _t0 + 2.7; continue
+        t = max(_t_crudo(_n), cur); TA[_n] = t; cur = t + 1.2
+def t_escena(n): return TA[n]
 def fin_escena(n):
     for nm, a, b, t0 in SEC_T:
         if a <= n <= b and n == b:
@@ -350,7 +356,7 @@ def g_mapa(c, o, a, b):
     if o.get("ruta"):
         pts = [proy(lo, la) for lo, la in o["ruta"]]
         dpath = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts)
-        ruta = f'<svg class="m-ruta" viewBox="0 0 3257 3800" width="3257" height="3800"><path d="{dpath}" stroke-width="{round(6 / s1, 2)}" stroke-dasharray="{round(18 / s1, 1)} {round(12 / s1, 1)}"/></svg>'
+        ruta = f'<svg class="m-ruta" viewBox="0 0 3111 2300" width="3111" height="2300"><path d="{dpath}" stroke-width="{round(6 / s1, 2)}" stroke-dasharray="{round(18 / s1, 1)} {round(12 / s1, 1)}"/></svg>'
     inner = f'<div class="m-cont"><img src="assets/mapa.svg" class="m-img" alt="mapa" />{ruta}{"".join(el)}</div><div class="vig"></div>'
     gid, st, d = capa(c, "mapa-fondo", a, b, inner)
     c.tw(f'tl.fromTo("#{gid} .m-cont", {{scale: {s0}, x: {x0}, y: {y0}}}, {{scale: {s1}, x: {x1}, y: {y1}, duration: {min(2.2, d * 0.6):.2f}, ease: "power2.inOut"}}, {st});')
@@ -499,12 +505,112 @@ def g_final(c, o, a, b):
     c.tw(f'tl.fromTo("#{gid} .fin-l", {{scaleX: 0}}, {{scaleX: 1, duration: 0.8}}, {st + 0.6});')
     sube(c, f"#{gid} .fin-s", st + 1.0, 0.6, 15)
 
+
+def g_cuarteta(c, o, a, b):
+    fr = "".join(f'<div class="cu-l">{X(l)}</div>' for l in o["fr"])
+    es = "".join(f'<div class="cu-l">{X(l)}</div>' for l in o["es"])
+    inner = f'<div class="cuarteta"><div class="cu-ref">{X(o["ref"])}</div><div class="cu-fr">{fr}</div><div class="cu-es">{es}</div><div class="cu-pie">francés de la edición de c. 1611 · traducción propia</div></div>'
+    gid, st, d = capa(c, "centro", a, b, inner)
+    c.tw(f'tl.fromTo("#{gid} .cuarteta", {{opacity: 0, y: 40}}, {{opacity: 1, y: 0, duration: 0.6, ease: "power3.out"}}, {st});')
+    c.tw(f'tl.fromTo("#{gid} .cu-fr .cu-l", {{opacity: 0, x: -20}}, {{opacity: 1, x: 0, duration: 0.4, stagger: 0.25}}, {st + 0.3});')
+    tcam = st + min(2.2, d * 0.3)
+    c.tw(f'tl.to("#{gid} .cu-fr", {{opacity: 0, y: -20, duration: 0.6}}, {tcam});')
+    c.tw(f'tl.fromTo("#{gid} .cu-es .cu-l", {{opacity: 0, y: 20}}, {{opacity: 1, y: 0, duration: 0.5, stagger: {max(0.4, (d - (tcam - st) - 1) / max(1, len(o["es"]))):.2f}}}, {tcam + 0.3});')
+
+def g_titulares(c, o, a, b):
+    tits = ["¿Nostradamus predijo el eclipse de 2026?", "Las 10 profecías de Nostradamus para este año", "El eclipse que «anunció» Nostradamus", "Lo que Nostradamus escribió sobre 2026", "¿Una profecía cumplida?"]
+    cards = "".join(f'<div class="tit" style="left:{180 + (k % 2) * 760 + (k // 2) * 40}px; top:{140 + k * 150}px; --r:{(k * 7) % 9 - 4}deg"><i></i><b>{X(t)}</b></div>' for k, t in enumerate(tits))
+    gid, st, d = capa(c, "", a, b, f'{cards}<div class="tit-nota">titulares de ejemplo, creados para este video</div>')
+    c.tw(f'tl.fromTo("#{gid} .tit", {{opacity: 0, y: 60, rotation: 0}}, {{opacity: 1, y: 0, rotation: (i) => [-3, 2, -1, 3, -2][i], duration: 0.35, stagger: {min(0.6, d / 6):.2f}, ease: "back.out(1.6)"}}, {st});')
+    sube(c, f"#{gid} .tit-nota", st + 0.8, 0.5, 10)
+
+def g_estatua(c, o, a, b):
+    capas = [("cabeza", "oro", "#d8b23a", 150), ("pecho y brazos", "plata", "#c9ccd2", 200), ("vientre y muslos", "bronce", "#b0763a", 200), ("piernas", "hierro", "#6d7684", 230), ("pies", "hierro y barro", "#8a6a4f", 90)]
+    nombres = o.get("reinos")
+    y = 70; partes = []; labs = []
+    for k, (p, m, col, h) in enumerate(capas):
+        w = [180, 360, 300, 220, 260][k]
+        partes.append(f'<div class="es-p" style="top:{y}px; height:{h}px; width:{w}px; margin-left:{-w/2}px; background:{col}"></div>')
+        etiqueta = nombres[k] if nombres else f"{p} · {m}"
+        labs.append(f'<div class="es-l" style="top:{y + h/2 - 26}px">{X(etiqueta)}</div>')
+        y += h + 8
+    gid, st, d = capa(c, "", a, b, f'<div class="estatua">{"".join(partes)}</div><div class="es-labs2">{"".join(labs)}</div><div class="piedra"></div>')
+    pal = o.get("palabras") or []
+    for k in range(5):
+        if o.get("cae"):
+            c.tw(f'gsap.set("#{gid} .es-p:nth-child({k + 1}), #{gid} .es-l:nth-child({k + 1})", {{opacity: 1}});'); continue
+        tm = palabra_t(pal[k], a, b) if k < len(pal) else None
+        t = c.L(tm) - 0.1 if tm else st + 0.3 + k * min(1.2, (d - 1) / 5)
+        c.tw(f'tl.fromTo("#{gid} .es-p:nth-child({k + 1}), #{gid} .es-l:nth-child({k + 1})", {{opacity: 0.12, x: 0}}, {{opacity: 1, duration: 0.4}}, {t:.2f});')
+    if o.get("cae"):
+        c.tw(f'tl.fromTo("#{gid} .piedra", {{opacity: 1, x: -900, y: 260}}, {{x: 0, y: 0, duration: 0.6, ease: "power2.in"}}, {st + 0.4});')
+        c.tw(f'tl.to("#{gid} .es-l", {{opacity: 0, duration: 0.6}}, {st + 1.0});')
+        c.tw(f'tl.to("#{gid} .es-p", {{y: (i) => 300 + i * 40, x: (i) => (i % 2 ? 1 : -1) * (60 + i * 30), rotation: (i) => (i % 2 ? 25 : -25), opacity: 0, duration: 1.4, stagger: 0.05, ease: "power2.in"}}, {st + 1.0});')
+        sfx(c, "impact-bass-1", a + 1.0, 0.35)
+    else:
+        c.tw(f'gsap.set("#{gid} .piedra", {{opacity: 0}});')
+
+def g_eclipse(c, o, a, b):
+    svg = ('<svg class="ecl" viewBox="0 0 1920 1080"><defs><radialGradient id="sol"><stop offset="0" stop-color="#fff6c8"/><stop offset="0.6" stop-color="#f2c94c"/><stop offset="1" stop-color="#c9a227" stop-opacity="0"/></radialGradient></defs>'
+           '<circle cx="330" cy="540" r="210" fill="url(#sol)"/><circle cx="330" cy="540" r="130" fill="#f6d55c"/>'
+           '<path class="ecl-cono" d="M998 525 L1500 470 L1500 610 L998 555 Z" fill="rgba(5,8,15,0.55)"/><path d="M1500 470 L1600 520 L1600 560 L1500 610 Z" fill="rgba(5,8,15,0.4)"/>'
+           '<circle class="ecl-luna" cx="960" cy="540" r="38" fill="#b7bcc6"/>'
+           '<circle cx="1640" cy="540" r="150" fill="#2c5d9a"/><path d="M1560 470 Q1620 450 1680 500 Q1700 560 1650 600 Q1590 610 1570 560 Z" fill="#3f7a3a"/></svg>'
+           '<div class="ecl-t e1">Sol</div><div class="ecl-t e2">Luna</div><div class="ecl-t e3">Tierra</div>')
+    gid, st, d = capa(c, "", a, b, svg)
+    c.tw(f'tl.fromTo("#{gid} .ecl-luna", {{attr: {{cy: 260}}}}, {{attr: {{cy: 540}}, duration: 1.6, ease: "power2.out"}}, {st + 0.3});')
+    c.tw(f'tl.fromTo("#{gid} .ecl-cono", {{opacity: 0}}, {{opacity: 1, duration: 0.6}}, {st + 1.9});')
+    c.tw(f'tl.fromTo("#{gid} .ecl-t", {{opacity: 0, y: 15}}, {{opacity: 1, y: 0, duration: 0.4, stagger: 0.4}}, {st + 0.4});')
+
+def g_bloques(c, o, a, b):
+    rom = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"]
+    bl = "".join(f'<div class="blq"><b>{r}</b><i></i><i></i><i></i></div>' for r in rom)
+    gid, st, d = capa(c, "centro", a, b, f'<div class="blqs">{bl}</div><div class="g-sub">10 centurias</div>')
+    c.tw(f'tl.fromTo("#{gid} .blq", {{opacity: 0.1, scale: 0.85}}, {{opacity: 1, scale: 1, duration: 0.3, stagger: {min(0.25, (d - 0.8) / 10):.2f}, ease: "back.out(2)"}}, {st});')
+
+def g_buscador(c, o, a, b):
+    gid, st, d = capa(c, "centro", a, b, '<div class="busca"><span class="bu-q">2026</span><i></i></div><div class="bu-r">0 resultados en 942 cuartetas</div>')
+    c.tw(f'tl.fromTo("#{gid} .busca", {{opacity: 0, y: 30}}, {{opacity: 1, y: 0, duration: 0.5}}, {st});')
+    c.tw(f'tl.fromTo("#{gid} .bu-q", {{clipPath: "inset(0 100% 0 0)"}}, {{clipPath: "inset(0 0% 0 0)", duration: 0.8, ease: "steps(4)"}}, {st + 0.4});')
+    sube(c, f"#{gid} .bu-r", st + 1.5, 0.5, 20)
+
+def g_etiqueta(c, o, a, b):
+    gid, st, d = capa(c, "centro", a, b, '<div class="t4 chica"><div class="t4-t" style="font-size:44px">un verso sin fecha</div><div class="t4-l"><i style="width:88%"></i></div><div class="t4-l"><i style="width:72%"></i></div><div class="t4-l"><i style="width:80%"></i></div></div><div class="pegote">2026</div>')
+    c.tw(f'tl.fromTo("#{gid} .t4", {{opacity: 0, y: 30}}, {{opacity: 1, y: 0, duration: 0.5}}, {st});')
+    c.tw(f'tl.fromTo("#{gid} .pegote", {{opacity: 0, scale: 2, rotation: -25}}, {{opacity: 1, scale: 1, rotation: -10, duration: 0.35, ease: "power4.in"}}, {st + min(2.5, d * 0.45)});')
+
+def g_cambio(c, o, a, b):
+    gid, st, d = capa(c, "centro", a, b, f'<div class="cb"><span class="cb-a">{X(o["a"])}</span><span class="cb-b">{X(o["b"])}</span></div><div class="g-sub">{X(o.get("sub", ""))}</div>')
+    c.tw(f'tl.fromTo("#{gid} .cb-a", {{opacity: 0, scale: 1.2}}, {{opacity: 1, scale: 1, duration: 0.6}}, {st});')
+    tb = palabra_t(o["at2"], a, b) if o.get("at2") else None
+    t2 = c.L(tb) if tb else st + d * 0.5
+    c.tw(f'tl.to("#{gid} .cb-a", {{opacity: 0.25, y: -90, scale: 0.7, duration: 0.5}}, {t2 - 0.1:.2f});')
+    c.tw(f'tl.fromTo("#{gid} .cb-b", {{opacity: 0, y: 60}}, {{opacity: 1, y: 0, duration: 0.5}}, {t2:.2f});')
+    if o.get("sub"): sube(c, f"#{gid} .g-sub", t2 + 0.4, 0.5, 15)
+
+def g_franja(c, o, a, b):
+    from mapa_vistas import VISTAS, proy, transf
+    s1, x1, y1 = transf(VISTAS["espana"]); s0, x0, y0 = transf(VISTAS["europa"])
+    cl = [(-10.5, 44.9), (-6.0, 43.3), (-2.5, 41.8), (0.5, 40.6), (4.5, 39.2)]
+    hw = 1.05
+    up = [proy(lo, la + hw) for lo, la in cl]; dn = [proy(lo, la - hw) for lo, la in reversed(cl)]
+    dpath = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in up + dn) + " Z"
+    cline = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in (proy(lo, la) for lo, la in cl))
+    svg = f'<svg class="m-ruta" viewBox="0 0 3111 2300" width="3111" height="2300"><path class="fr-banda" d="{dpath}" fill="rgba(232,197,71,0.36)" stroke="#e8c547" stroke-width="{2 / s1:.2f}"/><path class="fr-linea" d="{cline}" stroke="#e8c547" stroke-width="{3 / s1:.2f}" stroke-dasharray="{14 / s1:.1f} {10 / s1:.1f}" fill="none"/></svg>'
+    lab = f'<div class="m-et" style="left:{proy(-6.5, 41.0)[0]:.0f}px; top:{proy(-6.5, 41.0)[1]:.0f}px; font-size:{26 / s1:.1f}px; color:#f2e8d5">franja aproximada de la totalidad</div>'
+    fecha = '<div class="fr-fecha">12 · 08 · 2026</div>' if o.get("fecha") else ""
+    gid, st, d = capa(c, "mapa-fondo", a, b, f'<div class="m-cont"><img src="assets/mapa.svg" class="m-img" alt="mapa" />{svg}{lab}</div><div class="vig"></div>{fecha}')
+    c.tw(f'tl.fromTo("#{gid} .m-cont", {{scale: {s0}, x: {x0}, y: {y0}}}, {{scale: {s1}, x: {x1}, y: {y1}, duration: {min(1.6, d * 0.4):.2f}, ease: "power2.inOut"}}, {st});')
+    c.tw(f'tl.fromTo("#{gid} .fr-banda", {{opacity: 0}}, {{opacity: 1, duration: 1.0, ease: "power1.out"}}, {st + min(1.4, d * 0.35):.2f});')
+    c.tw(f'tl.fromTo("#{gid} .m-et", {{opacity: 0}}, {{opacity: 1, duration: 0.5}}, {st + min(2.0, d * 0.5):.2f});')
+    if fecha: c.tw(f'tl.fromTo("#{gid} .fr-fecha", {{opacity: 0, y: -20}}, {{opacity: 1, y: 0, duration: 0.5}}, {st + 0.1});')
+
 G = dict(rotulo=g_rotulo, grande=g_grande, cita=g_cita, palabra=g_palabra, sello=g_sello, contador=g_contador, lista=g_lista,
          fila=g_fila, flecha=g_flecha, libro=g_libro, ficha=g_ficha, gancho=g_gancho, tarjetas3=g_tarjetas3, balanza=g_balanza,
          tarjeta4=g_tarjeta4, ventanas=g_ventanas, interroga=g_interroga, silueta=g_silueta, luces=g_luces, mapa=g_mapa,
          tiempo=g_tiempo, escala=g_escala, columnas=g_columnas, arbol=g_arbol, tira=g_tira, expande=g_expande,
          comprime=lambda c, o, a, b: g_expande(c, o, a, b, True), candado=g_candado, huecos=g_huecos, cuatro=g_cuatro,
-         pulso=g_pulso, cruce=g_cruce, espias=g_espias, lupa=g_lupa, esqueleto=g_esqueleto, pincel=g_pincel, final=g_final)
+         pulso=g_pulso, cruce=g_cruce, espias=g_espias, lupa=g_lupa, esqueleto=g_esqueleto, pincel=g_pincel, final=g_final, cuarteta=g_cuarteta, titulares=g_titulares, estatua=g_estatua, eclipse=g_eclipse, bloques=g_bloques, buscador=g_buscador, etiqueta=g_etiqueta, cambio=g_cambio, franja=g_franja, titulo_video=lambda c, o, a, b: g_titulo(c, {"titulo": ("¿PREDIJO EL ECLIPSE?", "Nostradamus y 2026", "LO QUE ESCRIBIÓ")}, a, b))
 
 # ---------- armado ----------
 def generar():
@@ -516,7 +622,7 @@ def generar():
         overlays = []
         for n in range(n0, n1 + 1):
             sp = S.get(n, {}); a, b = t_escena(n), fin_escena(n)
-            if n == n0 and nm != "intro2": a = t0
+            if n == n0: a = t0
             if "titulo" in sp:
                 tb = a + 2.7; overlays.append(("titulo", sp, a, tb)); continue
             # si la escena anterior fue un título, esta empieza cuando el título termina
