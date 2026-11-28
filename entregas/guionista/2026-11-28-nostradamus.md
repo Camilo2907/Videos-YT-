@@ -1,6 +1,7 @@
-# Nostradamus y 2026: lo que realmente escribió
-Duración objetivo: ~12 min (máximo 13) · Voz El Faraón ≈125 palabras por minuto · Palabras de narración: ≈1.450 (≈11:35)
-Estado: **BORRADOR** para afinar con el Gancho y aprobar con Camilo.
+# ¿Predijo Nostradamus el eclipse de 2026? Lo que escribió
+Duración objetivo: ~12 min (máximo 13) · Voz El Faraón ≈125 palabras por minuto · Palabras de narración: ≈1.470 (≈11:45)
+Estado: **GUION FINAL aprobado por Camilo** (2026-11-28), con gancho A, título A y miniatura A del AGENTE · Gancho (`entregas/gancho/2026-11-28-nostradamus-ganchos.md`).
+Versión para voz: `entregas/guionista/2026-11-28-nostradamus-voz.md`. Los **[MINI GANCHO]** se narran: son la última frase de cada tramo.
 Base: ficha de referencia de Natalia (`entregas/natalia/2026-11-28-referencia-nostradamus.md`, rama `claude/religion-videos-motion-graphics-6xlqff`). Guion, investigación y fuentes propios.
 
 Claves para todos los agentes:
@@ -18,9 +19,9 @@ Un eclipse total de sol.
 Fue el primero visible en la España peninsular desde mil novecientos cinco.
 Muchísima gente miró al cielo.
 Y en internet empezó a circular una frase: «Nostradamus lo predijo».
-Videos, titulares, listas de profecías para este año.
 Pero ¿alguien ha leído lo que él escribió de verdad?
-Hoy vamos a abrir su libro original.
+Hoy abrimos su libro original.
+Vamos a buscar una sola cosa: el año dos mil veintiséis.
 Y lo que encontramos… no se parece en nada a lo que circula.
 
 [VISUAL: mapa animado de España con la franja del eclipse cruzándola; contador de fecha «12 · 08 · 2026»; disco solar que se oscurece; collage de titulares genéricos inventados para el video (sin marcas reales ni capturas de otros canales); portada facsimilar de *Les Prophéties* (Wikimedia Commons) que se abre.]
@@ -46,7 +47,7 @@ Ahí está todo lo que escribió como profecía.
 Y si existe una predicción para dos mil veintiséis… tendría que estar ahí.
 
 [VISUAL: línea de tiempo animada 1503 → 1555 → 1566 → 1568 con íconos (nacimiento, libro, muerte, edición completa); mapa del sur de Francia con Saint-Rémy, Montpellier, Lyon y Salon; grabado antiguo de un médico de la peste (dominio público); retrato de Nostradamus de dominio público (Wikimedia Commons); contador 353 → 942.]
-[MINI GANCHO: «Así que abrimos el libro. Y el primer problema aparece en la primera página».]
+[MINI GANCHO: «Así que abrimos el libro. Y lo primero que notas es que casi nunca dice cuándo».]
 
 ## CAPÍTULO 2 · Cómo escribía (2:15–4:15) · ≈245 palabras
 **[TEXTO]**
@@ -80,11 +81,11 @@ Cuando Nostradamus da una fecha, se puede comprobar.
 Y cuando no la da… cada lector puede ponerle la que quiera.
 
 [VISUAL: tarjeta de pergamino con la cuarteta I-1 en francés de 1611 que se transforma en la traducción; ilustración de una llama sobre un trípode de bronce (dibujo propio, no foto); nube de palabras «leones, águilas, reyes» sin nombre; tarjeta «X-72» con el «1999» resaltado en dorado y luego un sello vino «NO SE CUMPLIÓ»; aclaración en pantalla: «Centuria = grupo de 100 cuartetas · el número no es un año».]
-[MINI GANCHO: «Entonces, ¿de dónde salen las listas de "profecías para dos mil veintiséis"? Te muestro cómo se fabrican».]
+[MINI GANCHO: «Entonces, ¿de dónde salen las listas de "profecías para dos mil veintiséis"? Te muestro tres trucos que se repiten».]
 
 ## CAPÍTULO 3 · Cómo se fabrica una «predicción» (4:15–6:35) · ≈295 palabras
 **[TRADICIÓN]**
-Hay tres trucos que se repiten.
+Son tres.
 **El primero: leer la profecía después del hecho.**
 En la primera centuria, cuarteta treinta y cinco, se lee:
 «El león joven vencerá al viejo,
@@ -117,7 +118,7 @@ Pero no dice dónde. No dice cuándo.
 Y habla de la luna, no del sol.
 
 [VISUAL: tres tarjetas numeradas «1 · Leer después», «2 · Cambiar una palabra», «3 · Inventar»; grabado de dominio público del torneo de Enrique II (1559); comparación lado a lado «torneo ≠ campo de batalla» y «casco de acero ≠ jaula de oro»; mapa animado del Danubio con la etiqueta latina «HISTER»; documento genérico con sello «NO ESTÁ EN NINGUNA EDICIÓN» (sin mostrar el poema falso completo); tarjeta I-84 con «luna» resaltada y un signo de pregunta sobre fecha y lugar.]
-[MINI GANCHO: «Mucha gente pone a Nostradamus al lado de los profetas de la Biblia. Pero cuando los comparas, aparece una diferencia enorme».]
+[MINI GANCHO: «Mucha gente pone a Nostradamus al lado de los profetas de la Biblia. Pero la propia Biblia propone una prueba muy distinta».]
 
 ## CAPÍTULO 4 · Nostradamus frente a la profecía bíblica (6:35–8:50) · ≈280 palabras
 **[TEXTO]**
@@ -143,7 +144,7 @@ Jesús, en el evangelio de Mateo:
 «Del día y hora nadie sabe, ni aun los ángeles de los cielos, sino mi Padre solo».
 
 [VISUAL: arte clásico de dominio público del sueño de Nabucodonosor; estatua animada por capas de metal (oro, plata, bronce, hierro, barro) con su cita; piedra que la golpea y la estatua se deshace en polvo; cita de Daniel 2:27 con «astrólogos» resaltada; tarjeta «Deuteronomio 18 · prohíbe la adivinación»; cita de Mateo 24:36 en tarjeta final, sin efectos de miedo.]
-[MINI GANCHO: «Entonces, ¿qué piensan hoy la Iglesia y los historiadores de Nostradamus? Y sobre el eclipse… hay una predicción que sí se cumplió».]
+[MINI GANCHO: «¿Qué piensan hoy la Iglesia y los historiadores? Y sobre el eclipse, sí hubo una predicción exacta… pero no es la que imaginas».]
 
 ## GIRO · La única predicción exacta (8:50–10:30) · ≈205 palabras
 **[TRADICIÓN]**
@@ -170,7 +171,7 @@ No fue una amenaza.
 Fue una cita.
 
 [VISUAL: tarjeta «Catecismo de la Iglesia Católica · n.º 2116»; grabados de dominio público de la peste y de Europa en el siglo XVI; diagrama animado sol, luna y Tierra en línea con el cono de sombra; mapa de la franja del eclipse con horas aproximadas (datos públicos de la NASA); el disco del sol que se oscurece y vuelve a brillar con luz dorada.]
-[MINI GANCHO: «Y queda una pregunta: ¿por qué seguimos buscando a Nostradamus cada año?».]
+[MINI GANCHO: «Y queda una pregunta: ¿por qué seguimos buscándolo cada año? La respuesta tiene poco que ver con él».]
 
 ## CIERRE (10:30–11:35) · ≈135 palabras
 Hagamos un resumen.
@@ -191,14 +192,14 @@ Nos vemos en el próximo video.
 ## Tiempos estimados (voz El Faraón ≈125 palabras por minuto)
 | Tramo | Palabras | Minutos |
 |---|---|---|
-| Gancho | 79 | 0:40 |
-| Cap. 1 · Quién fue | 204 | 1:35 |
-| Cap. 2 · Cómo escribía | 243 | 2:00 |
-| Cap. 3 · Cómo se fabrica una predicción | 297 | 2:20 |
-| Cap. 4 · Frente a la Biblia | 282 | 2:15 |
-| Giro · La única predicción exacta | 207 | 1:40 |
+| Gancho | 87 | 0:40 |
+| Cap. 1 · Quién fue | 211 | 1:40 |
+| Cap. 2 · Cómo escribía | 245 | 2:00 |
+| Cap. 3 · Cómo se fabrica una predicción | 294 | 2:20 |
+| Cap. 4 · Frente a la Biblia | 281 | 2:15 |
+| Giro · La única predicción exacta | 216 | 1:45 |
 | Cierre | 136 | 1:05 |
-| **Total** | **≈1.450** | **≈11:35** (hay margen de ≈150 palabras hasta el máximo de 1.600) |
+| **Total** | **≈1.470** | **≈11:45** (máximo 1.600 palabras) |
 
 ## Notas para Visuales y Editor
 - Sin imágenes de catástrofes, guerras actuales, banderas ni políticos.
