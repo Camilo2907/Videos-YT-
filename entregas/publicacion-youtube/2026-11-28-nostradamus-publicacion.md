@@ -112,7 +112,7 @@ Archivo: `entregas/publicacion-youtube/2026-11-28-nostradamus-miniatura-A.png` (
 3. **Franja del eclipse** sobre el mapa: aproximada; el video lo dice en pantalla.
 4. **Guionista, por verificar (no cambia la descripción):** fecha en que la cuarteta I-35 se conectó por escrito con la muerte de Enrique II (el video dice solo «décadas después») y el origen converso de la familia de Nostradamus.
 5. **Duración:** 11:05, dentro del máximo de 13 min.
-6. **Corona del eclipse 2026 (Luc Viatour):** el autor y la licencia vienen del Editor; no pude volver a comprobarlos en Wikimedia desde aquí.
+6. **Corona del eclipse 2026 (Luc Viatour):** el autor y la licencia vienen del Editor; no los volví a comprobar en Wikimedia.
 
 ## Qué debe revisar Camilo
 Aprobar descripción, etiquetas, comentario fijado y miniatura A. Luego sube el video con el archivo de subtítulos y publica.
