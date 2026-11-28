@@ -7,11 +7,16 @@
 - Paleta, tipografía y texto en pantalla: ver `contexto/estilo-video.md`.
 
 ## Datos que faltan de Camilo
-- [ ] Nombre del canal (el AGENTE · Gancho puede proponer opciones).
+- [x] Nombre del canal: Raíces de la Fe. Logo y banner hechos por Natalia.
 - [ ] Primer video de referencia de YouTube (cada tema sale de una referencia de Camilo).
 - [x] Plan de ElevenLabs elegido (el dato lo lleva el Coordinador en su chat, no aquí).
 
 ## Por hacer
-- [ ] Guardar la clave de ElevenLabs en el entorno (formulario seguro, nunca en el chat ni en el repositorio).
-- [ ] Elegir voz y modelo con una muestra corta (`contexto/voz.md`).
-- [ ] Primer video de prueba.
+- [x] Clave de ElevenLabs guardada en el entorno.
+- [x] Voz elegida: El Faraón (`contexto/voz.md`).
+- [x] Video 1 · **Los Nefilim** (judaísmo/cristianismo), 14:56, aprobado por Camilo el 2026-11-21.
+
+## Temas hechos
+| Fecha | Tema | Religión |
+|---|---|---|
+| 2026-11-21 | Los Nefilim | Judaísmo / cristianismo |
