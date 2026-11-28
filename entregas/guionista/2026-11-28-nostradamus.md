@@ -13,10 +13,11 @@ Claves para todos los agentes:
 ---
 
 ## GANCHO (0:00–0:40) · ≈80 palabras
-El doce de agosto de dos mil veintiséis, el día se volverá noche sobre España.
+El doce de agosto de dos mil veintiséis, el día se volvió noche sobre España.
 Un eclipse total de sol.
-El primero visible en la España peninsular desde mil novecientos cinco.
-Y en internet ya circula una frase: «Nostradamus lo predijo».
+Fue el primero visible en la España peninsular desde mil novecientos cinco.
+Muchísima gente miró al cielo.
+Y en internet empezó a circular una frase: «Nostradamus lo predijo».
 Videos, titulares, listas de profecías para este año.
 Pero ¿alguien ha leído lo que él escribió de verdad?
 Hoy vamos a abrir su libro original.
@@ -142,7 +143,7 @@ Jesús, en el evangelio de Mateo:
 «Del día y hora nadie sabe, ni aun los ángeles de los cielos, sino mi Padre solo».
 
 [VISUAL: arte clásico de dominio público del sueño de Nabucodonosor; estatua animada por capas de metal (oro, plata, bronce, hierro, barro) con su cita; piedra que la golpea y la estatua se deshace en polvo; cita de Daniel 2:27 con «astrólogos» resaltada; tarjeta «Deuteronomio 18 · prohíbe la adivinación»; cita de Mateo 24:36 en tarjeta final, sin efectos de miedo.]
-[MINI GANCHO: «Entonces, ¿qué piensan hoy la Iglesia y los historiadores de Nostradamus? Y sobre el eclipse… hay una predicción que sí se va a cumplir».]
+[MINI GANCHO: «Entonces, ¿qué piensan hoy la Iglesia y los historiadores de Nostradamus? Y sobre el eclipse… hay una predicción que sí se cumplió».]
 
 ## GIRO · La única predicción exacta (8:50–10:30) · ≈205 palabras
 **[TRADICIÓN]**
@@ -155,17 +156,18 @@ Un médico y autor de almanaques en una Europa que vivía con miedo a la peste y
 Algunos estudiosos, como Peter Lemesurier, sostienen que muchas cuartetas se inspiran en hechos del pasado tomados de crónicas antiguas, con la idea de que la historia se repite.
 Y otros, como el francés Pierre Brind'Amour, estudiaron sus cálculos de los astros y encontraron que dependía de tablas de otros autores.
 Ahora, el giro.
-Ese eclipse del doce de agosto de dos mil veintiséis existe de verdad.
+Ese eclipse del doce de agosto fue real.
 Y alguien lo predijo.
 Pero no fue Nostradamus.
 Fueron los astrónomos.
-Saben el día, la hora, el minuto y el camino exacto de la sombra.
+Sabían el día, la hora, el minuto y el camino exacto de la sombra.
 Lo calcularon con años de anticipación.
+Y se cumplió tal como lo anunciaron.
 Y no hace falta ninguna cuarteta para entenderlo.
 Un eclipse ocurre cuando la luna se pone justo entre el sol y la Tierra.
 Es uno de los espectáculos más bellos del cielo.
-No es una amenaza.
-Es una cita.
+No fue una amenaza.
+Fue una cita.
 
 [VISUAL: tarjeta «Catecismo de la Iglesia Católica · n.º 2116»; grabados de dominio público de la peste y de Europa en el siglo XVI; diagrama animado sol, luna y Tierra en línea con el cono de sombra; mapa de la franja del eclipse con horas aproximadas (datos públicos de la NASA); el disco del sol que se oscurece y vuelve a brillar con luz dorada.]
 [MINI GANCHO: «Y queda una pregunta: ¿por qué seguimos buscando a Nostradamus cada año?».]
