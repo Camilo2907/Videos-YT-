@@ -1,0 +1,35 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; }
+    /* pantalla de carga de Roblox con "Grand Theft Auto VI" */
+    #cg { position:absolute; inset:0; background:#000; transform-origin:540px 760px; }
+    #cg-fondo { position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }
+    #cg-tarjeta { position:absolute; left:60px; top:660px; width:960px; height:378px; border-radius:22px; background:rgba(24,25,29,.86); }
+    #cg-icono { position:absolute; left:352px; top:472px; width:376px; height:376px; border-radius:20px; object-fit:cover; box-shadow:0 10px 30px rgba(0,0,0,.5); }
+    #cg-nombre { position:absolute; left:60px; right:60px; top:878px; text-align:center; font:700 42px/52px 'Inter', sans-serif; color:#fff; }
+    #cg-creador { position:absolute; left:60px; right:60px; top:958px; text-align:center; font:400 38px/48px 'Inter', sans-serif; color:#d6d6da; }
+    #cg-uniendo { position:absolute; left:0; right:0; top:1776px; text-align:center; font:400 26px/34px 'Inter', sans-serif; color:rgba(255,255,255,.85); }
+    #cg-flash { position:absolute; inset:0; background:#fff; opacity:0; }
+  </style>
+  <div id="root" data-composition-id="carga" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="cg">
+      <img id="cg-fondo" src="assets/footage/roblox/carga-fondo.jpg" alt="" />
+      <div id="cg-tarjeta"></div>
+      <img id="cg-icono" src="assets/footage/roblox/icono.jpg" alt="" />
+      <div id="cg-nombre">Grand Theft Auto VI</div>
+      <div id="cg-creador">xNeonVice</div>
+      <div id="cg-uniendo">Uniéndose a un servidor</div>
+    </div>
+    <div id="cg-flash"></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cg", { opacity: 0 }, { opacity: 1, duration: .12, ease: "none" }, 0);
+    tl.fromTo("#cg-icono", { scale: .92 }, { scale: 1, duration: .5, ease: "power2.out" }, 0);
+    // zoom borroso de transición al juego (como la referencia)
+    tl.to("#cg", { scale: 1.7, filter: "blur(18px)", opacity: 0, duration: .45, ease: "power2.in" }, 1.85);
+    tl.fromTo("#cg-flash", { opacity: 0 }, { opacity: .35, duration: .2, yoyo: true, repeat: 1, ease: "power1.inOut" }, 1.95);
+    window.__timelines["carga"] = tl;
+  </script>
+</template>

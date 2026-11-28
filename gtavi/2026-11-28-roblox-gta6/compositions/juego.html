@@ -1,0 +1,20 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; background:#000; }
+    /* gameplay de GTA VI centrado (horizontal) con la interfaz de Roblox encima */
+    #jg-video { position:absolute; left:0; top:656px; width:1080px; height:608px; object-fit:cover; }
+    #jg-botones { position:absolute; left:12px; top:666px; width:400px; height:auto; }
+    #jg-saltar { position:absolute; left:902px; top:1100px; width:132px; height:132px; opacity:.92; }
+  </style>
+  <div id="root" data-composition-id="juego" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <video id="jg-video" class="clip" src="assets/footage/gameplay.mp4" data-start="0" data-duration="9.3" muted playsinline></video>
+    <img id="jg-botones" src="assets/footage/roblox/botones.png" alt="" />
+    <img id="jg-saltar" src="assets/footage/roblox/saltar.png" alt="" />
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#jg-video", { scale: 1.25 }, { scale: 1, duration: .6, ease: "power3.out" }, 0);
+    window.__timelines["juego"] = tl;
+  </script>
+</template>

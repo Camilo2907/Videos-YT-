@@ -1,0 +1,19 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; }
+    /* texto fijo estilo TikTok, blanco con contorno negro */
+    #tx { position:absolute; left:20px; right:120px; top:1100px; text-align:center;
+      font:600 64px/1.25 'Poppins', sans-serif; color:#fff; letter-spacing:-.005em;
+      text-shadow:3.5px 0.0px 0 #111,3.2px 1.3px 0 #111,2.5px 2.5px 0 #111,1.3px 3.2px 0 #111,0.0px 3.5px 0 #111,-1.3px 3.2px 0 #111,-2.5px 2.5px 0 #111,-3.2px 1.3px 0 #111,-3.5px 0.0px 0 #111,-3.2px -1.3px 0 #111,-2.5px -2.5px 0 #111,-1.3px -3.2px 0 #111,-0.0px -3.5px 0 #111,1.3px -3.2px 0 #111,2.5px -2.5px 0 #111,3.2px -1.3px 0 #111,0 4px 12px rgba(0,0,0,.6); }
+    #tx-emoji { display:block; height:62px; width:auto; margin:6px auto 0; }
+  </style>
+  <div id="root" data-composition-id="texto" data-width="1080" data-height="1920">
+    <div id="tx"><div id="tx-l1" data-var-text="texto">Roblox en serio te pasaste</div><img id="tx-emoji" src="assets/img/emoji.png" alt="" /></div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#tx", { opacity: 1 }, 0);
+    window.__timelines["texto"] = tl;
+  </script>
+</template>

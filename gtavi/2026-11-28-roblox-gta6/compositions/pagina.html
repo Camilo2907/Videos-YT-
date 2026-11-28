@@ -1,0 +1,30 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; }
+    /* reemplazos sobre la hoja del juego de Roblox (sube entre 2,33 y 2,65 s) */
+    #pg { position:absolute; inset:0; opacity:0; }
+    #pg-icono { position:absolute; left:50px; top:671px; width:142px; height:142px; border-radius:13px; object-fit:cover; }
+    #pg-tapa1 { position:absolute; left:212px; top:648px; width:850px; height:136px; background:#f6f5f7; }
+    #pg-titulo { position:absolute; left:221px; top:652px; font:700 50px/62px 'Inter', sans-serif; color:#18181c; letter-spacing:-.01em; white-space:nowrap; }
+    #pg-creador { position:absolute; left:221px; top:724px; font:400 38px/54px 'Inter', sans-serif; color:#3c3c43; white-space:nowrap; }
+    #pg-vista { position:absolute; left:50px; top:884px; width:980px; height:548px; border-radius:18px; object-fit:cover; }
+  </style>
+  <div id="root" data-composition-id="pagina" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="pg">
+      <video id="pg-vista" class="clip" src="assets/footage/gameplay.mp4" data-start="2.3" data-duration="3.15" data-media-start="9" muted playsinline></video>
+      <img id="pg-icono" src="assets/footage/roblox/icono.jpg" alt="" />
+      <div id="pg-tapa1"></div>
+      <div id="pg-titulo" data-var-text="titulo">Grand Theft Auto VI</div>
+      <div id="pg-creador" data-var-text="creador">xNeonVice</div>
+    </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    // la hoja sube: desplazamiento medido cuadro a cuadro en la grabación (px del video final)
+    const sube = [[2.333,627],[2.367,456],[2.4,258],[2.433,138],[2.467,70],[2.5,34],[2.533,18],[2.567,8],[2.6,4],[2.633,2],[2.667,0]];
+    tl.set("#pg", { opacity: 1, y: sube[0][1] }, sube[0][0]);
+    sube.slice(1).forEach(([t, y]) => tl.set("#pg", { y }, t));
+    window.__timelines["pagina"] = tl;
+  </script>
+</template>
